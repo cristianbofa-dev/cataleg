@@ -9,7 +9,8 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Nexe Catàleg">
 <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='32' fill='%23f5f5f7'/%3E%3Ctext x='90' y='110' text-anchor='middle' font-size='72'%3E🔩%3C/text%3E%3C/svg%3E">
-<link rel="manifest" href="manifest.json">
+<script>/* El manifest només té sentit servit per web; obert des del disc, Safari el bloqueja */
+if(location.protocol !== 'file:') document.write('<link rel="manifest" href="manifest.json">');</script>
 <style>{{include:src/css/styles.css}}</style>
 <title>Nexe Catàleg</title>
 </head>

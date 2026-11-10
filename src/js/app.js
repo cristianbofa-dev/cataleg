@@ -88,6 +88,15 @@ function _resolveImgPath(s){
   var m = (typeof window !== 'undefined') ? window.__IMG_DATA__ : null;
   return (m && Object.prototype.hasOwnProperty.call(m, s)) ? m[s] : s;
 }
+// Retorna una adreça d'imatge que es pot mostrar, o '' si no n'hi ha.
+// Una ruta relativa (imgs/...) que no és dins del catàleg no es pot carregar
+// quan el fitxer s'obre des del disc (file://): Safari la bloqueja.
+function _imgSrc(s){
+  if(!s || typeof s !== 'string') return '';
+  var r = _resolveImgPath(s);
+  if(r.indexOf('data:') === 0 || r.indexOf('http') === 0 || r.indexOf('blob:') === 0) return r;
+  return location.protocol === 'file:' ? '' : r;
+}
 (function(){
   for(var ci=0; ci<NAV_CATEGORIES.length; ci++){
     if(NAV_CATEGORIES[ci].img) NAV_CATEGORIES[ci].img = _resolveImgPath(NAV_CATEGORIES[ci].img);
@@ -1862,15 +1871,16 @@ function showVariantGroup(groupId, pages){
       if(_updOverrideImgs && _updOverrideImgs.length > 0){
         for(var gi=0;gi<_updOverrideImgs.length;gi++){
           var simg = _updOverrideImgs[gi];
-          if(_isValidImg(simg)) imgs.push(simg);
+          if(_isValidImg(simg)) imgs.push(_imgSrc(simg) || _imgPlaceholder);
         }
       } else if(p.imgs && p.imgs.length > 0){
         for(var gi=0;gi<p.imgs.length;gi++){
           var simg = p.imgs[gi];
-          if(_isValidImg(simg)) imgs.push(simg);
+          if(_isValidImg(simg)) imgs.push(_imgSrc(simg) || _imgPlaceholder);
         }
       }
-      if(imgs.length === 0 && _isValidImg(p.i)) imgs.push(p.i);
+      if(!_editMode && imgs.length && imgs.every(function(x){ return x === _imgPlaceholder; })){ imgs = []; (p.imgs || []).forEach(function(x){ var u = _imgSrc(x); if(u) imgs.push(u); }); }
+  if(imgs.length === 0 && _isValidImg(p.i)) imgs.push(_imgSrc(p.i) || _imgPlaceholder);
 var fit = isPortraitImgProduct(p) ? 'contain' : 'cover';
       track.innerHTML = imgs.map(function(s){ return '<img src="'+escHtml(s)+'" alt="" style="flex-shrink:0;width:100%;height:100%;object-fit:'+fit+'">'; }).join('');
     }
@@ -1927,10 +1937,11 @@ var fit = isPortraitImgProduct(p) ? 'contain' : 'cover';
     if(p.imgs && p.imgs.length > 0){
       for(var gi=0;gi<p.imgs.length;gi++){
         var simg = p.imgs[gi];
-        if(_isValidImg(simg)) imgs.push(simg);
+        if(_isValidImg(simg)) imgs.push(_imgSrc(simg) || _imgPlaceholder);
       }
     }
-    if(imgs.length === 0 && _isValidImg(p.i)) imgs.push(p.i);
+    if(!_editMode && imgs.length && imgs.every(function(x){ return x === _imgPlaceholder; })){ imgs = []; (p.imgs || []).forEach(function(x){ var u = _imgSrc(x); if(u) imgs.push(u); }); }
+  if(imgs.length === 0 && _isValidImg(p.i)) imgs.push(_imgSrc(p.i) || _imgPlaceholder);
     if(imgs.length === 0) imgs.push('data:image/svg+xml,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect width="200" height="200" fill="#e8e8ed" rx="12"/><text x="100" y="105" text-anchor="middle" fill="#999" font-size="14" font-family="sans-serif">Sense imatge</text></svg>'));
 
   var fit = isVezzaniProduct(p) ? 'contain' : 'cover';
@@ -2331,14 +2342,19 @@ function buildKnowledgePanel(idx){
 }
 
 function getImgSrc(p, idx){
-  if(idx !== undefined && _editOverrides[idx] && _editOverrides[idx].imgs && _editOverrides[idx].imgs.length > 0 && _editOverrides[idx].imgs[0]) return _editOverrides[idx].imgs[0];
-  if(p && p.imgs && p.imgs.length > 0 && p.imgs[0]) return p.imgs[0];
-  if(!p || !p.i) return 'data:image/svg+xml,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect width="200" height="200" fill="#e8e8ed" rx="12"/><text x="100" y="100" text-anchor="middle" fill="#999" font-size="14" font-family="sans-serif">Imatge</text><text x="100" y="120" text-anchor="middle" fill="#999" font-size="14" font-family="sans-serif">no disponible</text></svg>');
-  return p.i;
+  // Primera foto que es pugui mostrar: la del mode edició, després les del producte
+  var cands = [];
+  if(idx !== undefined && _editOverrides[idx] && _editOverrides[idx].imgs) cands = cands.concat(_editOverrides[idx].imgs);
+  if(p && p.imgs) cands = cands.concat(p.imgs);
+  if(p && p.i) cands.push(p.i);
+  for(var ci=0; ci<cands.length; ci++){ var src = _imgSrc(cands[ci]); if(src) return src; }
+  return 'data:image/svg+xml,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect width="200" height="200" fill="#e8e8ed" rx="12"/><text x="100" y="100" text-anchor="middle" fill="#999" font-size="14" font-family="sans-serif">Imatge</text><text x="100" y="120" text-anchor="middle" fill="#999" font-size="14" font-family="sans-serif">no disponible</text></svg>');
 }
 
 var _imgPlaceholder = 'data:image/svg+xml,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect width="200" height="200" fill="#e8e8ed" rx="12"/><text x="100" y="100" text-anchor="middle" fill="#999" font-size="14" font-family="sans-serif">Imatge</text><text x="100" y="120" text-anchor="middle" fill="#999" font-size="14" font-family="sans-serif">no disponible</text></svg>');
 function _handleImgError(img){ img.onerror=null; img.src=_imgPlaceholder; }
+// Els atributs onerror="_handleImgError(this)" s'executen fora d'aquest bloc
+window._handleImgError = _handleImgError;
 function isVezzaniProduct(p){ return !!(p && p.fam === 'vezzani'); }
 function isPortraitImgProduct(p){
   if(!p) return false;
@@ -2398,15 +2414,16 @@ function showProduct(idx){
   if(overrideImgs && overrideImgs.length > 0){
     for(var gi=0;gi<overrideImgs.length;gi++){
       var simg = overrideImgs[gi];
-      if(_isValidImg(simg)) imgs.push(simg);
+      if(_isValidImg(simg)) imgs.push(_imgSrc(simg) || _imgPlaceholder);
     }
   } else if(p.imgs && p.imgs.length > 0){
     for(var gi=0;gi<p.imgs.length;gi++){
       var simg = p.imgs[gi];
-      if(_isValidImg(simg)) imgs.push(simg);
+      if(_isValidImg(simg)) imgs.push(_imgSrc(simg) || _imgPlaceholder);
     }
   }
-  if(imgs.length === 0 && _isValidImg(p.i)) imgs.push(p.i);
+  if(!_editMode && imgs.length && imgs.every(function(x){ return x === _imgPlaceholder; })){ imgs = []; (p.imgs || []).forEach(function(x){ var u = _imgSrc(x); if(u) imgs.push(u); }); }
+  if(imgs.length === 0 && _isValidImg(p.i)) imgs.push(_imgSrc(p.i) || _imgPlaceholder);
   if(imgs.length === 0) imgs.push(_imgPlaceholder);
 
   // Related
