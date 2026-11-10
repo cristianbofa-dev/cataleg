@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<script>{{include:src/js/error-bar.js}}</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Nexe Catàleg">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='32' fill='%23f5f5f7'/%3E%3Ctext x='90' y='110' text-anchor='middle' font-size='72'%3E🔩%3C/text%3E%3C/svg%3E">
+<link rel="manifest" href="manifest.json">
+<style>{{include:src/css/styles.css}}</style>
+<title>Nexe Catàleg</title>
+</head>
+<body>
+<div class="offline-badge" id="offlineBadge"><span class="dot"></span><span id="offlineText">Online</span></div>
+<div class="install-overlay hidden" id="installOverlay">
+   <div class="install-icon">📦</div>
+   <div class="install-title">Preparant catàleg offline</div>
+   <div class="install-sub">Descarregant tots els productes i imatges per funcionar sense connexió</div>
+   <div class="install-progress">
+     <div class="install-bar"><div class="install-bar-fill" id="installBarFill"></div></div>
+     <div class="install-status" id="installStatus">Iniciant...</div>
+   </div>
+   <button class="install-btn" id="installBtn">Obrir catàleg</button>
+ </div>
+ <div id="app">
+  
+<div class="header" id="header">
+    <button class="header-back" id="btnBack" aria-label="Enrere" hidden>&#x2039;</button>
+    <div class="header-title glow-text">Nexe Catàleg</div>
+    <button class="order-btn" id="orderBtn" aria-label="Pedido" title="Pedido"><span>🛒</span><span class="order-badge" id="orderBadge"></span></button>
+    <button class="header-back" id="togglePresentationTop" aria-label="Tema fosc" title="Tema fosc">🌙</button>
+  </div>
+
+  <div class="main" id="main">
+    <div class="page" id="page-home"></div>
+    <div class="page" id="page-category">
+      <div class="filter-bar" id="filterBar"></div>
+      <div class="prod-grid" id="categoryGrid"></div>
+    </div>
+    <div class="page" id="page-advisor"></div>
+    <div class="page" id="page-lists"></div>
+    <div class="page" id="page-list-detail"><div class="prod-grid" id="listDetailGrid"></div></div>
+    <div class="page" id="page-settings">
+      <div class="settings-group">
+        <div class="label">Visualització</div>
+        <div class="setting-item">
+          <div class="left"><span class="icon">🌙</span><div><div class="title">Tema fosc</div><div class="sub">Fons fosc per a presentacions davant del client</div></div></div>
+          <button class="toggle" id="togglePresentation" aria-label="Tema fosc"></button>
+        </div>
+      </div>
+      <div class="settings-group">
+        <div class="label">Catàleg</div>
+        <div class="setting-item"><div class="left"><div><div class="title">Productes</div><div class="sub" id="prodCount">—</div></div></div></div>
+        <div class="setting-item"><div class="left"><div><div class="title">Llistes</div><div class="sub" id="listCount">—</div></div></div></div>
+        <div class="setting-item"><div class="left"><div><div class="title">Versió</div><div class="sub" id="verCount">—</div></div></div></div>
+      </div>
+      <div class="settings-group">
+        <div class="label">Sobre</div>
+        <div class="setting-item"><div class="left"><div><div class="title">Nexe Catàleg v1.0</div><div class="sub">Catàleg comercial per a iPad</div></div></div></div>
+      </div>
+    </div>
+    <div class="page" id="page-clients"></div>
+  </div>
+
+  <nav class="nav" id="nav">
+    <button class="nav-item active" data-page="home" aria-label="Inici"><span class="icon">🏠</span><span>Inici</span></button>
+    <button class="nav-item" data-page="search" aria-label="Cercar"><span class="icon">🔍</span><span>Cercar</span></button>
+    <button class="nav-item" data-page="clients" aria-label="Clients"><span class="icon">👥</span><span>Clients</span></button>
+    <button class="nav-item" data-page="lists" aria-label="Llistes"><span class="icon">📋</span><span>Llistes</span></button>
+    <button class="nav-item" data-page="edit" id="btnEditMode" aria-label="Editar"><span class="icon">✏️</span><span>Editar</span></button>
+  </nav>
+</div>
+
+<div class="order-panel" id="orderPanel" hidden>
+  <div class="order-panel-header">
+    <div class="order-panel-header-left">
+      <span style="font-size:20px;font-weight:700">🛒 Pedido</span>
+      <div class="order-panel-client" id="orderPanelClient">
+        <span class="order-panel-client-label">Client:</span>
+        <span class="order-panel-client-name" id="orderPanelClientName">—</span>
+        <button class="order-panel-client-btn" id="orderPanelClientBtn">Canviar</button>
+      </div>
+    </div>
+    <button class="order-panel-close" id="orderPanelClose">✕</button>
+  </div>
+  <div class="order-panel-body" id="orderPanelBody"></div>
+  <div class="order-panel-footer" id="orderPanelFooter">
+    <div class="order-total-row"><span class="order-total-label">Total</span><span class="order-total-amount" id="orderTotal">0,00 €</span></div>
+    <textarea class="order-notes" id="orderNotes" placeholder="Observacions generals del pedido…" rows="2"></textarea>
+    <div class="order-actions">
+      <button class="order-action-btn secondary" id="orderClear">Buida</button>
+      <button class="order-action-btn primary" id="orderShare">Compartir</button>
+    </div>
+  </div>
+</div>
+
+<div class="add-modal" id="addModal" hidden>
+  <div class="add-modal-content">
+    <div class="add-modal-header">
+      <span class="add-modal-title" id="addModalTitle">Afegir al pedido</span>
+      <button class="add-modal-close" id="addModalClose">✕</button>
+    </div>
+    <div class="add-modal-body">
+      <div class="add-modal-product" id="addModalProduct"></div>
+      <div class="add-modal-row">
+        <label class="add-modal-label">Quantitat</label>
+        <div class="qty-stepper">
+          <button class="qty-btn" id="addQtyMinus">−</button>
+          <input type="number" class="qty-input" id="addQty" value="1" min="1" step="1">
+          <button class="qty-btn" id="addQtyPlus">+</button>
+        </div>
+      </div>
+      <div class="add-modal-row">
+        <label class="add-modal-label">Observacions (opcional)</label>
+        <textarea class="add-modal-textarea" id="addNotes" placeholder="Color, mida, etc." rows="2"></textarea>
+      </div>
+    </div>
+    <div class="add-modal-footer">
+      <button class="order-action-btn primary full" id="addConfirm">➕ Afegir al pedido</button>
+    </div>
+  </div>
+</div>
+
+<div class="list-picker" id="listPicker" hidden>
+  <div class="list-picker-content">
+    <div class="list-picker-header">
+      <span style="font-size:18px;font-weight:700">Afegir a llista</span>
+      <button class="list-picker-close" id="listPickerClose">✕</button>
+    </div>
+    <div class="list-picker-body" id="listPickerBody"></div>
+    <div class="list-picker-footer">
+      <button class="order-action-btn primary full" id="listPickerNew">➕ Nova llista</button>
+    </div>
+  </div>
+</div>
+
+<div class="list-picker" id="createListModal" hidden>
+  <div class="list-picker-content" style="max-width:380px">
+    <div class="list-picker-header">
+      <span style="font-size:18px;font-weight:700">Nova llista</span>
+      <button class="list-picker-close" id="createListClose">✕</button>
+    </div>
+    <div class="list-picker-body" style="padding:12px 20px">
+      <div style="margin-bottom:14px">
+        <label style="font-size:12px;color:rgba(29,29,31,.5);margin-bottom:6px;display:block;font-weight:500">Nom de la llista</label>
+        <input type="text" id="createListName" class="add-modal-textarea" style="height:44px;padding:0 12px;font-size:15px" placeholder="Ex: Productes estrella" maxlength="40">
+      </div>
+      <div style="margin-bottom:6px">
+        <label style="font-size:12px;color:rgba(29,29,31,.5);margin-bottom:8px;display:block;font-weight:500">Icona</label>
+        <div class="icon-picker" id="iconPicker"></div>
+      </div>
+    </div>
+    <div class="list-picker-footer">
+      <button class="order-action-btn primary full" id="createListConfirm">Crear llista</button>
+    </div>
+  </div>
+</div>
+
+<div class="search-overlay" id="searchOverlay" hidden>
+  <div class="search-input-wrap">
+    <input type="search" id="searchInput" placeholder="Cerca productes, marques, refs..." autocomplete="off" autocapitalize="off" spellcheck="false">
+    <button class="cancel" id="searchCancel">Cancel·lar</button>
+  </div>
+  <div class="results" id="searchResults"></div>
+</div>
+
+<!-- Client form modal -->
+<div class="client-modal" id="clientFormModal" hidden>
+  <div class="client-modal-content">
+    <div class="client-modal-header">
+      <span class="client-modal-title" id="clientFormTitle">Nou client</span>
+      <button class="client-modal-close" id="clientFormClose">✕</button>
+    </div>
+    <div class="client-modal-body" id="clientFormBody"></div>
+    <div class="client-modal-footer">
+      <button class="client-form-btn secondary" id="clientFormCancel">Cancel·lar</button>
+      <button class="client-form-btn primary" id="clientFormSave">Guardar</button>
+    </div>
+  </div>
+</div>
+
+<!-- Client picker -->
+<div class="client-picker" id="clientPicker" hidden>
+  <div class="client-picker-content">
+    <div class="client-picker-header">
+      <span class="client-picker-title">Seleccionar client</span>
+      <button class="client-picker-close" id="clientPickerClose">✕</button>
+    </div>
+    <div class="client-picker-search-wrap">
+      <input class="client-picker-search" id="clientPickerSearch" type="search" placeholder="Cerca client..." autocomplete="off">
+    </div>
+    <div class="client-picker-list" id="clientPickerList"></div>
+  </div>
+</div>
+
+<script>
+{{data:products}}
+</script>
+<script>
+var dogher_products = [];
+
+</script>
+<script>
+{{data:variant_groups}}
+</script>
+<script>{{include:src/js/knowledge.js}}</script>
+<script>{{data:clients}}</script>
+<script>{{data:images}}</script>
+<script>{{include:src/js/app.js}}</script>
+<script type="module">{{include:src/js/sqlite-bridge.js}}</script>
+<script>{{include:src/js/sw-register.js}}</script>
+
+<div class="edit-add-overlay" id="editAddOverlay">
+  <div class="edit-add-modal">
+    <h3>Afegir producte nou</h3>
+    <label>Nom del producte *</label>
+    <input type="text" id="editAddName" placeholder="Ex: Laminilla D.115 Hybrid">
+    <label>Referència</label>
+    <input type="text" id="editAddRef" placeholder="Ex: 11/402400">
+    <label>Preu (€) * <span style="font-weight:500">(si hi ha mides, és el de la primera)</span></label>
+    <input type="number" id="editAddPrice" step="0.01" placeholder="Ex: 45.50">
+    <label style="margin-top:12px">Mides / variants amb preu diferent (opcional)</label>
+    <div id="editAddVariants"></div>
+    <button type="button" class="btn-cancel" style="width:100%;margin-bottom:12px;padding:10px;border:none;border-radius:10px;background:rgba(0,0,0,.06);font-weight:600;cursor:pointer" onclick="window._app.addVariantRow()">+ Afegir mida amb preu</button>
+    <div class="row">
+      <div>
+        <label>Categoria</label>
+        <select id="editAddCat">
+          <option value="tall">Tall</option>
+          <option value="polit">Polit</option>
+          <option value="adhesius">Adhesius</option>
+          <option value="quimics">Químics</option>
+          <option value="manipulacio">Manipulació</option>
+          <option value="maquinaria">Maquinària</option>
+          <option value="equip">Equip</option>
+          <option value="funerari">Art funerari</option>
+        </select>
+      </div>
+      <div>
+        <label>Marca</label>
+        <input type="text" id="editAddBrand" placeholder="Ex: INSEMAC">
+      </div>
+    </div>
+    <label>Descripció</label>
+    <textarea id="editAddDesc" placeholder="Descripció del producte..."></textarea>
+    <label>URL imatge (opcional)</label>
+    <input type="text" id="editAddImg" placeholder="https://... o imgs/...">
+    <div class="btn-row">
+      <button class="btn-cancel" onclick="window._app.closeAddProduct()">Cancel·lar</button>
+      <button class="btn-save" onclick="window._app.saveNewProduct()">Desar</button>
+    </div>
+  </div>
+</div>
+<button class="edit-add-fab" id="editAddFab" onclick="window._app.openAddProduct()">+</button>
+<button class="edit-save-fab" id="editSaveFab" onclick="window._app.saveToFile()" title="Desar canvis">💾</button>
+<button class="edit-clear-fab" id="editClearFab" onclick="window._app.clearOverrides()" title="Netjar canvis">🗑</button>
+<button class="edit-import-fab" id="editImportFab" onclick="window._app.importOverrides()" title="Importar backup">📂</button>
+
+</body>
+</html>

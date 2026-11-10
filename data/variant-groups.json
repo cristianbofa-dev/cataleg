@@ -1,0 +1,871 @@
+[
+ {
+  "id": "prolongador-cono-1-2-gas",
+  "name": "Prolongador Cono 1/2 Gas",
+  "brand": "INSEMAC",
+  "variantAttrLabel": "Longitud",
+  "members": [
+   {
+    "idx": 577
+   },
+   {
+    "idx": 576
+   },
+   {
+    "idx": 575
+   },
+   {
+    "idx": 574
+   },
+   {
+    "idx": 573
+   }
+  ],
+  "autoDetected": true
+ },
+ {
+  "id": "fresa-electrodepositada-marmol",
+  "name": "Fresa electrodepositada Mármol",
+  "brand": "INSEMAC",
+  "variantAttrLabel": "Diámetro × Altura",
+  "members": [
+   {
+    "idx": 108
+   },
+   {
+    "idx": 107
+   },
+   {
+    "idx": 106
+   },
+   {
+    "idx": 105
+   },
+   {
+    "idx": 104
+   },
+   {
+    "idx": 103
+   },
+   {
+    "idx": 102
+   },
+   {
+    "idx": 101
+   },
+   {
+    "idx": 100
+   }
+  ],
+  "autoDetected": true
+ },
+ {
+  "id": "cepillo-envejecido",
+  "name": "Cepillo de envejecido",
+  "brand": "INSEMAC",
+  "variantAttrLabel": "Diámetro",
+  "members": [
+   {
+    "idx": 554
+   },
+   {
+    "idx": 553
+   },
+   {
+    "idx": 552
+   }
+  ],
+  "autoDetected": true
+ },
+ {
+  "id": "cepillo-diamantado-envejecido",
+  "name": "Cepillo diamantado de envejecido",
+  "brand": "INSEMAC",
+  "variantAttrLabel": "Diámetro",
+  "members": [
+   {
+    "idx": 557
+   },
+   {
+    "idx": 556
+   },
+   {
+    "idx": 555
+   }
+  ],
+  "autoDetected": true
+ },
+ {
+  "id": "coronas-diamantadas-canto-recto",
+  "name": "Coronas diamantadas canto recto velcro",
+  "brand": "INSEMAC",
+  "variantAttrLabel": "Diámetro",
+  "members": [
+   {
+    "idx": 78
+   },
+   {
+    "idx": 77
+   }
+  ],
+  "autoDetected": true
+ },
+ {
+  "id": "corona-boom",
+  "name": "Corona diamantada BOOM anclaje rápido",
+  "brand": "INSEMAC",
+  "variantAttrLabel": "Diámetro",
+  "members": [
+   {
+    "idx": 80
+   },
+   {
+    "idx": 79
+   }
+  ],
+  "autoDetected": true
+ },
+ {
+  "id": "resin-disc-pulidora-brazo",
+  "name": "Coronas diamantadas pulidora de brazo Resin disc",
+  "brand": "INSEMAC",
+  "variantAttrLabel": "Diámetro",
+  "members": [
+   {
+    "idx": 85
+   },
+   {
+    "idx": 83
+   }
+  ],
+  "autoDetected": true
+ },
+ {
+  "id": "coronas-metalicas-pulidora-brazo",
+  "name": "Coronas diamantadas metálicas pulidora de brazo",
+  "brand": "INSEMAC",
+  "variantAttrLabel": "Diámetro",
+  "members": [
+   {
+    "idx": 81
+   },
+   {
+    "idx": 84
+   }
+  ],
+  "autoDetected": true
+ },
+ {
+  "id": "aro-diamantado-helicoidal",
+  "name": "Aro diamantado anclaje helicoidal pulecantos",
+  "brand": "INSEMAC",
+  "variantAttrLabel": "Diámetro",
+  "members": [
+   {
+    "idx": 61
+   },
+   {
+    "idx": 60
+   }
+  ],
+  "autoDetected": true
+ },
+ {
+  "id": "plato-velcro-anclaje-rapido",
+  "name": "Plato plástico velcro anclaje rápido",
+  "brand": "INSEMAC",
+  "variantAttrLabel": "Diámetro",
+  "members": [
+   {
+    "idx": 659
+   },
+   {
+    "idx": 658
+   }
+  ],
+  "autoDetected": true
+ },
+ {
+  "id": "tope-neumatico",
+  "name": "Tope de posicionamiento neumático",
+  "brand": "INSEMAC",
+  "variantAttrLabel": "Altura",
+  "members": [
+   {
+    "idx": 615
+   },
+   {
+    "idx": 614
+   }
+  ],
+  "autoDetected": true
+ },
+ {
+  "id": "tope-desmontable",
+  "name": "Tope de posicionamiento desmontable",
+  "brand": "INSEMAC",
+  "variantAttrLabel": "Altura",
+  "members": [
+   {
+    "idx": 617
+   },
+   {
+    "idx": 616
+   }
+  ],
+  "autoDetected": true
+ },
+ {
+  "id": "flejadora-manual",
+  "name": "Flejadora Manual",
+  "brand": "INSEMAC",
+  "variantAttrLabel": "Ancho",
+  "members": [
+   {
+    "idx": 645
+   },
+   {
+    "idx": 644
+   }
+  ],
+  "autoDetected": true
+ },
+ {
+  "id": "ventosa-vd65",
+  "name": "Ventosa doble efecto D.65mm.",
+  "brand": "INSEMAC",
+  "variantAttrLabel": "Altura",
+  "members": [
+   {
+    "idx": 627
+   },
+   {
+    "idx": 626
+   }
+  ],
+  "autoDetected": true
+ },
+ {
+  "id": "ventosa-vd90",
+  "name": "Ventosa doble efecto D.80mm.",
+  "brand": "INSEMAC",
+  "variantAttrLabel": "Altura",
+  "members": [
+   {
+    "idx": 625
+   },
+   {
+    "idx": 624
+   }
+  ],
+  "autoDetected": true
+ },
+ {
+  "id": "ventosa-vd120-d130",
+  "name": "Ventosa doble efecto D.130mm.",
+  "brand": "INSEMAC",
+  "variantAttrLabel": "Altura",
+  "members": [
+   {
+    "idx": 622
+   },
+   {
+    "idx": 621
+   }
+  ],
+  "autoDetected": true
+ },
+ {
+  "id": "ventosa-vd160",
+  "name": "Ventosa doble efecto D.150mm.",
+  "brand": "INSEMAC",
+  "variantAttrLabel": "Altura",
+  "members": [
+   {
+    "idx": 619
+   },
+   {
+    "idx": 620
+   }
+  ],
+  "autoDetected": true
+ },
+ {
+  "id": "ventosa-v40x200",
+  "name": "Ventosa doble efecto 40 x 200mm.",
+  "brand": "INSEMAC",
+  "variantAttrLabel": "Altura",
+  "members": [
+   {
+    "idx": 628
+   },
+   {
+    "idx": 629
+   }
+  ],
+  "autoDetected": true
+ },
+ {
+  "id": "ventosa-v150x150",
+  "name": "Ventosa doble efecto 150 x 150mm.",
+  "brand": "INSEMAC",
+  "variantAttrLabel": "Altura",
+  "members": [
+   {
+    "idx": 631
+   },
+   {
+    "idx": 630
+   }
+  ],
+  "autoDetected": true
+ },
+ {
+  "id": "ventosa-v100x200",
+  "name": "Ventosa doble efecto 100 x 200mm.",
+  "brand": "INSEMAC",
+  "variantAttrLabel": "Altura",
+  "members": [
+   {
+    "idx": 632
+   },
+   {
+    "idx": 633
+   }
+  ],
+  "autoDetected": true
+ },
+ {
+  "id": "ventosa-v200x400",
+  "name": "Ventosa doble efecto 200 x 400mm.",
+  "brand": "INSEMAC",
+  "variantAttrLabel": "Altura",
+  "members": [
+   {
+    "idx": 635
+   },
+   {
+    "idx": 634
+   }
+  ],
+  "autoDetected": true
+ },
+ {
+  "id": "ventosa-v150x300",
+  "name": "Ventosa doble efecto 150 x 300mm.",
+  "brand": "INSEMAC",
+  "variantAttrLabel": "Altura",
+  "members": [
+   {
+    "idx": 636
+   },
+   {
+    "idx": 637
+   }
+  ],
+  "autoDetected": true
+ },
+ {
+  "id": "ventosa-v200x200",
+  "name": "Ventosa doble efecto 200 x 200mm.",
+  "brand": "INSEMAC",
+  "variantAttrLabel": "Altura",
+  "members": [
+   {
+    "idx": 639
+   },
+   {
+    "idx": 638
+   }
+  ],
+  "autoDetected": true
+ },
+ {
+  "id": "lijas-diamantadas-star3",
+  "name": "Lijas Diamantadas en húmedo STAR 3 D.100",
+  "brand": "INSEMAC",
+  "variantAttrLabel": "Granulometría",
+  "members": [
+   {
+    "idx": 72,
+    "label": "Gr.0"
+   },
+   {
+    "idx": 72,
+    "label": "Gr.1"
+   },
+   {
+    "idx": 72,
+    "label": "Gr.2"
+   },
+   {
+    "idx": 72,
+    "label": "Gr.3"
+   }
+  ],
+  "autoDetected": true
+ },
+ {
+  "id": "lijas-diamantadas-3pasos",
+  "name": "Lijas Diamantadas en húmedo 3 Pasos D.100",
+  "brand": "INSEMAC",
+  "variantAttrLabel": "Granulometría",
+  "members": [
+   {
+    "idx": 71,
+    "label": "Gr.0"
+   },
+   {
+    "idx": 71,
+    "label": "Gr.1"
+   },
+   {
+    "idx": 71,
+    "label": "Gr.2"
+   },
+   {
+    "idx": 71,
+    "label": "Gr.3"
+   }
+  ],
+  "autoDetected": true
+ },
+ {
+  "id": "CORSIVO MILLENNIUM",
+  "name": "Corsivo Millennium",
+  "brand": "VEZZANI",
+  "description": "Caràcter corsiu clàssic. Compresso, Standard, Allargato. Date incorporate o appoggiate. Doratura +60%. Punteggiatura gratuita fins mm 50.",
+  "options": [],
+  "autoDetected": false
+ },
+ {
+  "id": "CORSIVO MILLENNIUM OLD",
+  "name": "Corsivo Millennium Old",
+  "brand": "VEZZANI",
+  "description": "Versió anticada del Corsivo Millennium. Compresso, Standard, Allargato. Date incorporate o appoggiate. Doratura +60%.",
+  "options": [],
+  "autoDetected": false
+ },
+ {
+  "id": "CORSIVO UNIVERSAL",
+  "name": "Corsivo Universal",
+  "brand": "VEZZANI",
+  "description": "Caràcter corsiu versàtil. Compresso, Standard, Allargato. Date incorporate o appoggiate.",
+  "options": [],
+  "autoDetected": false
+ },
+ {
+  "id": "CORSIVO PLUS",
+  "name": "Corsivo Plus",
+  "brand": "VEZZANI",
+  "description": "Caràcter corsiu fi. Compresso, Standard, Allargato. Date incorporate o appoggiate.",
+  "options": [],
+  "autoDetected": false
+ },
+ {
+  "id": "CORSIVO PLUS S",
+  "name": "Corsivo Plus S",
+  "brand": "VEZZANI",
+  "description": "Gruix extra (mm 6). Date incorporate o appoggiate.",
+  "options": [],
+  "autoDetected": false
+ },
+ {
+  "id": "CORSIVO BOUTIQUE",
+  "name": "Corsivo Boutique",
+  "brand": "VEZZANI",
+  "description": "Gruix extra (mm 6). Date incorporate, appoggiate o sciolte.",
+  "options": [],
+  "autoDetected": false
+ },
+ {
+  "id": "CORSIVO ALADIN",
+  "name": "Corsivo Aladin",
+  "brand": "VEZZANI",
+  "description": "Sense majúscules, totes les lletres mateixa alçada. Date sciolte (+20%). Gruix mm 6.",
+  "options": [],
+  "autoDetected": false
+ },
+ {
+  "id": "CORSIVO DAKAR",
+  "name": "Corsivo Dakar",
+  "brand": "VEZZANI",
+  "description": "Date incorporate, appoggiate o sciolte. Gruix mm 6. Punteggiatura gratuita.",
+  "options": [],
+  "autoDetected": false
+ },
+ {
+  "id": "CORSIVO DIGIVI",
+  "name": "Corsivo Digivi",
+  "brand": "VEZZANI",
+  "description": "Compresso, Standard, Allargato. Date incorporate o appoggiate. Doratura +60%.",
+  "options": [],
+  "autoDetected": false
+ },
+ {
+  "id": "CORSIVO SMART",
+  "name": "Corsivo Smart",
+  "brand": "VEZZANI",
+  "description": "Date incorporate, appoggiate o sciolte. Gruix mm 2,5.",
+  "options": [],
+  "autoDetected": false
+ },
+ {
+  "id": "CORSIVO PLAIN",
+  "name": "Corsivo Plain",
+  "brand": "VEZZANI",
+  "description": "Solo Standard. Date incorporate, appoggiate o sciolte (+20%).",
+  "options": [],
+  "autoDetected": false
+ },
+ {
+  "id": "ANTARES",
+  "name": "Antares",
+  "brand": "VEZZANI",
+  "description": "Lettere e numeri sciolti +20%. Punteggiatura gratuita.",
+  "options": [],
+  "autoDetected": false
+ },
+ {
+  "id": "CORSIVO MILLENNIUM INOX",
+  "name": "Corsivo Millennium",
+  "brand": "VEZZANI",
+  "description": "Acciaio inox. Compresso, Standard, Allargato. Date incorporate o appoggiate. Doratura +60%.",
+  "options": [],
+  "autoDetected": false
+ },
+ {
+  "id": "CORSIVO PLUS INOX",
+  "name": "Corsivo Plus",
+  "brand": "VEZZANI",
+  "description": "Acciaio inox. Date incorporate, appoggiate o sciolte.",
+  "options": [],
+  "autoDetected": false
+ },
+ {
+  "id": "CORSIVO ALADIN INOX",
+  "name": "Corsivo Aladin",
+  "brand": "VEZZANI",
+  "description": "Acciaio inox. Sense majúscules. Date sciolte.",
+  "options": [],
+  "autoDetected": false
+ },
+ {
+  "id": "CORSIVO DIGIVI INOX",
+  "name": "Corsivo Digivi",
+  "brand": "VEZZANI",
+  "description": "Acciaio inox. Compresso, Standard, Allargato. Date incorporate o appoggiate.",
+  "options": [],
+  "autoDetected": false
+ },
+ {
+  "id": "ALTARES INOX",
+  "name": "Altares",
+  "brand": "VEZZANI",
+  "description": "Acciaio inox. Lettere e numeri sciolti +20%. Punteggiatura gratuita.",
+  "options": [],
+  "autoDetected": false
+ },
+ {
+  "id": "ROMANO INOX",
+  "name": "Romano",
+  "brand": "VEZZANI",
+  "description": "Acciaio inox. Caràcter romà clàssic.",
+  "options": [],
+  "autoDetected": false
+ },
+ {
+  "id": "FUTURO INOX",
+  "name": "Futuro",
+  "brand": "VEZZANI",
+  "description": "Acciaio inox. Lettere/Numeri/Stella/Croce. Date incorporate o appoggiate.",
+  "options": [],
+  "autoDetected": false
+ },
+ {
+  "id": "FUTURO ORO INOX",
+  "name": "Futuro Oro",
+  "brand": "VEZZANI",
+  "description": "Acciaio inox en bath or 24K. Lettere/Numeri/Stella/Croce.",
+  "options": [],
+  "autoDetected": false
+ },
+ {
+  "id": "FUTURO AUTOADESIVO INOX",
+  "name": "Futuro Autoadhesiu",
+  "brand": "VEZZANI",
+  "description": "Acciaio inox autoadhesiu. Lettere/Numeri/Stella/Croce.",
+  "options": [],
+  "autoDetected": false
+ },
+ {
+  "id": "PRISMATO INOX",
+  "name": "Prismato",
+  "brand": "VEZZANI",
+  "description": "Acciaio inox. Textura prismàtica.",
+  "options": [],
+  "autoDetected": false
+ },
+ {
+  "id": "FIORENTINO INOX",
+  "name": "Fiorentino",
+  "brand": "VEZZANI",
+  "description": "Acciaio inox taglat de làmina. Lettere/Numeri/Stella/Croce.",
+  "options": [],
+  "autoDetected": false
+ },
+ {
+  "id": "MODERNO INOX",
+  "name": "Moderno",
+  "brand": "VEZZANI",
+  "description": "Acciaio inox. Caràcter modern.",
+  "options": [],
+  "autoDetected": false
+ },
+ {
+  "id": "kgs-brocas-granito-continuas",
+  "name": "Brocas Granito Continuas M-14",
+  "brand": "KGS DIAMOND",
+  "description": "Brocas Granito Continuas M-14 D.16. Eina professional per a mecanitzat de pedra, ceràmica i porcellànic.",
+  "image": "imgs/products-2401-1-m.jpeg",
+  "category": "tall",
+  "subcategory": "freses-tall",
+  "members": [
+   {
+    "idx": 832,
+    "ref": "14/BGC-16"
+   },
+   {
+    "idx": 833,
+    "ref": "14/BGC-18"
+   },
+   {
+    "idx": 834,
+    "ref": "14/BGC-20"
+   },
+   {
+    "idx": 835,
+    "ref": "14/BGC-22"
+   },
+   {
+    "idx": 836,
+    "ref": "14/BGC-25"
+   },
+   {
+    "idx": 837,
+    "ref": "14/BGC-30"
+   },
+   {
+    "idx": 838,
+    "ref": "14/BGC-35"
+   },
+   {
+    "idx": 839,
+    "ref": "14/BGC-40"
+   },
+   {
+    "idx": 840,
+    "ref": "14/BGC-45"
+   },
+   {
+    "idx": 841,
+    "ref": "14/BGC-50"
+   },
+   {
+    "idx": 842,
+    "ref": "14/BGC-60"
+   },
+   {
+    "idx": 843,
+    "ref": "14/BGC-70"
+   },
+   {
+    "idx": 844,
+    "ref": "14/BGC-100"
+   },
+   {
+    "idx": 845,
+    "ref": "14/BGC-110"
+   }
+  ],
+  "autoDetected": true,
+  "variantAttrLabel": "Mida / Diàmetre",
+  "base": "Brocas Granito Continuas"
+ },
+ {
+  "id": "kgs-brocas-marmol-m14",
+  "name": "Brocas Diamantadas Marmol M14",
+  "brand": "KGS DIAMOND",
+  "description": "Brocas Diamantadas Marmol M14 D.20. Eina professional per a mecanitzat de pedra, ceràmica i porcellànic.",
+  "image": "imgs/products-508-1-m.jpeg",
+  "category": "tall",
+  "subcategory": "freses-tall",
+  "members": [
+   {
+    "idx": 846,
+    "ref": "14/M-20"
+   },
+   {
+    "idx": 847,
+    "ref": "14/M-25"
+   },
+   {
+    "idx": 848,
+    "ref": "14/M-30"
+   },
+   {
+    "idx": 849,
+    "ref": "14/M-35"
+   },
+   {
+    "idx": 850,
+    "ref": "14/M-40"
+   },
+   {
+    "idx": 851,
+    "ref": "14/M-50"
+   },
+   {
+    "idx": 852,
+    "ref": "14/M-60"
+   },
+   {
+    "idx": 853,
+    "ref": "14/M-70"
+   },
+   {
+    "idx": 854,
+    "ref": "14/M-80"
+   },
+   {
+    "idx": 855,
+    "ref": "14/M-90"
+   },
+   {
+    "idx": 856,
+    "ref": "14/M-100"
+   },
+   {
+    "idx": 857,
+    "ref": "14/M-110"
+   }
+  ],
+  "autoDetected": true,
+  "variantAttrLabel": "Mida / Diàmetre",
+  "base": "Brocas Diamantadas Marmol M14"
+ },
+ {
+  "id": "kgs-laminilla-hybrid",
+  "name": "Laminilla Diamantada Hybrid",
+  "brand": "KGS DIAMOND",
+  "description": "Laminilla Diamantada Hybrid D.115 Gr.50 M-14. Eina professional per a mecanitzat de pedra, ceràmica i porcellànic.",
+  "image": "imgs/products-2774-1-m.png",
+  "category": "tall",
+  "subcategory": "freses-tall",
+  "members": [
+   {
+    "idx": 791,
+    "ref": "11/402400122"
+   },
+   {
+    "idx": 792,
+    "ref": "11/402400082"
+   },
+   {
+    "idx": 793,
+    "ref": "11/402400083"
+   },
+   {
+    "idx": 794,
+    "ref": "11/402400084"
+   }
+  ],
+  "autoDetected": true,
+  "variantAttrLabel": "Mida / Diàmetre",
+  "base": "Laminilla Diamantada Hybrid"
+ },
+ {
+  "id": "kgs-esponja-diamante",
+  "name": "kgs-esponja-diamante",
+  "brand": "KGS",
+  "description": "",
+  "image": "",
+  "category": "",
+  "subcategory": "",
+  "members": [
+   {
+    "idx": 801,
+    "ref": "28/E-60"
+   },
+   {
+    "idx": 802,
+    "ref": "28/E-120"
+   },
+   {
+    "idx": 803,
+    "ref": "28/E-220"
+   },
+   {
+    "idx": 804,
+    "ref": "28/E-360"
+   },
+   {
+    "idx": 805,
+    "ref": "28/E-600"
+   },
+   {
+    "idx": 806,
+    "ref": "28/E-1500"
+   },
+   {
+    "idx": 807,
+    "ref": "28/E-14000"
+   }
+  ],
+  "autoDetected": true,
+  "variantAttrLabel": "Mida / Diàmetre",
+  "base": "Esponja Diamante"
+ },
+ {
+  "id": "kgs-esponja-diamante-color",
+  "name": "Esponja Diamante 90x55",
+  "brand": "KGS DIAMOND",
+  "description": "Esponja Diamante 90x55 C-60 Verde. Eina professional per a mecanitzat de pedra, ceràmica i porcellànic.",
+  "image": "imgs/products-3154-1-m.jpeg",
+  "category": "tall",
+  "subcategory": "freses-tall",
+  "members": [
+   {
+    "idx": 801,
+    "ref": "28/E-60"
+   },
+   {
+    "idx": 802,
+    "ref": "28/E-120"
+   },
+   {
+    "idx": 803,
+    "ref": "28/E-220"
+   },
+   {
+    "idx": 804,
+    "ref": "28/E-360"
+   },
+   {
+    "idx": 805,
+    "ref": "28/E-600"
+   },
+   {
+    "idx": 806,
+    "ref": "28/E-1500"
+   },
+   {
+    "idx": 807,
+    "ref": "28/E-14000"
+   }
+  ],
+  "autoDetected": true,
+  "variantAttrLabel": "Mida / Diàmetre",
+  "base": "Esponja Diamante"
+ }
+]

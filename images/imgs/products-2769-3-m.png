@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="robots" content="noindex, nofollow">
+        <title>Error inesperado | Insemactools.es</title>
+
+        <link rel="dns-prefetch" href="//cdntag.tarteaucitron.io">
+<link rel="preconnect" href="https://cdntag.tarteaucitron.io" crossorigin="">
+        <script src="https://cdntag.tarteaucitron.io/load.js?domain=www.insemactools.es&uuid=600955a78c331886e06729acbdf3323ec3446e70"></script>
+      
+<script>
+    (tarteaucitron.job = tarteaucitron.job || []);
+    tarteaucitron.job.push('recaptcha');
+    tarteaucitron.job.push('gtag');
+</script>   		 
+<meta charset="UTF-8">
+
+<link rel="shortcut icon" href="https://www.insemactools.es/_img/favicon.png?v=14">
+<link rel="stylesheet" href="https://www.insemactools.es/_css/interface.css?v=14">
+
+<script src="https://www.insemactools.es/_js/jquery-1.12.3.min.js?v=14"></script>
+<script src="https://www.insemactools.es/_js/autocomplete.js?v=14"></script>
+<script src="https://www.insemactools.es/_js/common.js?v=14"></script>
+<script src="https://www.insemactools.es/_js/languages.js?v=14"></script>
+
+<script> var http_web_root = 'https://www.insemactools.es/';</script>
+
+
+<!--[if lt IE 9]>
+    <script src="https://www.insemactools.es/_js/html5shiv.min.js?v=14"></script>
+<![endif]-->
+
+        <script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                        m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+            ga('create', 'UA-17849802-4', 'auto');
+            ga('send', 'pageview');
+        </script>
+        <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-60LXRW2T8Q"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+
+function gtag() {
+    dataLayer.push(arguments);
+}
+gtag('js', new Date());
+
+gtag('config', 'G-60LXRW2T8Q');
+</script>
+        <link rel="stylesheet" href="https://www.insemactools.es/_css/captcha.css?v=14">
+    </head>
+    <body>
+        <header>
+    <a class="logo_link" title="Ir a inicio" href="https://www.insemactools.es/">
+        <img alt="Logotipo de la tienda" src="https://www.insemactools.es/_img/logo.png">
+    </a>
+    <div class="idiomas">
+
+                <a title="Castellano" href="https://www.insemactools.es/" class="es">Castellano</a>
+
+        <a title="English" href="https://www.insemactools.com/" class="en">English</a>
+    </div>
+
+    <div class="header_container">
+                    <a class="login_button" title="Mi cuenta" href="https://www.insemactools.es/area-cliente/iniciar-sesion.html">Mi cuenta</a>
+        
+            </div>
+
+    <a id="menu_button" class="menu_button" title="Menú" href="javascript:void(0);"><span></span><span></span><span></span></a>
+    <nav>
+        <ul class="menu">
+                        
+                        <li>
+                <a class="menu_link " title="Novedades" href="https://www.insemactools.es/novedades.html">NOVEDADES</a>
+            </li>
+            <li>
+                <a class="menu_link " title="Ofertas" href="https://www.insemactools.es/ofertas.html">OFERTAS</a>
+			</li>			
+			<li>
+                    <a href="#" class="menu_link ">NOSOTROS</a>
+                    <ul class="category_menu category_menu_about_us">                       
+						<li>
+							<a class="category_link" title="Conócenos" href="https://www.insemactools.es/quienes-somos.html">CONÓCENOS</a>
+						</li>
+						<li>
+							<a class="category_link" title="Contacto" href="https://www.insemactools.es/contacto.html">CONTACTO</a>
+						<li>						
+                    </ul>
+                </li>		
+			
+			
+
+            <li>
+                <a class="menu_link" title="Maquinaria" href="http://www.insemac.com/" target="_blank">MAQUINARIA</a>
+            </li>
+			</li>
+			     <li>
+                <a class="menu_link  title="Ver nuestros Catálogos" href="https://insemac.com/catalogos/" target="_blank">CATÁLOGOS</a>
+            </li>
+
+            <li id="search" class="search">
+                <a class="menu_link" title="Buscar" href="javascript:void(0);"></a>
+
+                <form id="search_form" class="search_container" method="get" action="https://www.insemactools.es/listado.php" autocomplete="off">
+
+                    <input type="text" id="autocomplete_search" name="search_text" autocomplete="off" placeholder="¿Qué producto buscas?" value="">
+
+
+                    <a id="search_btn" class="search_button" title="Buscar" href="javascript:void(0);">Buscar</a>
+                </form>
+            </li>
+        </ul>
+    </nav>
+</header>
+        <main>
+            <div class="content_container">
+                <p class="title">¡OPSSS, SE HA PRODUCIDO<br> UN ERROR INESPERADO!</p>
+                <p class="text">Por favor, vuelve a intentarlo más tarde.</p>
+                <div class="button_container">
+                    <a class="boton" title="Aceptar" href="https://www.insemactools.es/">Aceptar</a>
+                </div>
+            </div>
+        </main>
+
+        <aside id="alert-popup" class="background_popup">
+    <div class="popup_container">
+        <div class="popup">
+            <a class="close_popup" title="Cerrar" href="javascript:void(0);"></a>
+            <p class="text_popup">
+                Te has llevado la última unidad que nos quedaba de este producto. <br>
+                Si quieres puedes <a href="https://www.insemactools.es/contacto.html" title="Contact">contactar con nosotros</a> y consultar cuando volveremos a tenerlo.            </p>
+            <div class="button_container">
+                <a id="close-alert" title="Aceptar" href="javascript:void(0);">Aceptar</a>
+            </div>
+        </div>
+    </div>
+</aside>
+
+<footer>
+    <ul class="brakebusters">
+        <li class="secure">Compra segura</li>
+        <li class="visa"></li>
+        <li class="delivery">Seguimiento de entrega</li>
+        <li class="shipments">Transporte</li>
+    </ul>
+    <div class="footer_container">
+        <div class="info_container">
+            <a class="logo_link" title="Ir a inicio" href="https://www.insemactools.es/">
+                <img alt="Logotipo de la tienda" src="https://www.insemactools.es/_img/logo.png" width="200">
+            </a>
+            <div class="contact_data">
+                <span>+34 93 846 39 39</span>
+                <a title="Contáctenos por e-mail" href="mailto:info@insemactools.es">info@insemactools.es</a>
+            </div>
+        </div>
+        <ul class="footer_links">
+            <li>
+                <a title="Quiénes somos" href="https://www.insemactools.es/quienes-somos.html">Quiénes somos</a>
+            </li>
+            <li>
+                <a title="Contacta con nosotros" href="https://www.insemactools.es/contacto.html">Contacta con nosotros</a>
+            </li>
+            <li>
+                 <a title="Política de privacidad" href="https://www.insemactools.es/politica-privacidad.html">Política de privacidad</a>
+            </li>
+        </ul>
+        <div class="social_container">
+            Síguenos            <ul class="social_buttons">
+                <li>
+                    <a class="yt" title="Síguenos en YouTube" rel="me" href="https://www.youtube.com/channel/UC-YdbbuzpzxCOXVDjMJMhww/"></a>
+                </li>
+                <li>
+                    <a class="ig" title="Síguenos en Instagram" rel="me" href="https://www.instagram.com/insemac_technology/"></a>
+                </li>
+                <li>
+                    <a class="tw" title="Síguenos en Twitter" rel="me" href="https://twitter.com/INSEMAC"></a>
+                </li>
+                <li>
+                    <a class="fb" title="Síguenos en Facebook" rel="me" href="https://es-es.facebook.com/insemac/"></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="legal_links">
+        <a title="Condiciones generales" rel="nofollow" href="https://www.insemactools.es/condiciones-de-uso.html">Condiciones generales</a>
+        <a title="Condiciones de compra" rel="nofollow" href="https://www.insemactools.es/condiciones-de-compra.html">Condiciones de compra</a>
+        <a title="Política sobre cookies" rel="nofollow" href="https://www.insemactools.es/politica-sobre-cookies.html">Política sobre cookies</a>
+        <a href="javascript: void(0)" onclick="tarteaucitron.userInterface.openPanel();">Gestión de cookies</a>
+    </div>
+</footer>
+
+<script type="text/javascript" src="https://www.insemactools.es/_js/bfbs.js"></script>
+
+<!-- <script type="text/javascript">
+    var __afpc_conf = {
+        URL_website: "",
+        URL_politica_cookies: ""
+            };
+            __afpc_conf.lang = ;
+</script>
+<script type="text/javascript" src="/_widgets/_aviso_cookies/afpc.js"></script>-->
+<!-- GetButton.io widget -->
+<script type="text/javascript">
+    (function () {
+        var options = {
+            whatsapp: "34662387655", // WhatsApp number
+            call_to_action: "Contacta con nosotros", // Call to action
+            position: "right", // Position may be 'right' or 'left'
+        };
+        var proto = document.location.protocol, host = "getbutton.io", url = proto + "//static." + host;
+        var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+        s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
+        var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+    })();
+</script>
+<!-- /GetButton.io widget -->    </body>
+</html>
