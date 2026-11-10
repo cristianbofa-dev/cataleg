@@ -9,6 +9,7 @@ Aquest script permet treballar-hi com un projecte de codi font normal:
   python3 tools/nexe.py import <fitxer.html>   # HTML únic  -> codi font del repositori
   python3 tools/nexe.py build                  # codi font  -> dist/ (versió pública)
   python3 tools/nexe.py build --with-private   # inclou clients, Firebase i costos (ús personal)
+  python3 tools/nexe.py build --light          # versió lleugera per a l'iPad / en línia -> dist/lleuger/
   python3 tools/nexe.py verify <fitxer.html>   # comprova que build reprodueix el fitxer
 
 Dades privades (MAI al repositori, carpeta private/ ignorada per git):
@@ -22,7 +23,8 @@ personal: un HTML amb dades privades no s'ha de publicar ni compartir).
 Sense dades privades el catàleg funciona igual, però sense clients
 precarregats, sense sincronització amb Firebase i sense costos.
 
-Només utilitza la biblioteca estàndard de Python 3.8+.
+Només utilitza la biblioteca estàndard de Python 3.8+ (la versió --light
+necessita també Pillow: pip3 install pillow).
 """
 import argparse
 import base64
@@ -277,7 +279,65 @@ def load_images():
     return images
 
 
-def build_html(use_private=False):
+def make_light(products, images, code_text, max_size, quality):
+    """Versió lleugera: una imatge per producte, reduïda i en JPEG.
+
+    És la que es publica en línia i la que obre bé l'app Documents de l'iPad
+    (el catàleg complet fa uns 55 MB; el lleuger, uns 14 MB).
+    Es conserven totes les imatges que el codi fa servir fora dels productes
+    (botons del menú, etc.) i totes les dels productes de data/light.json.
+    """
+    try:
+        from PIL import Image
+    except ImportError:
+        sys.exit('La versió lleugera necessita Pillow: pip3 install pillow')
+    import io
+
+    def shrink(uri):
+        m = re.match(r'data:([^;,]+);base64,(.*)$', uri, re.S)
+        if not m:
+            return uri
+        raw = base64.b64decode(m.group(2))
+        try:
+            im = Image.open(io.BytesIO(raw))
+            im.load()
+        except Exception:
+            return uri
+        if im.mode in ('RGBA', 'LA', 'P'):
+            im = im.convert('RGBA')
+            bg = Image.new('RGB', im.size, (255, 255, 255))
+            bg.paste(im, mask=im.split()[-1])
+            im = bg
+        else:
+            im = im.convert('RGB')
+        im.thumbnail((max_size, max_size), Image.LANCZOS)
+        buf = io.BytesIO()
+        im.save(buf, 'JPEG', quality=quality, optimize=True, progressive=True)
+        if buf.tell() >= len(raw) and m.group(1) == 'image/jpeg':
+            return uri
+        return 'data:image/jpeg;base64,' + base64.b64encode(buf.getvalue()).decode('ascii')
+
+    keep_all = set(read_json(os.path.join(DATA, 'light.json'), {}).get('keepAllImages', []))
+    used = set()
+    for p in products:
+        if p.get('cat') == '_removed':
+            continue
+        cands = [x for x in (p.get('imgs') or []) if x] + ([p['i']] if p.get('i') else [])
+        if p.get('r') in keep_all and p.get('imgs'):
+            used.update(x for x in p['imgs'] if not x.startswith('data:'))
+            continue
+        first = cands[0] if cands else ''
+        if first.startswith('data:'):
+            first = shrink(first)
+        elif first:
+            used.add(first)
+        p['imgs'] = [first] if first else []
+        p['i'] = first
+    used |= {k for k in images if k in code_text}
+    return {k: shrink(v) for k, v in images.items() if k in used}
+
+
+def build_html(use_private=False, light=None):
     template = read_text(TEMPLATE)
     priv = use_private and os.path.isdir(PRIVATE)
     firebase = read_json(os.path.join(PRIVATE, 'firebase.json'), {}) if priv else {}
@@ -298,11 +358,15 @@ def build_html(use_private=False):
 
     html = re.sub(r'\{\{include:([^}]+)\}\}', include, template)
 
+    images = load_images()
+    if light:
+        images = make_light(products, images, html, *light)
+
     data = {
         'products': PRODUCTS_PREFIX + compact(products) + ';',
         'variant_groups': GROUPS_PREFIX + compact(groups) + ';',
         'clients': CLIENTS_HEADER + js_safe(json.dumps(clients, ensure_ascii=False, indent=2)) + ';\n',
-        'images': IMAGES_PREFIX + compact(load_images()) + ';',
+        'images': IMAGES_PREFIX + compact(images) + ';',
     }
     html = re.sub(r'\{\{data:(\w+)\}\}', lambda m: data[m.group(1)], html)
     return html
@@ -323,8 +387,9 @@ def copy_public(dest, html):
 
 
 def cmd_build(args):
-    html = build_html(use_private=args.with_private)
-    out = args.out or os.path.join(DIST, 'index.html')
+    light = (args.max_size, args.quality) if args.light else None
+    html = build_html(use_private=args.with_private, light=light)
+    out = args.out or os.path.join(DIST, 'lleuger' if light else '', 'index.html')
     write_text(out, html)
     copy_public(os.path.dirname(os.path.abspath(out)), html)
     print('Construït %s (%.1f MB) — %s' % (
@@ -393,6 +458,10 @@ def main():
     p.add_argument('--out')
     p.add_argument('--with-private', action='store_true',
                    help='Inclou les dades de private/ (ús personal, no publicar)')
+    p.add_argument('--light', action='store_true',
+                   help='Versió lleugera (una foto per producte, reduïda) → dist/lleuger/')
+    p.add_argument('--max-size', type=int, default=520, help='Mida màxima de les fotos a --light')
+    p.add_argument('--quality', type=int, default=70, help='Qualitat JPEG a --light')
     p.set_defaults(func=cmd_build)
     p = sub.add_parser('verify', help='Comprova que el build reprodueix un HTML')
     p.add_argument('html')

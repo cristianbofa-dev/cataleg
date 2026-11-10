@@ -8,7 +8,12 @@ llistes i mode edició.
 El catàleg es distribueix com **un sol fitxer HTML** que ho porta tot a dins
 (dades, codi i imatges). Funciona sense connexió i s'obre amb Safari, Chrome
 o l'app Documents. Aquest repositori conté el **codi font** d'aquest fitxer i
-les eines per reconstruir-lo.
+les eines per reconstruir-lo, en dues versions:
+
+| Versió | Mida | Ús |
+|---|---|---|
+| Completa (`build`) | ~56 MB | Mac, fotos a resolució completa i totes les fotos de cada producte |
+| Lleugera (`build --light`) | ~14 MB | iPad (app Documents) i publicació en línia: una foto per producte, reduïda |
 
 ---
 
@@ -26,9 +31,10 @@ src/
 data/
   products.json         Productes (964 entrades: 763 d'actius + 201 d'eliminats)
   variant-groups.json   Grups de variants (mides, colors…)
+  light.json            Productes que conserven totes les fotos a la versió lleugera
 images/
   manifest.json         Llista d'imatges (clau → tipus)
-  imgs/, imatges/       672 imatges JPEG
+  imgs/, imatges/       1.500 imatges a resolució completa (JPEG, PNG, GIF)
 public/
   manifest.json, sw.js, icons/   Fitxers per instal·lar-lo com a app
 tools/
@@ -78,7 +84,8 @@ sincronitza amb Firebase.
 
 Només cal **Python 3.8 o posterior** (al Mac: `python3 --version`; si no hi
 és, s'instal·la amb `xcode-select --install` o des de python.org).
-`tools/nexe.py` no necessita cap biblioteca addicional.
+La versió completa no necessita cap biblioteca addicional; la lleugera
+necessita Pillow (`pip3 install pillow`).
 
 ```bash
 git clone https://github.com/cristianbofa-dev/cataleg.git
@@ -99,14 +106,19 @@ python3 -m playwright install chromium
 ## Construir el catàleg
 
 ```bash
-python3 tools/nexe.py build                  # → dist/ (versió pública, es pot publicar)
-python3 tools/nexe.py build --with-private   # → dist/ amb clients, Firebase i costos
+python3 tools/nexe.py build                  # → dist/index.html, versió completa (~56 MB)
+python3 tools/nexe.py build --light          # → dist/lleuger/index.html, versió lleugera (~14 MB)
+python3 tools/nexe.py build --with-private   # afegeix clients, Firebase i costos (també amb --light)
 python3 tools/build_pdf.py                   # → dist/Cataleg_NEXE.pdf
 ```
 
-`dist/` conté `index.html` (el catàleg complet, ~14 MB) i els fitxers per
-instal·lar-lo (`manifest.json`, `sw.js`, `icons/`). La carpeta `dist/` no es
-puja a GitHub: es torna a generar quan cal.
+Al costat de cada `index.html` es copien els fitxers per instal·lar-lo
+(`manifest.json`, `sw.js`, `icons/`). La carpeta `dist/` no es puja a
+GitHub: es torna a generar quan cal.
+
+La versió lleugera redueix les fotos a 520 px (JPEG, qualitat 70) i en deixa
+una per producte, excepte els productes de `data/light.json`. Es pot ajustar
+amb `--max-size` i `--quality`. Un artifact de Claude admet fins a 16 MB.
 
 > ⚠️ Un `index.html` construït amb `--with-private` conté la llista de
 > clients i la contrasenya de Firebase. És per al teu ús personal: no el
@@ -142,7 +154,7 @@ o color són a `data/variant-groups.json`.
 
 ### Imatges
 
-1. Copia la foto (JPEG, uns 600 px) a `images/imgs/`.
+1. Copia la foto a `images/imgs/` a bona resolució (la versió lleugera ja la redueix).
 2. Afegeix-la a `images/manifest.json`: `["imgs/nom.jpg", "image/jpeg"]`.
 3. Posa `"imgs/nom.jpg"` als camps `i` i `imgs` del producte.
 
@@ -191,10 +203,11 @@ Obre `dist/index.html` al navegador i revisa les categories que has tocat.
 
 ## Actualitzar i publicar
 
-**A l'iPad o al Mac com a fitxer.** Copia `dist/index.html` a iCloud Drive o
-a l'app Documents i obre'l des d'allà.
+**A l'iPad o al Mac com a fitxer.** Copia `dist/index.html` (Mac) o
+`dist/lleuger/index.html` (iPad) a iCloud Drive o a l'app Documents i
+obre'l des d'allà.
 
-**Com a app instal·lable.** Puja el contingut de `dist/` a qualsevol
+**Com a app instal·lable.** Puja el contingut de `dist/lleuger/` a qualsevol
 allotjament web amb HTTPS. Des de Safari, l'iPad l'afegeix a la pantalla
 d'inici amb *Compartir → Afegir a la pantalla d'inici*; el Mac, amb
 *Arxiu → Afegir al Dock*. El service worker el desa per obrir-lo sense
@@ -204,13 +217,13 @@ l'actualització la propera vegada que tinguin connexió.
 - **GitHub Pages:** *Settings → Pages*, branca amb `dist/` publicat. Tingues
   en compte que serà **públic**: qualsevol amb l'enllaç veurà els preus.
   Publica-hi només el build sense `--with-private`.
-- **Claude:** es pot tornar a publicar `dist/index.html` com a artifact
-  privat.
+- **Claude:** es pot tornar a publicar `dist/lleuger/index.html` com a
+  artifact privat.
 
 **Pujar els canvis al repositori:**
 
 ```bash
-git add data images src public tools README.md
+git add data images src public tools README.md .gitignore
 git commit -m "Descripció del canvi"
 git push
 ```
@@ -222,8 +235,9 @@ Quan la branca de desenvolupament estigui revisada, s'integra a `main` amb un
 
 ## Recuperació
 
-- El catàleg original de Claude és a la branca `backup-original-claude`
-  (`original/index.html`).
+- El catàleg original de Claude (versió lleugera) és a la branca
+  `backup-original-claude` (`original/index.html`). Les fotos a resolució
+  completa són a `images/` d'aquesta branca.
 - Qualsevol versió anterior es recupera amb `git log` i `git checkout <commit>`.
 - `python3 tools/nexe.py verify <fitxer.html>` comprova que un build
   coincideix amb un HTML de referència (codi idèntic i dades idèntiques).
