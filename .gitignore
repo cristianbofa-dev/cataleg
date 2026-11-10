@@ -1,0 +1,30 @@
+# ── Dades privades: MAI al repositori ──
+private/
+*.private.*
+clients*.json
+!data/**
+firebase*.json
+costs*.json
+nexe-overrides-*.json
+*tarifa*.pdf
+.env
+.env.*
+*.pem
+*.key
+
+# ── Fitxers generats (es reconstrueixen amb tools/nexe.py i tools/build_pdf.py) ──
+dist/
+build/
+*.pyc
+__pycache__/
+
+# ── Temporals i del sistema ──
+.DS_Store
+Thumbs.db
+*.tmp
+*.bak
+*.swp
+*~
+.vscode/
+.idea/
+node_modules/
