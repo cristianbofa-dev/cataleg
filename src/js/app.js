@@ -1956,7 +1956,7 @@ var fit = 'contain';
     html += '<div class="gallery" id="vgGallery"><div style="display:flex;height:100%">';
     for(var i=0;i<imgs.length;i++){
       html += '<div class="gallery-slide" data-gi="'+i+'" style="position:relative;flex-shrink:0;width:100%;height:100%">';
-      html += '<img src="'+escHtml(imgs[i])+'" alt="" style="width:100%;height:100%;object-fit:'+fit+'">';
+      html += '<img src="'+escHtml(imgs[i])+'" alt="" style="width:100%;height:100%;object-fit:'+fit+'" onerror="_handleImgError(this)">';
       if(_editMode) html += '<button class="gallery-img-del" data-gi="'+i+'" aria-label="Eliminar foto">\u2715</button>';
       html += '</div>';
     }
@@ -2326,7 +2326,18 @@ function getImgSrc(p, idx){
 }
 
 var _imgPlaceholder = 'data:image/svg+xml,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect width="200" height="200" fill="#e8e8ed" rx="12"/><text x="100" y="100" text-anchor="middle" fill="#999" font-size="14" font-family="sans-serif">Imatge</text><text x="100" y="120" text-anchor="middle" fill="#999" font-size="14" font-family="sans-serif">no disponible</text></svg>');
-function _handleImgError(img){ img.onerror=null; img.src=_imgPlaceholder; }
+function _handleImgError(img){
+  img.onerror = null;
+  // A la galeria, una foto que no carrega (p. ex. una foto de la web sense
+  // connexió) es treu en lloc de deixar un forat, si n'hi ha d'altres.
+  var track = img.closest ? img.closest('.gallery-track') : null;
+  if(track && !_editMode){
+    var slide = img.closest('.gallery-slide') || (img.parentNode === track ? img : null);
+    var n = Array.prototype.filter.call(track.children, function(el){ return el.tagName === 'IMG' || el.classList.contains('gallery-slide'); }).length;
+    if(slide && n > 1){ var gal = track.parentNode; slide.remove(); if(gal && gal._refresh) gal._refresh(); return; }
+  }
+  img.src = _imgPlaceholder;
+}
 // Els atributs onerror="_handleImgError(this)" s'executen fora d'aquest bloc
 window._handleImgError = _handleImgError;
 

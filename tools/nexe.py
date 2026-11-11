@@ -279,7 +279,7 @@ def load_images():
     return images
 
 
-def make_light(products, images, code_text, max_size, quality):
+def make_light(products, images, code_text, max_size, quality, extra_size=300, extras_mode='web', extra_files=None):
     """Versió lleugera: una imatge per producte, reduïda i en JPEG.
 
     És la que es publica en línia i la que obre bé l'app Documents de l'iPad
@@ -318,6 +318,8 @@ def make_light(products, images, code_text, max_size, quality):
         return 'data:image/jpeg;base64,' + base64.b64encode(buf.getvalue()).decode('ascii')
 
     keep_all = set(read_json(os.path.join(DATA, 'light.json'), {}).get('keepAllImages', []))
+    web_images = read_json(os.path.join(DATA, 'web-images.json'), {}).get('images', {})
+    small_extras = [] if extra_size else None
     used = set()
     for p in products:
         if p.get('cat') == '_removed':
@@ -331,13 +333,38 @@ def make_light(products, images, code_text, max_size, quality):
             first = shrink(first)
         elif first:
             used.add(first)
-        p['imgs'] = [first] if first else []
+        # Fotos addicionals: les que són a la web del proveïdor s'hi enllacen
+        # (no ocupen espai); la resta s'incrusten petites si hi caben.
+        extra = []
+        for x in (p.get('imgs') or [])[1:]:
+            if not x or x == first:
+                continue
+            if extras_mode in ('files', 'bundle') and x in images:
+                # Es publica com a fitxer al costat de l'HTML (ruta relativa)
+                extra_files.append(x)
+                extra.append(x)
+            elif x.startswith('http'):
+                extra.append(x)
+            elif x in web_images:
+                extra.append(web_images[x])
+            elif x in images and small_extras is not None:
+                small_extras.append(x)
+                extra.append(x)
+        p['imgs'] = ([first] if first else []) + extra
         p['i'] = first
     used |= {k for k in images if k in code_text}
-    return {k: shrink(v) for k, v in images.items() if k in used}
+    out = {k: shrink(v) for k, v in images.items() if k in used}
+    if small_extras:
+        size = max_size
+        max_size = extra_size  # fotos addicionals, més petites
+        for k in small_extras:
+            if k not in out:
+                out[k] = shrink(images[k])
+        max_size = size
+    return out
 
 
-def build_html(use_private=False, light=None):
+def build_html(use_private=False, light=None, extras_mode='web', extra_files=None):
     template = read_text(TEMPLATE)
     priv = use_private and os.path.isdir(PRIVATE)
     firebase = read_json(os.path.join(PRIVATE, 'firebase.json'), {}) if priv else {}
@@ -360,16 +387,78 @@ def build_html(use_private=False, light=None):
 
     images = load_images()
     if light:
-        images = make_light(products, images, html, *light)
+        images = make_light(products, images, html, *light, extras_mode=extras_mode, extra_files=extra_files)
 
     data = {
         'products': PRODUCTS_PREFIX + compact(products) + ';',
         'variant_groups': GROUPS_PREFIX + compact(groups) + ';',
         'clients': CLIENTS_HEADER + js_safe(json.dumps(clients, ensure_ascii=False, indent=2)) + ';\n',
-        'images': IMAGES_PREFIX + compact(images) + ';',
+        'images': IMAGES_PREFIX + compact(images) + ';' + (
+            # Fotos addicionals en un fitxer a part (--extras bundle)
+            '</script>\n<script src="fotos-extra.js"></script>\n<script>' if extras_mode == 'bundle' else ''),
     }
     html = re.sub(r'\{\{data:(\w+)\}\}', lambda m: data[m.group(1)], html)
     return html
+
+
+def write_extra_files(dest, keys, max_size=1000, quality=80):
+    """Escriu les fotos addicionals com a fitxers (per a --extras files)."""
+    from PIL import Image
+    skipped = []
+    for key in keys:
+        src = os.path.join(IMAGES, key)
+        dst = os.path.join(dest, key)
+        os.makedirs(os.path.dirname(dst), exist_ok=True)
+        try:
+            im = Image.open(src)
+            im.load()
+        except Exception:
+            skipped.append(key)  # no és una imatge vàlida (descàrrega fallida)
+            continue
+        if im.mode in ('RGBA', 'LA', 'P'):
+            im = im.convert('RGBA')
+            bg = Image.new('RGB', im.size, (255, 255, 255))
+            bg.paste(im, mask=im.split()[-1])
+            im = bg
+        else:
+            im = im.convert('RGB')
+        im.thumbnail((max_size, max_size), Image.LANCZOS)
+        im.save(dst, 'JPEG', quality=quality, optimize=True, progressive=True)
+    print('  %d fotos addicionals escrites com a fitxers a %s/' % (len(keys) - len(skipped), os.path.relpath(dest)))
+    if skipped:
+        print('  Avís: %d fitxers no són imatges vàlides i s\'han omès: %s' % (len(skipped), ', '.join(skipped)))
+
+
+def write_extra_bundle(dest, keys, max_size=900, quality=78):
+    """Fotos addicionals en un sol fitxer fotos-extra.js (--extras bundle)."""
+    from PIL import Image
+    import io
+    data, skipped = {}, []
+    for key in keys:
+        try:
+            im = Image.open(os.path.join(IMAGES, key))
+            im.load()
+        except Exception:
+            skipped.append(key)
+            continue
+        if im.mode in ('RGBA', 'LA', 'P'):
+            im = im.convert('RGBA')
+            bg = Image.new('RGB', im.size, (255, 255, 255))
+            bg.paste(im, mask=im.split()[-1])
+            im = bg
+        else:
+            im = im.convert('RGB')
+        im.thumbnail((max_size, max_size), Image.LANCZOS)
+        buf = io.BytesIO()
+        im.save(buf, 'JPEG', quality=quality, optimize=True, progressive=True)
+        data[key] = 'data:image/jpeg;base64,' + base64.b64encode(buf.getvalue()).decode('ascii')
+    js = ('/* Fotos addicionals del Catàleg NEXE (versió lleugera) */\n'
+          'window.__IMG_DATA__ = window.__IMG_DATA__ || {};\n'
+          'Object.assign(window.__IMG_DATA__, ' + compact(data) + ');\n')
+    write_text(os.path.join(dest, 'fotos-extra.js'), js)
+    print('  fotos-extra.js: %d fotos addicionals (%.1f MB)' % (len(data), len(js) / 1e6))
+    if skipped:
+        print('  Avís: %d fitxers no són imatges vàlides: %s' % (len(skipped), ', '.join(skipped)))
 
 
 def copy_public(dest, html):
@@ -388,9 +477,15 @@ def copy_public(dest, html):
 
 def cmd_build(args):
     light = (args.max_size, args.quality) if args.light else None
-    html = build_html(use_private=args.with_private, light=light)
+    extra_files = []
+    html = build_html(use_private=args.with_private, light=light,
+                      extras_mode=args.extras, extra_files=extra_files)
     out = args.out or os.path.join(DIST, 'lleuger' if light else '', 'index.html')
     write_text(out, html)
+    if extra_files and args.extras == 'files':
+        write_extra_files(os.path.dirname(os.path.abspath(out)), sorted(set(extra_files)))
+    elif args.extras == 'bundle':
+        write_extra_bundle(os.path.dirname(os.path.abspath(out)), sorted(set(extra_files)))
     copy_public(os.path.dirname(os.path.abspath(out)), html)
     print('Construït %s (%.1f MB) — %s' % (
         os.path.relpath(out), len(html.encode()) / 1e6,
@@ -462,6 +557,11 @@ def main():
                    help='Versió lleugera (una foto per producte, reduïda) → dist/lleuger/')
     p.add_argument('--max-size', type=int, default=520, help='Mida màxima de les fotos a --light')
     p.add_argument('--quality', type=int, default=70, help='Qualitat JPEG a --light')
+    p.add_argument('--extras', choices=['web', 'files', 'bundle'], default='web',
+                   help="A --light, fotos addicionals: 'web' les enllaça a la web del proveïdor "
+                        "(fitxer per a l'app Documents); 'files' les escriu com a fitxers al costat "
+                        "de l'HTML; 'bundle' les posa totes a fotos-extra.js (per publicar a Claude, "
+                        "on les imatges externes no carreguen)")
     p.set_defaults(func=cmd_build)
     p = sub.add_parser('verify', help='Comprova que el build reprodueix un HTML')
     p.add_argument('html')

@@ -116,9 +116,26 @@ Al costat de cada `index.html` es copien els fitxers per instal·lar-lo
 (`manifest.json`, `sw.js`, `icons/`). La carpeta `dist/` no es puja a
 GitHub: es torna a generar quan cal.
 
-La versió lleugera redueix les fotos a 520 px (JPEG, qualitat 70) i en deixa
-una per producte, excepte els productes de `data/light.json`. Es pot ajustar
-amb `--max-size` i `--quality`. Un artifact de Claude admet fins a 16 MB.
+La versió lleugera incrusta la primera foto de cada producte reduïda a 520 px
+(JPEG, qualitat 70); es pot ajustar amb `--max-size` i `--quality`. Les fotos
+addicionals depenen de `--extras`:
+
+| `--extras` | Fotos addicionals | Per a |
+|---|---|---|
+| `web` (per defecte) | Enllaçades a la web del proveïdor (`data/web-images.json`); la resta, petites dins l'HTML. Sense internet no surten (la galeria les amaga). | Fitxer per a l'app Documents |
+| `bundle` | Totes en un fitxer `fotos-extra.js` al costat de l'HTML | Publicar a Claude (hi pugen els dos fitxers) |
+| `files` | Cada foto com a fitxer a `imgs/` al costat de l'HTML | Un allotjament web propi |
+
+Un artifact de Claude admet fins a 16 MB per fitxer i no carrega imatges
+d'altres webs; per això s'hi publica amb `--extras bundle`:
+
+```bash
+python3 tools/nexe.py build --light --extras bundle --with-private --out publicar/index.html
+# Puja publicar/index.html i publicar/fotos-extra.js
+```
+
+`data/web-images.json` es va generar el 11/11/2026 recorrent insemactools.es
+amb el navegador; relaciona cada foto del catàleg amb la seva adreça a la web.
 
 > ⚠️ Un `index.html` construït amb `--with-private` conté la llista de
 > clients i la contrasenya de Firebase. És per al teu ús personal: no el
