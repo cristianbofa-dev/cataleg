@@ -25099,7 +25099,7 @@
   "star": 0
  },
  {
-  "n": "Ventosa Doble Efecto 40x150mm. Base 70x150mm.",
+  "n": "Ventosa Doble Efecto 40x150mm. Base 70x150mm. h.70-140",
   "r": "51/01.040.150.c",
   "d": "Las Ventosas CNC Rectangulares 40x150 mm de Doble Efecto están diseñadas para garantizar una sujeción firme, segura y precisa durante los procesos de corte, fresado, perforación y mecanizado en centros de trabajo CNC.\n\nFabricadas con materiales de alta calidad y resistencia al desgaste, estas ventosas ofrecen una excelente capacidad de vacío para trabajar con mármol, granito, cuarzo, porcelánicos, Dekton, Neolith, piedra natural y vidrio.\n\nGracias a su sistema de doble efecto, proporcionan una mayor estabilidad de la pieza durante el mecanizado, mejorando la precisión de los trabajos y reduciendo el riesgo de desplazamientos o vibraciones.\n\nAl realizar el pedido es importante indicar la altura deseada de la ventosa para asegurar la compatibilidad con la máquina y el tipo de trabajo a realizar.\n\n                        Plazo de entrega: De 10 a 15 días",
   "p": 196,
@@ -25117,20 +25117,6 @@
   "subcat": "ventoses",
   "colorGroup": null,
   "featured": null,
-  "insemacVariants": [
-   {
-    "id": 3270,
-    "label": "Ventosa Altura h.70 - 140mm.",
-    "price": 196,
-    "star": 0
-   },
-   {
-    "id": 3271,
-    "label": "Ventosa Altura h.149 - 213mm.",
-    "price": 231,
-    "star": 0
-   }
-  ],
   "imgs": [
    "imgs/products-3269-1-m.jpeg"
   ],
@@ -25140,10 +25126,11 @@
     "value": "De 10 a 15 días"
    }
   ],
-  "star": 0
+  "star": 0,
+  "variantGroup": "ventosa-doble-efecto"
  },
  {
-  "n": "Ventosa Doble Efecto 100x100mm.",
+  "n": "Ventosa Doble Efecto 100x100mm. h.70-140",
   "r": "51/01.100.100..B",
   "d": "Las Ventosas CNC Cuadradas 100x100 mm de Doble Efecto están diseñadas para garantizar una sujeción firme, segura y precisa durante los procesos de corte, fresado, perforación y mecanizado en centros de trabajo CNC.\n\nFabricadas con materiales de alta calidad y gran resistencia al desgaste, estas ventosas proporcionan una excelente capacidad de vacío para trabajar con mármol, granito, cuarzo, porcelánicos, Dekton, Neolith, piedra natural y vidrio.\n\nSu sistema de doble efecto mejora la estabilidad de las piezas durante el mecanizado, reduciendo vibraciones y desplazamientos para conseguir acabados más precisos y una mayor productividad en el taller.\n\nAl realizar el pedido es importante indicar en observaciones la altura deseada de la ventosa para asegurar una perfecta adaptación a la máquina y a las necesidades de trabajo.\n\n                        Plazo de entrega: De 10 a 15 días",
   "p": 173,
@@ -25161,20 +25148,6 @@
   "subcat": "ventoses",
   "colorGroup": null,
   "featured": null,
-  "insemacVariants": [
-   {
-    "id": 3264,
-    "label": "Ventosa altura h.70-140mm.",
-    "price": 173,
-    "star": 0
-   },
-   {
-    "id": 3265,
-    "label": "Ventosa Altura h.149 - 213mm.",
-    "price": 207,
-    "star": 0
-   }
-  ],
   "imgs": [
    "imgs/products-3263-1-m.jpeg"
   ],
@@ -25184,10 +25157,11 @@
     "value": "De 10 a 15 días"
    }
   ],
-  "star": 0
+  "star": 0,
+  "variantGroup": "ventosa-doble-efecto"
  },
  {
-  "n": "Ventosa Doble Efecto D.250mm.",
+  "n": "Ventosa Doble Efecto D.250mm. h.70-140",
   "r": "51/01.000.250..A",
   "d": "La Ventosa CNC Redonda D.250 mm de Doble Efecto está diseñada para garantizar una sujeción firme, segura y precisa durante los procesos de corte, fresado, perforación, pulido y mecanizado en centros de trabajo CNC.\n\nGracias a su gran diámetro de 250 mm y a su sistema de doble efecto, proporciona una excelente capacidad de vacío y una estabilidad superior para trabajar con piezas de gran formato fabricadas en mármol, granito, cuarzo, porcelánico, Dekton, Neolith, piedra natural y vidrio.\n\nFabricada con materiales de alta calidad y resistencia al desgaste, esta ventosa asegura una larga vida útil incluso en entornos de producción intensiva, mejorando la precisión del mecanizado y reduciendo posibles desplazamientos de la pieza durante el trabajo.\n\nAl realizar el pedido es importante indicar en observaciones la altura deseada de la ventosa para asegurar la compatibilidad con la máquina y el tipo de aplicación.\n\n                        Plazo de entrega: De 10 a 15 días",
   "p": 265,
@@ -25205,20 +25179,6 @@
   "subcat": "ventoses",
   "colorGroup": null,
   "featured": null,
-  "insemacVariants": [
-   {
-    "id": 3261,
-    "label": "Ventosa Altura h.70 - 140 mm.",
-    "price": 265,
-    "star": 0
-   },
-   {
-    "id": 3262,
-    "label": "Ventosa Altura 149 - 213 mm.",
-    "price": 300,
-    "star": 0
-   }
-  ],
   "imgs": [
    "imgs/products-3260-1-m.jpeg"
   ],
@@ -25228,10 +25188,11 @@
     "value": "De 10 a 15 días"
    }
   ],
-  "star": 0
+  "star": 0,
+  "variantGroup": "ventosa-doble-efecto"
  },
  {
-  "n": "Ventosa doble efecto D.200mm.",
+  "n": "Ventosa doble efecto D.200mm. h.70-140",
   "r": "51/01.000.200..A",
   "d": "La Ventosa CNC Redonda D.200 mm de Doble Efecto está diseñada para proporcionar una sujeción firme, segura y precisa durante los procesos de corte, fresado, perforación, pulido y mecanizado en centros de trabajo CNC.\n\nGracias a su diámetro de 200 mm y a su sistema de doble efecto, ofrece una excelente capacidad de vacío y una gran estabilidad para trabajar con mármol, granito, cuarzo, porcelánico, Dekton, Neolith, piedra natural y vidrio, incluso en operaciones de mecanizado exigentes.\n\nFabricada con materiales de alta calidad y gran resistencia al desgaste, esta ventosa garantiza una larga vida útil y un rendimiento constante, ayudando a mejorar la precisión de los trabajos y reduciendo los movimientos indeseados de la pieza.\n\nAl realizar el pedido es importante indicar en observaciones la altura deseada de la ventosa para asegurar una perfecta adaptación a la máquina y a las necesidades específicas de trabajo.\n\n                        Plazo de entrega: De 10 a 15 días",
   "p": 196,
@@ -25249,20 +25210,6 @@
   "subcat": "ventoses",
   "colorGroup": null,
   "featured": null,
-  "insemacVariants": [
-   {
-    "id": 3258,
-    "label": "Ventosa Altura 70-140mm.",
-    "price": 196,
-    "star": 0
-   },
-   {
-    "id": 3259,
-    "label": "Ventosa Altura 149-213mm.",
-    "price": 231,
-    "star": 0
-   }
-  ],
   "imgs": [
    "imgs/products-3257-1-m.jpeg"
   ],
@@ -25272,10 +25219,11 @@
     "value": "De 10 a 15 días"
    }
   ],
-  "star": 0
+  "star": 0,
+  "variantGroup": "ventosa-doble-efecto"
  },
  {
-  "n": "Ventosa Doble efecto 40x100mm. base 100x100mm.",
+  "n": "Ventosa Doble efecto 40x100mm. base 100x100mm. h.70-140",
   "r": "51/01.040.100.",
   "d": "Las Ventosas CNC de Doble Efecto están diseñadas para proporcionar una sujeción segura, estable y precisa durante los procesos de corte, fresado, perforación, pulido y mecanizado en centros de trabajo CNC.\n\nFabricadas en aluminio anodizado de alta calidad, incorporan una superficie de apoyo de goma vulcanizada de alto agarre que garantiza una excelente fijación de la pieza, minimizando desplazamientos y vibraciones durante el trabajo.\n\nSu construcción robusta incluye tornillería de acero inoxidable, ofreciendo una elevada resistencia al desgaste, la humedad y las condiciones exigentes de los talleres de transformación de piedra y vidrio.\n\nEstas ventosas son ideales para trabajar con mármol, granito, cuarzo, porcelánico, Dekton, Neolith, piedra natural, materiales técnicos y vidrio, proporcionando máxima estabilidad y precisión en cada operación.\n\nAl realizar el pedido es necesario indicar la altura deseada de las ventosas para asegurar la correcta compatibilidad con la máquina y la aplicación.\n\n                        Plazo de entrega: De 10 a 15 días",
   "p": 174,
@@ -25293,20 +25241,6 @@
   "subcat": "ventoses",
   "colorGroup": null,
   "featured": null,
-  "insemacVariants": [
-   {
-    "id": 3272,
-    "label": "Ventosa Altura h.70 - 140mm.",
-    "price": 174,
-    "star": 0
-   },
-   {
-    "id": 3273,
-    "label": "Ventosa Altura h.149 - 213mm.",
-    "price": 208,
-    "star": 0
-   }
-  ],
   "imgs": [
    "imgs/products-3256-1-m.jpeg"
   ],
@@ -25316,7 +25250,8 @@
     "value": "De 10 a 15 días"
    }
   ],
-  "star": 0
+  "star": 0,
+  "variantGroup": "ventosa-doble-efecto"
  },
  {
   "n": "Ventosa en Angulo 150x150x35 Intermac | ventosas para cnc",
@@ -25525,7 +25460,8 @@
     "value": "De 5 a 7 días"
    }
   ],
-  "star": 0
+  "star": 0,
+  "variantGroup": "ventosa-doble-efecto"
  },
  {
   "n": "Ventosa doble efecto D.150mm. h.70-140 | ventosas para cnc",
@@ -25554,7 +25490,8 @@
     "value": "De 5 a 7 días"
    }
   ],
-  "star": 0
+  "star": 0,
+  "variantGroup": "ventosa-doble-efecto"
  },
  {
   "n": "Ventosa doble efecto D.150mm. h.149-213 | ventosas para cnc",
@@ -25583,7 +25520,8 @@
     "value": "De 5 a 7 días"
    }
   ],
-  "star": 0
+  "star": 0,
+  "variantGroup": "ventosa-doble-efecto"
  },
  {
   "n": "Ventosa doble efecto D.130mm. h.149-213 | ventosas para cnc",
@@ -25612,7 +25550,8 @@
     "value": "De 5 a 7 días"
    }
   ],
-  "star": 0
+  "star": 0,
+  "variantGroup": "ventosa-doble-efecto"
  },
  {
   "n": "Ventosa doble efecto D.130mm. h.70-140 | ventosas para cnc",
@@ -25641,7 +25580,8 @@
     "value": "De 5 a 7 días"
    }
   ],
-  "star": 0
+  "star": 0,
+  "variantGroup": "ventosa-doble-efecto"
  },
  {
   "n": "Ventosa doble efecto D.110mm. h.70-140 | ventosas para cnc",
@@ -25670,7 +25610,8 @@
     "value": "De 5 a 7 días"
    }
   ],
-  "star": 0
+  "star": 0,
+  "variantGroup": "ventosa-doble-efecto"
  },
  {
   "n": "Ventosa doble efecto D.80mm. h.149-213 | ventosas para cnc",
@@ -25699,7 +25640,8 @@
     "value": "De 5 a 7 días"
    }
   ],
-  "star": 0
+  "star": 0,
+  "variantGroup": "ventosa-doble-efecto"
  },
  {
   "n": "Ventosa doble efecto D.80mm. h.70-140 | ventosas para cnc",
@@ -25728,7 +25670,8 @@
     "value": "De 5 a 7 días"
    }
   ],
-  "star": 0
+  "star": 0,
+  "variantGroup": "ventosa-doble-efecto"
  },
  {
   "n": "Ventosa doble efecto D.65mm. h.149-213 | ventosas para cnc",
@@ -25757,7 +25700,8 @@
     "value": "De 5 a 7 días"
    }
   ],
-  "star": 0
+  "star": 0,
+  "variantGroup": "ventosa-doble-efecto"
  },
  {
   "n": "Ventosa doble efecto D.65mm. h.70-140 | ventosas para cnc",
@@ -25786,7 +25730,8 @@
     "value": "De 5 a 7 días"
    }
   ],
-  "star": 0
+  "star": 0,
+  "variantGroup": "ventosa-doble-efecto"
  },
  {
   "n": "Ventosa doble efecto 40 x 200mm. base 100x200mm  h.70-140 | ventosas para cnc",
@@ -25815,7 +25760,8 @@
     "value": "De 5 a 7 días"
    }
   ],
-  "star": 0
+  "star": 0,
+  "variantGroup": "ventosa-doble-efecto"
  },
  {
   "n": "Ventosa doble efecto 40 x 200mm. base 100x200mm  h.149-213 | ventosas para cnc",
@@ -25844,7 +25790,8 @@
     "value": "De 5 a 7 días"
    }
   ],
-  "star": 0
+  "star": 0,
+  "variantGroup": "ventosa-doble-efecto"
  },
  {
   "n": "Ventosa doble efecto 150 x 150mm.  h.149-213 | ventosas para cnc",
@@ -25873,7 +25820,8 @@
     "value": "De 5 a 7 días"
    }
   ],
-  "star": 0
+  "star": 0,
+  "variantGroup": "ventosa-doble-efecto"
  },
  {
   "n": "Ventosa doble efecto 150 x 150mm.  h.70-140 | ventosas para cnc",
@@ -25902,7 +25850,8 @@
     "value": "De 5 a 7 días"
    }
   ],
-  "star": 0
+  "star": 0,
+  "variantGroup": "ventosa-doble-efecto"
  },
  {
   "n": "Ventosa doble efecto 100X200mm.  h.70-140 | ventosas para cnc",
@@ -25931,7 +25880,8 @@
     "value": "De 5 a 7 días"
    }
   ],
-  "star": 0
+  "star": 0,
+  "variantGroup": "ventosa-doble-efecto"
  },
  {
   "n": "Ventosa doble efecto 100X200mm.  h.149-213 | ventosas para cnc",
@@ -25960,7 +25910,8 @@
     "value": "De 5 a 7 días"
    }
   ],
-  "star": 0
+  "star": 0,
+  "variantGroup": "ventosa-doble-efecto"
  },
  {
   "n": "Ventosa doble efecto 200X400mm.  h.149-213 | ventosas para cnc",
@@ -25989,7 +25940,8 @@
     "value": "De 5 a 7 días"
    }
   ],
-  "star": 0
+  "star": 0,
+  "variantGroup": "ventosa-doble-efecto"
  },
  {
   "n": "Ventosa doble efecto 200X400mm.  h.70-140 | ventosas para cnc",
@@ -26018,7 +25970,8 @@
     "value": "De 5 a 7 días"
    }
   ],
-  "star": 0
+  "star": 0,
+  "variantGroup": "ventosa-doble-efecto"
  },
  {
   "n": "Ventosa doble efecto 150x300mm.  h.70-140 | ventosas para cnc",
@@ -26047,7 +26000,8 @@
     "value": "De 5 a 7 días"
    }
   ],
-  "star": 0
+  "star": 0,
+  "variantGroup": "ventosa-doble-efecto"
  },
  {
   "n": "Ventosa doble efecto 150x300mm.  h.149-213 | ventosas para cnc",
@@ -26076,7 +26030,8 @@
     "value": "De 5 a 7 días"
    }
   ],
-  "star": 0
+  "star": 0,
+  "variantGroup": "ventosa-doble-efecto"
  },
  {
   "n": "Ventosa doble efecto 200x200 h.149-213 | ventosas para cnc",
@@ -26105,7 +26060,8 @@
     "value": "De 5 a 7 días"
    }
   ],
-  "star": 0
+  "star": 0,
+  "variantGroup": "ventosa-doble-efecto"
  },
  {
   "n": "Ventosa doble efecto 200x200 h.70-140 | ventosas para cnc",
@@ -26134,7 +26090,8 @@
     "value": "De 5 a 7 días"
    }
   ],
-  "star": 0
+  "star": 0,
+  "variantGroup": "ventosa-doble-efecto"
  },
  {
   "n": "FUNDA BORREGUILLO",
@@ -34529,5 +34486,160 @@
     "star": 0
    }
   ]
+ },
+ {
+  "n": "Ventosa Doble Efecto 40x150mm. Base 70x150mm. h.149-213",
+  "r": "51/01.040.150.c",
+  "d": "Las Ventosas CNC Rectangulares 40x150 mm de Doble Efecto están diseñadas para garantizar una sujeción firme, segura y precisa durante los procesos de corte, fresado, perforación y mecanizado en centros de trabajo CNC.\n\nFabricadas con materiales de alta calidad y resistencia al desgaste, estas ventosas ofrecen una excelente capacidad de vacío para trabajar con mármol, granito, cuarzo, porcelánicos, Dekton, Neolith, piedra natural y vidrio.\n\nGracias a su sistema de doble efecto, proporcionan una mayor estabilidad de la pieza durante el mecanizado, mejorando la precisión de los trabajos y reduciendo el riesgo de desplazamientos o vibraciones.\n\nAl realizar el pedido es importante indicar la altura deseada de la ventosa para asegurar la compatibilidad con la máquina y el tipo de trabajo a realizar.\n\n                        Plazo de entrega: De 10 a 15 días",
+  "p": 231,
+  "b": "INSEMAC",
+  "s": "VENTOSAS PARA CNC",
+  "i": "imgs/products-3269-1-m.jpeg",
+  "u": "https://www.insemactools.es/ventosa-doble-efecto-40x150mm-base-70x150mm-.html",
+  "fam": "manipulacio",
+  "aplic": [
+   "Granito",
+   "Mármol",
+   "Porcelánico"
+  ],
+  "cat": "manipulacio",
+  "subcat": "ventoses",
+  "colorGroup": null,
+  "featured": null,
+  "imgs": [
+   "imgs/products-3269-1-m.jpeg"
+  ],
+  "specs": [
+   {
+    "label": "Plazo de entrega",
+    "value": "De 10 a 15 días"
+   }
+  ],
+  "star": 0,
+  "variantGroup": "ventosa-doble-efecto"
+ },
+ {
+  "n": "Ventosa Doble Efecto 100x100mm. h.149-213",
+  "r": "51/01.100.100..B",
+  "d": "Las Ventosas CNC Cuadradas 100x100 mm de Doble Efecto están diseñadas para garantizar una sujeción firme, segura y precisa durante los procesos de corte, fresado, perforación y mecanizado en centros de trabajo CNC.\n\nFabricadas con materiales de alta calidad y gran resistencia al desgaste, estas ventosas proporcionan una excelente capacidad de vacío para trabajar con mármol, granito, cuarzo, porcelánicos, Dekton, Neolith, piedra natural y vidrio.\n\nSu sistema de doble efecto mejora la estabilidad de las piezas durante el mecanizado, reduciendo vibraciones y desplazamientos para conseguir acabados más precisos y una mayor productividad en el taller.\n\nAl realizar el pedido es importante indicar en observaciones la altura deseada de la ventosa para asegurar una perfecta adaptación a la máquina y a las necesidades de trabajo.\n\n                        Plazo de entrega: De 10 a 15 días",
+  "p": 207,
+  "b": "INSEMAC",
+  "s": "VENTOSAS PARA CNC",
+  "i": "imgs/products-3263-1-m.jpeg",
+  "u": "https://www.insemactools.es/ventosa-doble-efecto-100x100mm-.html",
+  "fam": "manipulacio",
+  "aplic": [
+   "Granito",
+   "Mármol",
+   "Porcelánico"
+  ],
+  "cat": "manipulacio",
+  "subcat": "ventoses",
+  "colorGroup": null,
+  "featured": null,
+  "imgs": [
+   "imgs/products-3263-1-m.jpeg"
+  ],
+  "specs": [
+   {
+    "label": "Plazo de entrega",
+    "value": "De 10 a 15 días"
+   }
+  ],
+  "star": 0,
+  "variantGroup": "ventosa-doble-efecto"
+ },
+ {
+  "n": "Ventosa Doble Efecto D.250mm. h.149-213",
+  "r": "51/01.000.250..A",
+  "d": "La Ventosa CNC Redonda D.250 mm de Doble Efecto está diseñada para garantizar una sujeción firme, segura y precisa durante los procesos de corte, fresado, perforación, pulido y mecanizado en centros de trabajo CNC.\n\nGracias a su gran diámetro de 250 mm y a su sistema de doble efecto, proporciona una excelente capacidad de vacío y una estabilidad superior para trabajar con piezas de gran formato fabricadas en mármol, granito, cuarzo, porcelánico, Dekton, Neolith, piedra natural y vidrio.\n\nFabricada con materiales de alta calidad y resistencia al desgaste, esta ventosa asegura una larga vida útil incluso en entornos de producción intensiva, mejorando la precisión del mecanizado y reduciendo posibles desplazamientos de la pieza durante el trabajo.\n\nAl realizar el pedido es importante indicar en observaciones la altura deseada de la ventosa para asegurar la compatibilidad con la máquina y el tipo de aplicación.\n\n                        Plazo de entrega: De 10 a 15 días",
+  "p": 300,
+  "b": "INSEMAC",
+  "s": "VENTOSAS PARA CNC",
+  "i": "imgs/products-3260-1-m.jpeg",
+  "u": "https://www.insemactools.es/ventosa-doble-efecto-d-250mm-.html",
+  "fam": "manipulacio",
+  "aplic": [
+   "Granito",
+   "Mármol",
+   "Porcelánico"
+  ],
+  "cat": "manipulacio",
+  "subcat": "ventoses",
+  "colorGroup": null,
+  "featured": null,
+  "imgs": [
+   "imgs/products-3260-1-m.jpeg"
+  ],
+  "specs": [
+   {
+    "label": "Plazo de entrega",
+    "value": "De 10 a 15 días"
+   }
+  ],
+  "star": 0,
+  "variantGroup": "ventosa-doble-efecto"
+ },
+ {
+  "n": "Ventosa doble efecto D.200mm. h.149-213",
+  "r": "51/01.000.200..A",
+  "d": "La Ventosa CNC Redonda D.200 mm de Doble Efecto está diseñada para proporcionar una sujeción firme, segura y precisa durante los procesos de corte, fresado, perforación, pulido y mecanizado en centros de trabajo CNC.\n\nGracias a su diámetro de 200 mm y a su sistema de doble efecto, ofrece una excelente capacidad de vacío y una gran estabilidad para trabajar con mármol, granito, cuarzo, porcelánico, Dekton, Neolith, piedra natural y vidrio, incluso en operaciones de mecanizado exigentes.\n\nFabricada con materiales de alta calidad y gran resistencia al desgaste, esta ventosa garantiza una larga vida útil y un rendimiento constante, ayudando a mejorar la precisión de los trabajos y reduciendo los movimientos indeseados de la pieza.\n\nAl realizar el pedido es importante indicar en observaciones la altura deseada de la ventosa para asegurar una perfecta adaptación a la máquina y a las necesidades específicas de trabajo.\n\n                        Plazo de entrega: De 10 a 15 días",
+  "p": 231,
+  "b": "INSEMAC",
+  "s": "VENTOSAS PARA CNC",
+  "i": "imgs/products-3257-1-m.jpeg",
+  "u": "https://www.insemactools.es/ventosa-doble-efecto-d-200mm-.html",
+  "fam": "manipulacio",
+  "aplic": [
+   "Granito",
+   "Mármol",
+   "Porcelánico"
+  ],
+  "cat": "manipulacio",
+  "subcat": "ventoses",
+  "colorGroup": null,
+  "featured": null,
+  "imgs": [
+   "imgs/products-3257-1-m.jpeg"
+  ],
+  "specs": [
+   {
+    "label": "Plazo de entrega",
+    "value": "De 10 a 15 días"
+   }
+  ],
+  "star": 0,
+  "variantGroup": "ventosa-doble-efecto"
+ },
+ {
+  "n": "Ventosa Doble efecto 40x100mm. base 100x100mm. h.149-213",
+  "r": "51/01.040.100.",
+  "d": "Las Ventosas CNC de Doble Efecto están diseñadas para proporcionar una sujeción segura, estable y precisa durante los procesos de corte, fresado, perforación, pulido y mecanizado en centros de trabajo CNC.\n\nFabricadas en aluminio anodizado de alta calidad, incorporan una superficie de apoyo de goma vulcanizada de alto agarre que garantiza una excelente fijación de la pieza, minimizando desplazamientos y vibraciones durante el trabajo.\n\nSu construcción robusta incluye tornillería de acero inoxidable, ofreciendo una elevada resistencia al desgaste, la humedad y las condiciones exigentes de los talleres de transformación de piedra y vidrio.\n\nEstas ventosas son ideales para trabajar con mármol, granito, cuarzo, porcelánico, Dekton, Neolith, piedra natural, materiales técnicos y vidrio, proporcionando máxima estabilidad y precisión en cada operación.\n\nAl realizar el pedido es necesario indicar la altura deseada de las ventosas para asegurar la correcta compatibilidad con la máquina y la aplicación.\n\n                        Plazo de entrega: De 10 a 15 días",
+  "p": 208,
+  "b": "INSEMAC",
+  "s": "VENTOSAS PARA CNC",
+  "i": "imgs/products-3256-1-m.jpeg",
+  "u": "https://www.insemactools.es/ventosa-doble-efecto-40x100mm-base-100x100mm-h-70-140.html",
+  "fam": "manipulacio",
+  "aplic": [
+   "Granito",
+   "Mármol",
+   "Porcelánico"
+  ],
+  "cat": "manipulacio",
+  "subcat": "ventoses",
+  "colorGroup": null,
+  "featured": null,
+  "imgs": [
+   "imgs/products-3256-1-m.jpeg"
+  ],
+  "specs": [
+   {
+    "label": "Plazo de entrega",
+    "value": "De 10 a 15 días"
+   }
+  ],
+  "star": 0,
+  "variantGroup": "ventosa-doble-efecto"
  }
 ]

@@ -74,8 +74,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",sans-serif;ba
 .filter-chip.active{background:#ff6b35;color:#fff;border-color:#ff6b35}
 .prod-detail{position:fixed;inset:0;z-index:50;background:#f5f5f7;overflow-y:auto;animation:detailUp .3s cubic-bezier(.2,.8,.2,1) both}@keyframes detailUp{from{transform:translateY(24px);opacity:.2}to{transform:translateY(0);opacity:1}}
 .prod-detail .close-btn{position:absolute;top:max(16px,var(--safe-t));left:16px;z-index:5;width:48px;height:48px;border-radius:50%;background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.1);color:#fff;font-size:22px;display:flex;align-items:center;justify-content:center;cursor:pointer}
-.prod-detail .gallery{height:450px;overflow-x:auto;overflow-y:hidden;background:#e8e8ed;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;scroll-behavior:smooth;position:relative}
-.prod-detail .gallery img,.prod-detail .gallery iframe{scroll-snap-align:start;flex-shrink:0;width:100%;height:100%;object-fit:cover}
+.prod-detail .gallery{height:450px;overflow:hidden;background:#fff;position:relative}
+.prod-detail .gallery img,.prod-detail .gallery iframe{flex-shrink:0;width:100%;height:100%;object-fit:contain}
+.gallery-track{display:flex;height:100%;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.gallery-track::-webkit-scrollbar{display:none}
+.gallery-track>*{scroll-snap-align:start;scroll-snap-stop:always}
+.gallery-track img{cursor:zoom-in}
 .gallery-arrow{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:none;background:rgba(0,0,0,.5);color:#fff;font-size:24px;cursor:pointer;z-index:2;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(4px)}
 .gallery-arrow:active{background:rgba(0,0,0,.7)}
 .gallery-prev{left:12px}
@@ -115,6 +119,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",sans-serif;ba
 .search-result-item .sub{font-size:12px;color:rgba(29,29,31,.35);margin-top:2px}
 .lightbox{position:fixed;inset:0;z-index:70;background:rgba(0,0,0,.95);display:flex;align-items:center;justify-content:center}
 .lightbox img{max-width:100%;max-height:100%;object-fit:contain}
+.lightbox .lb-track{position:absolute;inset:0;display:flex;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.lightbox .lb-track::-webkit-scrollbar{display:none}
+.lightbox .lb-slide{flex:0 0 100%;width:100%;height:100%;display:flex;align-items:center;justify-content:center;scroll-snap-align:start;scroll-snap-stop:always}
+.lightbox .close,.lightbox .gallery-arrow{z-index:3}
+.lb-count{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);z-index:3;color:#fff;font-size:14px;font-weight:600;background:rgba(0,0,0,.45);padding:4px 12px;border-radius:12px}
 .lightbox .close{position:absolute;top:16px;right:16px;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.1);border:none;color:#fff;font-size:20px;cursor:pointer}
 .settings-group{margin-bottom:24px}
 .settings-group .label{font-size:12px;color:rgba(29,29,31,.35);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
@@ -353,8 +362,8 @@ body.presentation .advisor-role p{color:rgba(255,255,255,.42)}
 /* Variant detail page */
 .variant-detail{position:fixed;inset:0;z-index:50;background:#f5f5f7;overflow-y:auto;animation:detailUp .3s cubic-bezier(.2,.8,.2,1) both}
 .variant-detail .close-btn{position:absolute;top:max(16px,var(--safe-t));left:16px;z-index:5;width:48px;height:48px;border-radius:50%;background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.1);color:#fff;font-size:22px;display:flex;align-items:center;justify-content:center;cursor:pointer}
-.variant-detail .gallery{height:450px;overflow-x:auto;overflow-y:hidden;background:#e8e8ed;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;scroll-behavior:smooth;position:relative}
-.variant-detail .gallery img,.variant-detail .gallery iframe{scroll-snap-align:start;flex-shrink:0;width:100%;height:100%;object-fit:cover}
+.variant-detail .gallery{height:450px;overflow:hidden;background:#fff;position:relative}
+.variant-detail .gallery img,.variant-detail .gallery iframe{flex-shrink:0;width:100%;height:100%;object-fit:contain}
 .variant-detail .body{padding:24px 20px 38px;max-width:840px;margin:0 auto}
 .variant-detail .eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#ff6b35;font-weight:700;margin-bottom:8px}
 .variant-detail .name{font-size:clamp(27px,4vw,40px);letter-spacing:-.045em;line-height:1.06;font-weight:730;margin-bottom:7px}

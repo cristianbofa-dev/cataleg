@@ -231,156 +231,6 @@
   "autoDetected": true
  },
  {
-  "id": "ventosa-vd65",
-  "name": "Ventosa doble efecto D.65mm.",
-  "brand": "INSEMAC",
-  "variantAttrLabel": "Altura",
-  "members": [
-   {
-    "idx": 627
-   },
-   {
-    "idx": 626
-   }
-  ],
-  "autoDetected": true
- },
- {
-  "id": "ventosa-vd90",
-  "name": "Ventosa doble efecto D.80mm.",
-  "brand": "INSEMAC",
-  "variantAttrLabel": "Altura",
-  "members": [
-   {
-    "idx": 625
-   },
-   {
-    "idx": 624
-   }
-  ],
-  "autoDetected": true
- },
- {
-  "id": "ventosa-vd120-d130",
-  "name": "Ventosa doble efecto D.130mm.",
-  "brand": "INSEMAC",
-  "variantAttrLabel": "Altura",
-  "members": [
-   {
-    "idx": 622
-   },
-   {
-    "idx": 621
-   }
-  ],
-  "autoDetected": true
- },
- {
-  "id": "ventosa-vd160",
-  "name": "Ventosa doble efecto D.150mm.",
-  "brand": "INSEMAC",
-  "variantAttrLabel": "Altura",
-  "members": [
-   {
-    "idx": 619
-   },
-   {
-    "idx": 620
-   }
-  ],
-  "autoDetected": true
- },
- {
-  "id": "ventosa-v40x200",
-  "name": "Ventosa doble efecto 40 x 200mm.",
-  "brand": "INSEMAC",
-  "variantAttrLabel": "Altura",
-  "members": [
-   {
-    "idx": 628
-   },
-   {
-    "idx": 629
-   }
-  ],
-  "autoDetected": true
- },
- {
-  "id": "ventosa-v150x150",
-  "name": "Ventosa doble efecto 150 x 150mm.",
-  "brand": "INSEMAC",
-  "variantAttrLabel": "Altura",
-  "members": [
-   {
-    "idx": 631
-   },
-   {
-    "idx": 630
-   }
-  ],
-  "autoDetected": true
- },
- {
-  "id": "ventosa-v100x200",
-  "name": "Ventosa doble efecto 100 x 200mm.",
-  "brand": "INSEMAC",
-  "variantAttrLabel": "Altura",
-  "members": [
-   {
-    "idx": 632
-   },
-   {
-    "idx": 633
-   }
-  ],
-  "autoDetected": true
- },
- {
-  "id": "ventosa-v200x400",
-  "name": "Ventosa doble efecto 200 x 400mm.",
-  "brand": "INSEMAC",
-  "variantAttrLabel": "Altura",
-  "members": [
-   {
-    "idx": 635
-   },
-   {
-    "idx": 634
-   }
-  ],
-  "autoDetected": true
- },
- {
-  "id": "ventosa-v150x300",
-  "name": "Ventosa doble efecto 150 x 300mm.",
-  "brand": "INSEMAC",
-  "variantAttrLabel": "Altura",
-  "members": [
-   {
-    "idx": 636
-   },
-   {
-    "idx": 637
-   }
-  ],
-  "autoDetected": true
- },
- {
-  "id": "ventosa-v200x200",
-  "name": "Ventosa doble efecto 200 x 200mm.",
-  "brand": "INSEMAC",
-  "variantAttrLabel": "Altura",
-  "members": [
-   {
-    "idx": 639
-   },
-   {
-    "idx": 638
-   }
-  ],
-  "autoDetected": true
- },
- {
   "id": "lijas-diamantadas-star3",
   "name": "Lijas Diamantadas en húmedo STAR 3 D.100",
   "brand": "INSEMAC",
@@ -867,5 +717,142 @@
   "autoDetected": true,
   "variantAttrLabel": "Mida / Diàmetre",
   "base": "Esponja Diamante"
+ },
+ {
+  "id": "ventosa-doble-efecto",
+  "name": "Ventosa doble efecto",
+  "brand": "INSEMAC",
+  "variantAttrLabel": "Model",
+  "members": [
+   {
+    "idx": 626,
+    "label": "Ø 65 mm · h.70-140"
+   },
+   {
+    "idx": 625,
+    "label": "Ø 65 mm · h.149-213"
+   },
+   {
+    "idx": 624,
+    "label": "Ø 80 mm · h.70-140"
+   },
+   {
+    "idx": 623,
+    "label": "Ø 80 mm · h.149-213"
+   },
+   {
+    "idx": 622,
+    "label": "Ø 110 mm · h.70-140"
+   },
+   {
+    "idx": 617,
+    "label": "Ø 110 mm · h.149-213"
+   },
+   {
+    "idx": 621,
+    "label": "Ø 130 mm · h.70-140"
+   },
+   {
+    "idx": 620,
+    "label": "Ø 130 mm · h.149-213"
+   },
+   {
+    "idx": 618,
+    "label": "Ø 150 mm · h.70-140"
+   },
+   {
+    "idx": 619,
+    "label": "Ø 150 mm · h.149-213"
+   },
+   {
+    "idx": 609,
+    "label": "Ø 200 mm · h.70-140"
+   },
+   {
+    "idx": 967,
+    "label": "Ø 200 mm · h.149-213"
+   },
+   {
+    "idx": 608,
+    "label": "Ø 250 mm · h.70-140"
+   },
+   {
+    "idx": 966,
+    "label": "Ø 250 mm · h.149-213"
+   },
+   {
+    "idx": 610,
+    "label": "40x100 mm (base 100x100) · h.70-140"
+   },
+   {
+    "idx": 968,
+    "label": "40x100 mm (base 100x100) · h.149-213"
+   },
+   {
+    "idx": 606,
+    "label": "40x150 mm (base 70x150) · h.70-140"
+   },
+   {
+    "idx": 964,
+    "label": "40x150 mm (base 70x150) · h.149-213"
+   },
+   {
+    "idx": 627,
+    "label": "40x200 mm (base 100x200) · h.70-140"
+   },
+   {
+    "idx": 628,
+    "label": "40x200 mm (base 100x200) · h.149-213"
+   },
+   {
+    "idx": 607,
+    "label": "100x100 mm · h.70-140"
+   },
+   {
+    "idx": 965,
+    "label": "100x100 mm · h.149-213"
+   },
+   {
+    "idx": 631,
+    "label": "100x200 mm · h.70-140"
+   },
+   {
+    "idx": 632,
+    "label": "100x200 mm · h.149-213"
+   },
+   {
+    "idx": 630,
+    "label": "150x150 mm · h.70-140"
+   },
+   {
+    "idx": 629,
+    "label": "150x150 mm · h.149-213"
+   },
+   {
+    "idx": 635,
+    "label": "150x300 mm · h.70-140"
+   },
+   {
+    "idx": 636,
+    "label": "150x300 mm · h.149-213"
+   },
+   {
+    "idx": 638,
+    "label": "200x200 mm · h.70-140"
+   },
+   {
+    "idx": 637,
+    "label": "200x200 mm · h.149-213"
+   },
+   {
+    "idx": 634,
+    "label": "200x400 mm · h.70-140"
+   },
+   {
+    "idx": 633,
+    "label": "200x400 mm · h.149-213"
+   }
+  ],
+  "autoDetected": true
  }
 ]
