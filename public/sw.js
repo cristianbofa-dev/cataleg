@@ -30,8 +30,24 @@ self.addEventListener('activate', function (event) {
         return k.indexOf('nexe-cataleg-') === 0 && k !== CACHE;
       }).map(function (k) { return caches.delete(k); }));
     }).then(function () { return self.clients.claim(); })
+      .then(notifyClients)
   );
 });
+
+function offlineStatus() {
+  return caches.open(CACHE).then(function (cache) {
+    return Promise.all(['./index.html', './fotos-extra.js'].map(function (u) { return cache.match(u); }));
+  }).then(function (hits) {
+    return { type: 'NEXE_OFFLINE_STATUS', ready: !!(hits[0] && hits[1]), version: VERSION };
+  });
+}
+function notifyClients() {
+  return offlineStatus().then(function (st) {
+    return self.clients.matchAll({ type: 'window' }).then(function (list) {
+      list.forEach(function (c) { c.postMessage(st); });
+    });
+  });
+}
 
 function fromNetwork(req, ms) {
   return new Promise(function (resolve, reject) {
@@ -79,12 +95,8 @@ self.addEventListener('fetch', function (event) {
   );
 });
 
-// Avisa la pàgina si ja ho té tot desat per funcionar sense connexió
+// La pàgina pregunta si ja ho té tot desat per funcionar sense connexió
 self.addEventListener('message', function (event) {
   if (!event.data || event.data.type !== 'NEXE_OFFLINE_STATUS') return;
-  caches.open(CACHE).then(function (cache) {
-    return Promise.all(['./index.html', './fotos-extra.js'].map(function (u) { return cache.match(u); }));
-  }).then(function (hits) {
-    if (event.source) event.source.postMessage({ type: 'NEXE_OFFLINE_STATUS', ready: !!hits[0], photos: !!hits[1], version: VERSION });
-  });
+  offlineStatus().then(function (st) { if (event.source) event.source.postMessage(st); });
 });
