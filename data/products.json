@@ -34766,7 +34766,7 @@
   "star": 0,
   "n": "Batería Crown 20 V Max 5 Ah",
   "r": "CAB205014XE",
-  "d": "Batería de litio de 5 Ah compatible con toda la gama Crown 20 V Max.",
+  "d": "Batería de litio de 5 Ah compatible con toda la gama Crown 20 V Max.\n\nPromoció: comprant 2 bateries a la mateixa comanda, 5 € de descompte.",
   "p": 84.9,
   "s": "BATERÍAS Y CARGADORES",
   "i": "imgs/crown-cab205014xe.jpg",
@@ -34799,7 +34799,8 @@
     "label": "Recarga con cargador 9,6 A",
     "value": "55 min"
    }
-  ]
+  ],
+  "promoBateria": true
  },
  {
   "b": "CROWN",

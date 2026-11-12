@@ -10,9 +10,9 @@ maquines.txt:
   C  elèctrica de cable                 +10 €
   M  màquina a bateria                   +5 €
   P  pack màquina + bateria              +10 €
-  B  bateria, carregador o kit recàrrega  +5 €
+  B  bateria o kit de recàrrega          +5 € (carregadors: preu de fullet)
   I  instrument de mesura a piles         +5 €
-(Excepció: els preus de PREU_FIX es posen tal com diu el fullet.)
+(Els carregadors i les referències de PREU_FIX van a preu de fullet.)
 
 Requisits: pip3 install reportlab pillow
 """
@@ -32,7 +32,9 @@ from reportlab.platypus import (Image, KeepTogether, PageBreak, Paragraph,
 AQUI = os.path.dirname(os.path.abspath(__file__))
 ARREL = os.path.dirname(AQUI)
 RECARREC = {'C': 10, 'M': 5, 'P': 10, 'B': 5, 'I': 5}
-PREU_FIX = {'CAC204001X'}  # es venen a preu de fullet, sense ports
+# Carregadors (CAC… i el carregador USB CAU…): a preu de fullet, sense ports
+PREU_FIX_PREFIXOS = ('CAC', 'CAU')
+PREU_FIX = set()  # altres referències concretes a preu de fullet
 
 GRUPS = [
     ('EINES A BATERIA', ('M', 'P')),
@@ -56,7 +58,8 @@ def llegir():
                 continue
             pag, ref, nom, preu, tipus, seccio = l.split('|')
             preu = float(preu)
-            venda = preu if ref in PREU_FIX else preu + RECARREC[tipus]
+            fix = ref in PREU_FIX or ref.startswith(PREU_FIX_PREFIXOS)
+            venda = preu if fix else preu + RECARREC[tipus]
             items.append({'pag': int(pag), 'ref': ref, 'nom': nom, 'fullet': preu,
                           'tipus': tipus, 'seccio': seccio, 'preu': round(venda, 2),
                           'foto': os.path.join(AQUI, 'fotos', re.sub(r'[^\w\-]', '_', ref) + '.jpg')})
@@ -127,6 +130,9 @@ def construir(items, sortida):
         story.append(PageBreak())
         story.append(Paragraph('CROWN', st['kick']))
         story.append(Paragraph(esc(titol), st['h1']))
+        if 'B' in tipus:
+            story.append(Paragraph('🔋 Promoció: comprant 2 bateries a la mateixa comanda, 5 € de descompte. '
+                                   'Carregadors a preu de fullet.'.replace('🔋 ', ''), st['etq']))
         seccions = []
         for i in grup:
             if i['seccio'] not in seccions:

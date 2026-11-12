@@ -3251,7 +3251,7 @@ function updateOrderBadge(){
   badge.classList.toggle('show', count > 0);
 }
 
-function getOrderTotal(){
+function getOrderSubtotal(){
   var total = 0;
   for(var i=0;i<orderItems.length;i++){
     var p = PRODS[orderItems[i].idx];
@@ -3259,6 +3259,23 @@ function getOrderTotal(){
     total += (orderItems[i].price || (parseFloat(p.p)||0)) * orderItems[i].qty;
   }
   return total;
+}
+// Promoció bateries: per cada 2 bateries (productes amb promoBateria) a la
+// mateixa comanda, 5 € de descompte sobre el total.
+var PROMO_BATERIA_DTE = 5;
+function getOrderBatteryCount(){
+  var n = 0;
+  for(var i=0;i<orderItems.length;i++){
+    var p = PRODS[orderItems[i].idx];
+    if(p && p.promoBateria) n += orderItems[i].qty;
+  }
+  return n;
+}
+function getOrderDiscount(){
+  return Math.floor(getOrderBatteryCount() / 2) * PROMO_BATERIA_DTE;
+}
+function getOrderTotal(){
+  return Math.max(0, getOrderSubtotal() - getOrderDiscount());
 }
 
 function formatPrice(v){ return v.toFixed(2).replace('.',',')+' €'; }
@@ -3462,6 +3479,13 @@ function renderOrderPanel(){
     if(item.notes) html += '<div class="order-item-notes">'+escHtml(item.notes)+'</div>';
     html += '</div></div>';
   }
+  var _dte = getOrderDiscount();
+  if(_dte > 0){
+    var _nb = getOrderBatteryCount();
+    html += '<div class="order-item order-promo" style="display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 14px;margin-top:6px;border-radius:12px;background:rgba(36,138,61,.10);color:#1d6b31;font-weight:600">'
+      + '<span>🔋 Promoció bateries ('+_nb+' bateries): −'+PROMO_BATERIA_DTE+' € per cada 2</span>'
+      + '<span>−'+formatPrice(_dte)+'</span></div>';
+  }
   body.innerHTML = html;
 
   if(totalEl) totalEl.textContent = formatPrice(getOrderTotal());
@@ -3519,6 +3543,10 @@ function shareOrder(){
     lines.push('');
   }
   lines.push('━'.repeat(30));
+  if(getOrderDiscount() > 0){
+    lines.push('Subtotal: '+formatPrice(getOrderSubtotal()));
+    lines.push('🔋 Promoció bateries ('+getOrderBatteryCount()+' bateries): −'+formatPrice(getOrderDiscount()));
+  }
   lines.push('*TOTAL: '+formatPrice(getOrderTotal())+'*');
   if(orderNotes) lines.push('📌 '+orderNotes);
   lines.push('');
