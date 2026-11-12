@@ -224,18 +224,25 @@ Obre `dist/index.html` al navegador i revisa les categories que has tocat.
 `dist/lleuger/index.html` (iPad) a iCloud Drive o a l'app Documents i
 obre'l des d'allà.
 
-**Com a app instal·lable.** Puja el contingut de `dist/lleuger/` a qualsevol
-allotjament web amb HTTPS. Des de Safari, l'iPad l'afegeix a la pantalla
-d'inici amb *Compartir → Afegir a la pantalla d'inici*; el Mac, amb
-*Arxiu → Afegir al Dock*. El service worker el desa per obrir-lo sense
-connexió, i cada build nou canvia la versió perquè els dispositius rebin
-l'actualització la propera vegada que tinguin connexió.
+**Com a app instal·lable que funciona sense connexió (GitHub Pages).**
 
-- **GitHub Pages:** *Settings → Pages*, branca amb `dist/` publicat. Tingues
-  en compte que serà **públic**: qualsevol amb l'enllaç veurà els preus.
-  Publica-hi només el build sense `--with-private`.
-- **Claude:** es pot tornar a publicar `dist/lleuger/index.html` com a
-  artifact privat.
+```bash
+bash tools/publish_pages.sh     # construeix la versió pública i la puja a la branca gh-pages
+```
+
+L'app és a https://cristianbofa-dev.github.io/cataleg/. A l'iPad: obrir-la
+amb Safari → *Compartir → Afegir a la pantalla d'inici*. Al Mac: Safari →
+*Arxiu → Afegir al Dock*.
+
+- El primer cop cal connexió: es desen la pàgina, les fotos addicionals
+  (`fotos-extra.js`) i les icones, uns 27 MB. Quan acaba surt l'avís
+  "✓ Catàleg desat: ja funciona sense connexió".
+- Després s'obre sempre sense internet. Amb connexió, si hi ha una versió
+  nova, la desa i es recarrega sola (si la xarxa triga més de 4 s, obre la
+  còpia desada).
+- És **pública**: qui tingui l'enllaç veu els preus de venda. No hi ha mai
+  clients, credencials ni costos (el script fa sempre el build públic), i
+  per tant tampoc sincronització amb Firebase.
 
 **Pujar els canvis al repositori:**
 

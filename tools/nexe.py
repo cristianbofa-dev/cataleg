@@ -463,7 +463,12 @@ def write_extra_bundle(dest, keys, max_size=900, quality=78):
 
 def copy_public(dest, html):
     """Copia public/ (manifest, service worker, icones) al costat de l'HTML."""
-    version = hashlib.sha256(html.encode('utf-8')).hexdigest()[:12]
+    h = hashlib.sha256(html.encode('utf-8'))
+    extra = os.path.join(dest, 'fotos-extra.js')
+    if os.path.exists(extra):  # la versió també canvia si canvien les fotos
+        with open(extra, 'rb') as f:
+            h.update(f.read())
+    version = h.hexdigest()[:12]
     for base, _, files in os.walk(PUBLIC):
         for name in files:
             src = os.path.join(base, name)
