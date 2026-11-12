@@ -34654,5 +34654,281 @@
   ],
   "star": 0,
   "variantGroup": "ventosa-doble-efecto"
+ },
+ {
+  "b": "CROWN",
+  "u": "https://www.crown-tools.es",
+  "fam": "maquinaria",
+  "aplic": [],
+  "cat": "maquinaria",
+  "colorGroup": null,
+  "featured": null,
+  "star": 0,
+  "n": "Amoladora angular Crown 1500 W Ø125 mm velocidad variable",
+  "r": "CT13677-125RSVC",
+  "d": "Amoladora angular profesional de 1500 W para disco de 125 mm. Arranque suave, protección anti-arranque, velocidad variable, empuñadura antivibraciones y sistema de estabilización de velocidad.",
+  "p": 169.9,
+  "s": "AMOLADORAS ELÉCTRICAS",
+  "i": "imgs/crown-ct13677-125rsvc.jpg",
+  "imgs": [
+   "imgs/crown-ct13677-125rsvc.jpg"
+  ],
+  "subcat": "amoladores-talladores",
+  "specs": [
+   {
+    "label": "Potencia nominal",
+    "value": "1500 W"
+   },
+   {
+    "label": "Velocidad",
+    "value": "2800-11000 min⁻¹"
+   },
+   {
+    "label": "Ø máx. disco",
+    "value": "125 mm"
+   },
+   {
+    "label": "Ø máx. plato de apoyo",
+    "value": "125 mm"
+   },
+   {
+    "label": "Ø máx. cepillo",
+    "value": "75 mm"
+   },
+   {
+    "label": "Rosca de husillo",
+    "value": "M14"
+   },
+   {
+    "label": "Peso",
+    "value": "2,45 kg"
+   }
+  ]
+ },
+ {
+  "b": "CROWN",
+  "u": "https://www.crown-tools.es",
+  "fam": "maquinaria",
+  "aplic": [],
+  "cat": "maquinaria",
+  "colorGroup": null,
+  "featured": null,
+  "star": 0,
+  "n": "Amoladora angular a batería Crown 20 V Max Ø125 mm brushless, velocidad variable",
+  "r": "CT23008-125HX",
+  "d": "Amoladora angular brushless de la plataforma 20 V Max. Se suministra solo el cuerpo de la máquina (sin batería ni cargador). Arranque suave, protección de reinicio y velocidad variable.",
+  "p": 174.9,
+  "s": "AMOLADORAS A BATERÍA",
+  "i": "imgs/crown-ct23008-125hx.jpg",
+  "imgs": [
+   "imgs/crown-ct23008-125hx.jpg"
+  ],
+  "subcat": "amoladores-talladores",
+  "specs": [
+   {
+    "label": "Tensión",
+    "value": "20 V Max"
+   },
+   {
+    "label": "Velocidad",
+    "value": "3000-8500 min⁻¹"
+   },
+   {
+    "label": "Ø máx. disco de corte",
+    "value": "125 mm"
+   },
+   {
+    "label": "Rosca",
+    "value": "M14"
+   },
+   {
+    "label": "Motor",
+    "value": "Brushless"
+   },
+   {
+    "label": "Peso",
+    "value": "1,7 kg"
+   },
+   {
+    "label": "Incluye",
+    "value": "Cuerpo de la máquina"
+   }
+  ]
+ },
+ {
+  "b": "CROWN",
+  "u": "https://www.crown-tools.es",
+  "fam": "maquinaria",
+  "aplic": [],
+  "cat": "maquinaria",
+  "colorGroup": null,
+  "featured": null,
+  "star": 0,
+  "n": "Batería Crown 20 V Max 5 Ah",
+  "r": "CAB205014XE",
+  "d": "Batería de litio de 5 Ah compatible con toda la gama Crown 20 V Max.",
+  "p": 84.9,
+  "s": "BATERÍAS Y CARGADORES",
+  "i": "imgs/crown-cab205014xe.jpg",
+  "imgs": [
+   "imgs/crown-cab205014xe.jpg"
+  ],
+  "subcat": "bateries",
+  "specs": [
+   {
+    "label": "Tipo",
+    "value": "Litio-ion 20 V Max"
+   },
+   {
+    "label": "Capacidad",
+    "value": "5 Ah"
+   },
+   {
+    "label": "Peso",
+    "value": "0,69 kg"
+   },
+   {
+    "label": "Recarga con cargador 2 A",
+    "value": "150 min"
+   },
+   {
+    "label": "Recarga con cargador 4 A",
+    "value": "75 min"
+   },
+   {
+    "label": "Recarga con cargador 9,6 A",
+    "value": "55 min"
+   }
+  ]
+ },
+ {
+  "b": "CROWN",
+  "u": "https://www.crown-tools.es",
+  "fam": "maquinaria",
+  "aplic": [],
+  "cat": "maquinaria",
+  "colorGroup": null,
+  "featured": null,
+  "star": 0,
+  "n": "Cargador Crown 20 V Max 4 A",
+  "r": "CAC204001X",
+  "d": "Cargador de 4 A para las baterías Crown 20 V Max.",
+  "p": 49.9,
+  "s": "BATERÍAS Y CARGADORES",
+  "i": "imgs/crown-cac204001x.jpg",
+  "imgs": [
+   "imgs/crown-cac204001x.jpg"
+  ],
+  "subcat": "bateries",
+  "specs": [
+   {
+    "label": "Potencia nominal",
+    "value": "100 W"
+   },
+   {
+    "label": "Tensión",
+    "value": "20 V Max"
+   },
+   {
+    "label": "Corriente de salida",
+    "value": "4 A"
+   },
+   {
+    "label": "Peso",
+    "value": "0,5 kg"
+   },
+   {
+    "label": "Batería 2 Ah",
+    "value": "35 min"
+   },
+   {
+    "label": "Batería 5 Ah",
+    "value": "75 min"
+   },
+   {
+    "label": "Batería 8 Ah",
+    "value": "120 min"
+   }
+  ]
+ },
+ {
+  "b": "CROWN",
+  "u": "https://www.crown-tools.es",
+  "fam": "maquinaria",
+  "aplic": [],
+  "cat": "maquinaria",
+  "colorGroup": null,
+  "featured": null,
+  "star": 0,
+  "n": "Kit de recarga Crown 20 V Max: 2 baterías 5 Ah + cargador 4 A + bolsa",
+  "r": "K-R03",
+  "d": "Kit de energía con 2 baterías de 5 Ah (CAB205014XE), 1 cargador de 4 A (CAC204001X) y bolsa de herramientas de regalo.",
+  "p": 194.9,
+  "s": "BATERÍAS Y CARGADORES",
+  "i": "imgs/crown-k-r03.jpg",
+  "imgs": [
+   "imgs/crown-k-r03.jpg"
+  ],
+  "subcat": "bateries",
+  "specs": [
+   {
+    "label": "Baterías",
+    "value": "2 × 5 Ah CAB205014XE"
+   },
+   {
+    "label": "Cargador",
+    "value": "4 A CAC204001X"
+   },
+   {
+    "label": "Recarga de cada batería",
+    "value": "75 min"
+   },
+   {
+    "label": "Regalo",
+    "value": "Bolsa de herramientas"
+   }
+  ]
+ },
+ {
+  "b": "CROWN",
+  "u": "https://www.crown-tools.es",
+  "fam": "maquinaria",
+  "aplic": [],
+  "cat": "maquinaria",
+  "colorGroup": null,
+  "featured": null,
+  "star": 0,
+  "n": "Kit de recarga Crown 20 V Max Turbo Pack: 2 baterías 5 Ah + cargador doble 4 A + bolsa",
+  "r": "K-R08",
+  "d": "Turbo Pack con 2 baterías de 5 Ah (CAB205014XE), cargador doble de 4 A (CAC204003X) que carga las dos baterías a la vez y bolsa de herramientas de regalo.",
+  "p": 214.9,
+  "s": "BATERÍAS Y CARGADORES",
+  "i": "imgs/crown-k-r08.jpg",
+  "imgs": [
+   "imgs/crown-k-r08.jpg"
+  ],
+  "subcat": "bateries",
+  "specs": [
+   {
+    "label": "Baterías",
+    "value": "2 × 5 Ah CAB205014XE"
+   },
+   {
+    "label": "Cargador",
+    "value": "Doble 4 A CAC204003X"
+   },
+   {
+    "label": "Recarga de una batería",
+    "value": "75 min"
+   },
+   {
+    "label": "Recarga de las dos a la vez",
+    "value": "100 min"
+   },
+   {
+    "label": "Regalo",
+    "value": "Bolsa de herramientas"
+   }
+  ]
  }
 ]
