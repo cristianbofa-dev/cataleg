@@ -257,6 +257,20 @@ Quan la branca de desenvolupament estigui revisada, s'integra a `main` amb un
 
 ---
 
+## Catàleg de màquines Crown
+
+`cataleg-crown/` conté les 203 màquines del fullet Crown tardor-hivern 2026
+(`maquines.txt`: pàgina, referència, nom, preu del fullet, tipus i secció) i
+les seves fotos, i `generar_pdf.py` en fa un catàleg PDF a part amb el preu
+NEXE: preu del fullet + 10 € (elèctriques de cable i packs màquina + bateria)
+o + 5 € (màquines a bateria, bateries, carregadors, kits i instruments).
+
+```bash
+python3 cataleg-crown/generar_pdf.py --llista   # dist/Cataleg_Crown_NEXE.pdf i dist/Crown_preus.csv
+```
+
+---
+
 ## Recuperació
 
 - El catàleg original de Claude (versió lleugera) és a la branca
