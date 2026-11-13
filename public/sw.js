@@ -10,6 +10,7 @@ var VERSION = '__BUILD_VERSION__';
 var CACHE = 'nexe-cataleg-' + VERSION;
 var CORE = ['./', './index.html', './fotos-extra.js', './manifest.json',
             './icons/icon-192.png', './icons/icon-512.png', './icons/apple-touch-icon.png'];
+var OTHER_APPS = ['crown/']; // subcarpetes amb una app independent
 var NETWORK_TIMEOUT = 4000; // amb poca cobertura, no esperar més: obrir la còpia desada
 
 self.addEventListener('install', function (event) {
@@ -62,6 +63,10 @@ self.addEventListener('fetch', function (event) {
   if (req.method !== 'GET') return;
   var url = new URL(req.url);
   if (url.origin !== self.location.origin) return; // altres webs: sense intervenir
+  // Les apps que viuen en una subcarpeta (p. ex. crown/) tenen el seu propi service worker
+  var scopePath = new URL(self.registration.scope).pathname;
+  var rel = url.pathname.indexOf(scopePath) === 0 ? url.pathname.slice(scopePath.length) : '';
+  for (var i = 0; i < OTHER_APPS.length; i++) if (rel.indexOf(OTHER_APPS[i]) === 0) return;
 
   // Pàgina: la xarxa si respon ràpid (per tenir la darrera versió); si no, la còpia.
   if (req.mode === 'navigate') {

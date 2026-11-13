@@ -269,6 +269,19 @@ o + 5 € (màquines a bateria, bateries, carregadors, kits i instruments).
 python3 cataleg-crown/generar_pdf.py --llista   # dist/Cataleg_Crown_NEXE.pdf i dist/Crown_preus.csv
 ```
 
+També hi ha l'**app Catàleg Crown**: el mateix catàleg que NEXE (fitxes, cerca,
+comandes, sense connexió) però només amb aquestes màquines.
+
+```bash
+python3 tools/crown_app.py                              # dist/crown/ (app instal·lable)
+python3 tools/crown_app.py --out Cataleg_Crown.html     # un sol fitxer per a l'app Documents
+```
+
+`tools/publish_pages.sh` la publica a https://cristianbofa-dev.github.io/cataleg/crown/.
+Té la memòria del navegador separada de NEXE (comandes, favorits i mode
+edició no es barregen) i el seu propi service worker. Per afegir o canviar
+màquines, edita `cataleg-crown/maquines.txt` (i la foto a `cataleg-crown/fotos/`).
+
 ---
 
 ## Recuperació

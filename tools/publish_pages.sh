@@ -5,7 +5,8 @@
 #
 #   bash tools/publish_pages.sh
 #
-# L'adreça és https://<usuari>.github.io/<repositori>/
+# L'adreça és https://<usuari>.github.io/<repositori>/ (catàleg NEXE)
+# i https://<usuari>.github.io/<repositori>/crown/ (catàleg Crown)
 # A l'iPad: obrir-la amb Safari > Compartir > Afegir a la pantalla d'inici.
 set -euo pipefail
 cd "$(dirname "$0")/.."
@@ -13,6 +14,7 @@ SITE="$(mktemp -d)"
 trap 'rm -rf "$SITE"' EXIT
 
 python3 tools/nexe.py build --light --extras bundle --out "$SITE/index.html"
+python3 tools/crown_app.py --site "$SITE/crown"   # app Crown a /crown/
 touch "$SITE/.nojekyll"   # GitHub Pages: servir els fitxers tal qual
 
 REMOTE="$(git remote get-url origin)"
