@@ -1087,12 +1087,6 @@ function renderHome(pages){
     quickRow.appendChild(quick);
   }
 
-  // Recomanats NEXE: just després del cercador, abans de les categories
-  var recomanatsContainer = document.createElement('div');
-  recomanatsContainer.id = 'recomanatsSection';
-  pages.home.appendChild(recomanatsContainer);
-  renderRecomanats(recomanatsContainer, pages);
-
   // Category grid
   var gridTitle = document.createElement('div');
   gridTitle.className = 'section-head';
@@ -1123,6 +1117,12 @@ function renderHome(pages){
     grid.appendChild(tile);
   }
   pages.home.appendChild(grid);
+
+  // Recomanats NEXE: sota les categories
+  var recomanatsContainer = document.createElement('div');
+  recomanatsContainer.id = 'recomanatsSection';
+  pages.home.appendChild(recomanatsContainer);
+  renderRecomanats(recomanatsContainer, pages);
 
 
 

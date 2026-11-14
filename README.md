@@ -327,7 +327,7 @@ El catàleg per a clients es pot llegir en català, castellà, anglès i ucraïn
 
 ### Recomanats de portada i venda creuada
 
-`data/promo.json` decideix què surt a la secció **Recomanats** de la portada (just sota el cercador) i els productes de **"Sovint es compra amb…"** de cada fitxa. Serveix per al catàleg intern i per al de clients.
+`data/promo.json` decideix què surt a la secció **Recomanats** de la portada (sota les categories) i els productes de **"Sovint es compra amb…"** de cada fitxa. Serveix per al catàleg intern i per al de clients.
 
 - `recomanats`: targetes amb etiqueta (`badge`), títol i frase de venda (`pitch`). Les de tipus `pack` porten diversos productes i un botó que els afegeix tots a la comanda d'un toc.
 - `crossSell`: regles per subcategoria (`{"subcat": "discs-tall"}`) o per producte concret (`{"idx": 970}`); val la primera que coincideix. Si falten productes, s'omple amb altres de la mateixa categoria.
