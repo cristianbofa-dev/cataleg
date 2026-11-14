@@ -284,6 +284,24 @@ màquines, edita `cataleg-crown/maquines.txt` (i la foto a `cataleg-crown/fotos/
 
 ---
 
+## Catàleg per a clients (sense preus)
+
+`tools/client_app.py` genera el catàleg general **sense preus** perquè els
+clients facin comandes: el client afegeix productes, omple nom, empresa i
+telèfon, i la comanda s'envia per WhatsApp al comercial (número a la
+constant `WHATSAPP` del script). Els preus es treuen de les dades, no només
+de la pantalla, i el script s'atura si en queda algun.
+
+```bash
+python3 tools/client_app.py     # dist/clients/
+```
+
+`tools/publish_pages.sh` el publica a https://cristianbofa-dev.github.io/cataleg/clients/.
+Atenció: a la mateixa web, l'adreça arrel (sense `clients/`) és el catàleg
+intern amb preus, i aquest repositori (públic) conté els preus de venda.
+
+---
+
 ## Recuperació
 
 - El catàleg original de Claude (versió lleugera) és a la branca

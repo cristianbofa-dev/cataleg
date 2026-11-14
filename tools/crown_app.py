@@ -236,7 +236,7 @@ def write_public(dest, html):
     version = hashlib.sha256(html.encode('utf-8')).hexdigest()[:12]
     sw = nexe.read_text(os.path.join(nexe.PUBLIC, 'sw.js'))
     sw = sw.replace('nexe-cataleg-', 'crown-cataleg-').replace('__BUILD_VERSION__', version)
-    sw = sw.replace("'./fotos-extra.js', ", '').replace("var OTHER_APPS = ['crown/'];", "var OTHER_APPS = [];")
+    sw = sw.replace("'./fotos-extra.js', ", '').replace("var OTHER_APPS = ['crown/', 'clients/'];", "var OTHER_APPS = [];")
     sw = sw.replace("['./index.html', './fotos-extra.js']", "['./index.html', './index.html']")
     nexe.write_text(os.path.join(dest, 'sw.js'), sw)
 

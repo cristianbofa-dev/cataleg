@@ -15,6 +15,7 @@ trap 'rm -rf "$SITE"' EXIT
 
 python3 tools/nexe.py build --light --extras bundle --out "$SITE/index.html"
 python3 tools/crown_app.py --site "$SITE/crown"   # app Crown a /crown/
+python3 tools/client_app.py --site "$SITE/clients"   # catàleg per a clients, sense preus, a /clients/
 touch "$SITE/.nojekyll"   # GitHub Pages: servir els fitxers tal qual
 
 REMOTE="$(git remote get-url origin)"
