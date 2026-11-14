@@ -324,3 +324,12 @@ El catàleg per a clients es pot llegir en català, castellà, anglès i ucraïn
 - Les traduccions són a `data/i18n-clients.json`: la clau és el text tal com surt a l'app i al costat hi ha `es`, `en`, `uk` (i `ca` quan cal corregir l'original). Per canviar una traducció, edita el fitxer i torna a publicar amb `bash tools/publish_clients.sh`.
 - Es tradueix la interfície i les categories; els noms i descripcions dels productes es queden com els dona el proveïdor.
 - La comanda de WhatsApp sempre arriba en català, amb una línia que diu l'idioma del client si no és el català.
+
+### Recomanats de portada i venda creuada
+
+`data/promo.json` decideix què surt a la secció **Recomanats** de la portada (just sota el cercador) i els productes de **"Sovint es compra amb…"** de cada fitxa. Serveix per al catàleg intern i per al de clients.
+
+- `recomanats`: targetes amb etiqueta (`badge`), títol i frase de venda (`pitch`). Les de tipus `pack` porten diversos productes i un botó que els afegeix tots a la comanda d'un toc.
+- `crossSell`: regles per subcategoria (`{"subcat": "discs-tall"}`) o per producte concret (`{"idx": 970}`); val la primera que coincideix. Si falten productes, s'omple amb altres de la mateixa categoria.
+- Cada producte porta `idx` i `ref`; si l'índex deixa d'apuntar a la mateixa referència, el build s'atura i avisa.
+- Els productes que afegeixis a la llista ⭐ Recomanats des de l'app també surten a la portada, darrere dels de `promo.json`.

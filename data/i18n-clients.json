@@ -1297,6 +1297,81 @@
    "es": "Añadir al pedido",
    "en": "Add to order",
    "uk": "Додати до замовлення"
+  },
+  "Sovint es compra amb…": {
+   "es": "Se suele comprar con…",
+   "en": "Often bought with…",
+   "uk": "Часто купують разом з…"
+  },
+  "Total pack": {
+   "es": "Total pack",
+   "en": "Pack total",
+   "uk": "Разом за набір"
+  },
+  "Des de": {
+   "es": "Desde",
+   "en": "From",
+   "uk": "Від"
+  },
+  "Veure producte →": {
+   "es": "Ver producto →",
+   "en": "View product →",
+   "uk": "Переглянути товар →"
+  },
+  "➕ Afegir el pack a la comanda": {
+   "es": "➕ Añadir el pack al pedido",
+   "en": "➕ Add the pack to the order",
+   "uk": "➕ Додати набір до замовлення"
+  },
+  "✓ Pack afegit a la comanda": {
+   "es": "✓ Pack añadido al pedido",
+   "en": "✓ Pack added to the order",
+   "uk": "✓ Набір додано до замовлення"
+  },
+  "Pack complet": {
+   "es": "Pack completo",
+   "en": "Complete pack",
+   "uk": "Повний набір"
+  },
+  "Recomanat": {
+   "es": "Recomendado",
+   "en": "Recommended",
+   "uk": "Рекомендовано"
+  },
+  "Destacat": {
+   "es": "Destacado",
+   "en": "Featured",
+   "uk": "Хіт"
+  },
+  "Amoladora a bateria Crown + kit de 2 bateries": {
+   "es": "Amoladora a batería Crown + kit de 2 baterías",
+   "en": "Crown cordless grinder + 2-battery kit",
+   "uk": "Акумуляторна шліфмашина Crown + набір із 2 акумуляторів"
+  },
+  "Brushless Ø125 sense cable · 2 bateries 5 Ah, carregador i bossa de transport": {
+   "es": "Brushless Ø125 sin cable · 2 baterías 5 Ah, cargador y bolsa de transporte",
+   "en": "Brushless Ø125, cordless · 2 × 5 Ah batteries, charger and carry bag",
+   "uk": "Безщітковий двигун, Ø125, без кабелю · 2 акумулятори 5 А·год, зарядний пристрій і сумка"
+  },
+  "Silicona neutra Collak": {
+   "es": "Silicona neutra Collak",
+   "en": "Collak neutral silicone",
+   "uk": "Нейтральний силікон Collak"
+  },
+  "Blanca i transparent · per a juntes, banys i cuines": {
+   "es": "Blanca y transparente · para juntas, baños y cocinas",
+   "en": "White and clear · for joints, bathrooms and kitchens",
+   "uk": "Білий і прозорий · для швів, ванних і кухонь"
+  },
+  "Broques Red Shine": {
+   "es": "Brocas Red Shine",
+   "en": "Red Shine core drill bits",
+   "uk": "Свердла Red Shine"
+  },
+  "Granit, quars i porcellànic · de Ø16 a Ø140 mm": {
+   "es": "Granito, cuarzo y porcelánico · de Ø16 a Ø140 mm",
+   "en": "Granite, quartz and porcelain · Ø16 to Ø140 mm",
+   "uk": "Граніт, кварц і керамограніт · від Ø16 до Ø140 мм"
   }
  },
  "patterns": [

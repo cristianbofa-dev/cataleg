@@ -364,6 +364,31 @@ def make_light(products, images, code_text, max_size, quality, extra_size=300, e
     return out
 
 
+def load_promo(products):
+    """Recomanats de portada i venda creuada (data/promo.json), comprovant que
+    cada índex continua apuntant a la mateixa referència."""
+    promo = read_json(os.path.join(DATA, 'promo.json'), {})
+
+    def chk(e):
+        i = e['idx']
+        if i >= len(products) or products[i].get('r') != e['ref'] or products[i].get('cat') == '_removed':
+            sys.exit('promo.json: l\'índex %s ja no és %s' % (i, e['ref']))
+        return i
+
+    out = {'recomanats': [], 'crossSell': []}
+    for r in promo.get('recomanats', []):
+        r = dict(r)
+        if r.get('type') == 'pack':
+            r['items'] = [{'idx': chk(x), 'qty': x.get('qty', 1)} for x in r['items']]
+        else:
+            r['idx'] = chk(r)
+            r.pop('ref', None)
+        out['recomanats'].append(r)
+    for c in promo.get('crossSell', []):
+        out['crossSell'].append({'when': c['when'], 'show': [chk(x) for x in c['show']]})
+    return out
+
+
 def build_html(use_private=False, light=None, extras_mode='web', extra_files=None):
     template = read_text(TEMPLATE)
     priv = use_private and os.path.isdir(PRIVATE)
@@ -374,6 +399,7 @@ def build_html(use_private=False, light=None, extras_mode='web', extra_files=Non
     products = read_json(os.path.join(DATA, 'products.json'))
     restore_costs(products, costs)
     groups = read_json(os.path.join(DATA, 'variant-groups.json'))
+    promo = load_promo(products)
 
     def include(m):
         text = read_text(os.path.join(ROOT, m.group(1)))
@@ -392,6 +418,7 @@ def build_html(use_private=False, light=None, extras_mode='web', extra_files=Non
     data = {
         'products': PRODUCTS_PREFIX + compact(products) + ';',
         'variant_groups': GROUPS_PREFIX + compact(groups) + ';',
+        'promo': 'var PROMO = ' + compact(promo) + ';',
         'clients': CLIENTS_HEADER + js_safe(json.dumps(clients, ensure_ascii=False, indent=2)) + ';\n',
         'images': IMAGES_PREFIX + compact(images) + ';' + (
             # Fotos addicionals en un fitxer a part (--extras bundle)

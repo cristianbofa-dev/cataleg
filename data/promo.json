@@ -1,0 +1,629 @@
+{
+ "_comment": "Portada i venda creuada. 'ref' serveix per comprovar que l'índex continua apuntant al mateix producte (el build s'atura si no coincideix).",
+ "recomanats": [
+  {
+   "type": "pack",
+   "id": "pack-crown-bateria",
+   "badge": "🎁 Pack complet",
+   "title": "Amoladora a bateria Crown + kit de 2 bateries",
+   "pitch": "Brushless Ø125 sense cable · 2 bateries 5 Ah, carregador i bossa de transport",
+   "items": [
+    {
+     "idx": 970,
+     "ref": "CT23008-125HX",
+     "qty": 1
+    },
+    {
+     "idx": 973,
+     "ref": "K-R03",
+     "qty": 1
+    }
+   ]
+  },
+  {
+   "idx": 328,
+   "ref": "4/BLA-C22",
+   "badge": "⭐ Recomanat",
+   "title": "Silicona neutra Collak",
+   "pitch": "Blanca i transparent · per a juntes, banys i cuines"
+  },
+  {
+   "idx": 22,
+   "ref": "14/RS-",
+   "badge": "🔥 Destacat",
+   "title": "Broques Red Shine",
+   "pitch": "Granit, quars i porcellànic · de Ø16 a Ø140 mm"
+  }
+ ],
+ "crossSell": [
+  {
+   "when": {
+    "subcat": "discs-tall"
+   },
+   "show": [
+    {
+     "idx": 970,
+     "ref": "CT23008-125HX"
+    },
+    {
+     "idx": 969,
+     "ref": "CT13677-125RSVC"
+    },
+    {
+     "idx": 164,
+     "ref": "50/L14-7/125"
+    },
+    {
+     "idx": 158,
+     "ref": "50/GA5040C"
+    },
+    {
+     "idx": 176,
+     "ref": ""
+    },
+    {
+     "idx": 175,
+     "ref": "50/SLID45"
+    },
+    {
+     "idx": 459,
+     "ref": "3/G2890"
+    },
+    {
+     "idx": 428,
+     "ref": "3/9163"
+    },
+    {
+     "idx": 440,
+     "ref": "3/H540A"
+    }
+   ]
+  },
+  {
+   "when": {
+    "subcat": "freses-tall"
+   },
+   "show": [
+    {
+     "idx": 667,
+     "ref": "52/PKSUPPM14GAS"
+    },
+    {
+     "idx": 668,
+     "ref": "20/MANGO"
+    },
+    {
+     "idx": 669,
+     "ref": "51/ADAPTADOR"
+    },
+    {
+     "idx": 576,
+     "ref": "52/PR-100"
+    },
+    {
+     "idx": 574,
+     "ref": "52/PR-200"
+    },
+    {
+     "idx": 147,
+     "ref": "50/GPD-233"
+    },
+    {
+     "idx": 970,
+     "ref": "CT23008-125HX"
+    }
+   ]
+  },
+  {
+   "when": {
+    "subcat": "guies-suports"
+   },
+   "show": [
+    {
+     "idx": 970,
+     "ref": "CT23008-125HX"
+    },
+    {
+     "idx": 164,
+     "ref": "50/L14-7/125"
+    },
+    {
+     "idx": 6,
+     "ref": "17/POR"
+    },
+    {
+     "idx": 4,
+     "ref": "16/TLA"
+    },
+    {
+     "idx": 7,
+     "ref": "11/073"
+    }
+   ]
+  },
+  {
+   "when": {
+    "subcat": "silicones-polimers"
+   },
+   "show": [
+    {
+     "idx": 325,
+     "ref": "4/PIST-SIL"
+    },
+    {
+     "idx": 419,
+     "ref": "4/0780-0035"
+    },
+    {
+     "idx": 933,
+     "ref": "4/QSILICONA"
+    },
+    {
+     "idx": 328,
+     "ref": "4/BLA-C22"
+    },
+    {
+     "idx": 326,
+     "ref": "4/POLIMSB"
+    },
+    {
+     "idx": 327,
+     "ref": "4/POLIMS"
+    },
+    {
+     "idx": 460,
+     "ref": "2/VMD89"
+    }
+   ]
+  },
+  {
+   "when": {
+    "subcat": "pistolets-broquets"
+   },
+   "show": [
+    {
+     "idx": 247,
+     "ref": "1/COMPBOND"
+    },
+    {
+     "idx": 959,
+     "ref": "INTEGRA/SURFACE-BONDER"
+    },
+    {
+     "idx": 241,
+     "ref": "1/TIPCB"
+    },
+    {
+     "idx": 251,
+     "ref": "1/BOQ.INT"
+    },
+    {
+     "idx": 460,
+     "ref": "2/VMD89"
+    }
+   ]
+  },
+  {
+   "when": {
+    "subcat": "juntes-invisibles"
+   },
+   "show": [
+    {
+     "idx": 243,
+     "ref": "1/P400"
+    },
+    {
+     "idx": 241,
+     "ref": "1/TIPCB"
+    },
+    {
+     "idx": 250,
+     "ref": "1/P250"
+    },
+    {
+     "idx": 251,
+     "ref": "1/BOQ.INT"
+    },
+    {
+     "idx": 534,
+     "ref": "50/SP-E2W-M14"
+    },
+    {
+     "idx": 536,
+     "ref": "50/NIVEL115"
+    },
+    {
+     "idx": 537,
+     "ref": "50/NIVEL150"
+    },
+    {
+     "idx": 460,
+     "ref": "2/VMD89"
+    },
+    {
+     "idx": 383,
+     "ref": "1/030100028"
+    }
+   ]
+  },
+  {
+   "when": {
+    "idx": 970
+   },
+   "show": [
+    {
+     "idx": 973,
+     "ref": "K-R03"
+    },
+    {
+     "idx": 974,
+     "ref": "K-R08"
+    },
+    {
+     "idx": 971,
+     "ref": "CAB205014XE"
+    },
+    {
+     "idx": 972,
+     "ref": "CAC204001X"
+    },
+    {
+     "idx": 6,
+     "ref": "17/POR"
+    },
+    {
+     "idx": 7,
+     "ref": "11/073"
+    },
+    {
+     "idx": 4,
+     "ref": "16/TLA"
+    },
+    {
+     "idx": 176,
+     "ref": ""
+    },
+    {
+     "idx": 459,
+     "ref": "3/G2890"
+    }
+   ]
+  },
+  {
+   "when": {
+    "idx": 969
+   },
+   "show": [
+    {
+     "idx": 6,
+     "ref": "17/POR"
+    },
+    {
+     "idx": 7,
+     "ref": "11/073"
+    },
+    {
+     "idx": 4,
+     "ref": "16/TLA"
+    },
+    {
+     "idx": 176,
+     "ref": ""
+    },
+    {
+     "idx": 175,
+     "ref": "50/SLID45"
+    },
+    {
+     "idx": 459,
+     "ref": "3/G2890"
+    },
+    {
+     "idx": 428,
+     "ref": "3/9163"
+    },
+    {
+     "idx": 440,
+     "ref": "3/H540A"
+    }
+   ]
+  },
+  {
+   "when": {
+    "subcat": "amoladores-talladores"
+   },
+   "show": [
+    {
+     "idx": 6,
+     "ref": "17/POR"
+    },
+    {
+     "idx": 4,
+     "ref": "16/TLA"
+    },
+    {
+     "idx": 7,
+     "ref": "11/073"
+    },
+    {
+     "idx": 176,
+     "ref": ""
+    },
+    {
+     "idx": 175,
+     "ref": "50/SLID45"
+    },
+    {
+     "idx": 459,
+     "ref": "3/G2890"
+    },
+    {
+     "idx": 428,
+     "ref": "3/9163"
+    },
+    {
+     "idx": 440,
+     "ref": "3/H540A"
+    }
+   ]
+  },
+  {
+   "when": {
+    "subcat": "bateries"
+   },
+   "show": [
+    {
+     "idx": 970,
+     "ref": "CT23008-125HX"
+    },
+    {
+     "idx": 971,
+     "ref": "CAB205014XE"
+    },
+    {
+     "idx": 972,
+     "ref": "CAC204001X"
+    },
+    {
+     "idx": 973,
+     "ref": "K-R03"
+    },
+    {
+     "idx": 974,
+     "ref": "K-R08"
+    }
+   ]
+  },
+  {
+   "when": {
+    "subcat": "lijes-papers"
+   },
+   "show": [
+    {
+     "idx": 663,
+     "ref": "8/125-PLAT"
+    },
+    {
+     "idx": 664,
+     "ref": ""
+    },
+    {
+     "idx": 662,
+     "ref": "9/180-PLAT"
+    },
+    {
+     "idx": 666,
+     "ref": "SUPL/"
+    },
+    {
+     "idx": 170,
+     "ref": "50/PE14-3/125"
+    },
+    {
+     "idx": 169,
+     "ref": "50/LW1503"
+    },
+    {
+     "idx": 168,
+     "ref": "50/LW1202"
+    }
+   ]
+  },
+  {
+   "when": {
+    "subcat": "maquines-polit"
+   },
+   "show": [
+    {
+     "idx": 663,
+     "ref": "8/125-PLAT"
+    },
+    {
+     "idx": 664,
+     "ref": ""
+    },
+    {
+     "idx": 136,
+     "ref": "9/I125"
+    },
+    {
+     "idx": 71,
+     "ref": "9/LDD1003-"
+    },
+    {
+     "idx": 72,
+     "ref": "9/LDD1003P"
+    },
+    {
+     "idx": 958,
+     "ref": "11/402400"
+    }
+   ]
+  },
+  {
+   "when": {
+    "subcat": "corones-abrasives"
+   },
+   "show": [
+    {
+     "idx": 659,
+     "ref": "24/"
+    },
+    {
+     "idx": 660,
+     "ref": "24/P"
+    },
+    {
+     "idx": 658,
+     "ref": "24/"
+    },
+    {
+     "idx": 169,
+     "ref": "50/LW1503"
+    },
+    {
+     "idx": 170,
+     "ref": "50/PE14-3/125"
+    }
+   ]
+  },
+  {
+   "when": {
+    "subcat": "abrillantadors-ceres"
+   },
+   "show": [
+    {
+     "idx": 641,
+     "ref": "7/TBLANCO"
+    },
+    {
+     "idx": 642,
+     "ref": "7/FI"
+    },
+    {
+     "idx": 639,
+     "ref": "3/BORRE"
+    },
+    {
+     "idx": 170,
+     "ref": "50/PE14-3/125"
+    },
+    {
+     "idx": 169,
+     "ref": "50/LW1503"
+    }
+   ]
+  },
+  {
+   "when": {
+    "subcat": "proteccio-pedra"
+   },
+   "show": [
+    {
+     "idx": 349,
+     "ref": "1/SHDE0000029"
+    },
+    {
+     "idx": 424,
+     "ref": "3/GU-NEO"
+    }
+   ]
+  },
+  {
+   "when": {
+    "subcat": "ventoses"
+   },
+   "show": [
+    {
+     "idx": 474,
+     "ref": "50/COMPACT208PLUS"
+    },
+    {
+     "idx": 740,
+     "ref": "CARRO_COMPACT_208_PLUS"
+    },
+    {
+     "idx": 478,
+     "ref": "50/COMPACT209"
+    },
+    {
+     "idx": 466,
+     "ref": "50/PIN-CA"
+    },
+    {
+     "idx": 462,
+     "ref": "50/PIN"
+    }
+   ]
+  },
+  {
+   "when": {
+    "subcat": "pinces-grapes"
+   },
+   "show": [
+    {
+     "idx": 474,
+     "ref": "50/COMPACT208PLUS"
+    },
+    {
+     "idx": 740,
+     "ref": "CARRO_COMPACT_208_PLUS"
+    },
+    {
+     "idx": 471,
+     "ref": "50/COMPACT209C"
+    },
+    {
+     "idx": 478,
+     "ref": "50/COMPACT209"
+    }
+   ]
+  },
+  {
+   "when": {
+    "subcat": "refors-anclatges"
+   },
+   "show": [
+    {
+     "idx": 952,
+     "ref": "CIMASER/pegamento-epoxy-para-soportes-en-fibra-d"
+    },
+    {
+     "idx": 247,
+     "ref": "1/COMPBOND"
+    },
+    {
+     "idx": 565,
+     "ref": "1/SINK"
+    },
+    {
+     "idx": 699,
+     "ref": "KIT_ANCLAJE_FREGADEROS_EN"
+    }
+   ]
+  },
+  {
+   "when": {
+    "subcat": "mascaretes-proteccio"
+   },
+   "show": [
+    {
+     "idx": 459,
+     "ref": "3/G2890"
+    },
+    {
+     "idx": 440,
+     "ref": "3/H540A"
+    },
+    {
+     "idx": 428,
+     "ref": "3/9163"
+    },
+    {
+     "idx": 424,
+     "ref": "3/GU-NEO"
+    }
+   ]
+  }
+ ]
+}

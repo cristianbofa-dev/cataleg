@@ -520,3 +520,31 @@ body.edit-mode .edit-price:focus{outline:none;background:#fff;box-shadow:0 0 0 2
 
 .edit-move{position:absolute;left:6px;bottom:6px;display:flex;gap:4px;z-index:6}
 .edit-move button{width:30px;height:30px;border-radius:50%;border:none;background:rgba(0,0,0,.62);color:#fff;font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(0,0,0,.25);padding:0}
+
+/* ── Recomanats NEXE (portada) ── */
+.promo-scroll{display:flex;gap:14px;overflow-x:auto;margin:0 -20px 26px;padding:2px 20px 8px;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity}
+.promo-card{position:relative;flex:0 0 264px;display:flex;flex-direction:column;overflow:hidden;border-radius:20px;background:#fff;border:1px solid rgba(0,0,0,.07);box-shadow:0 6px 22px rgba(0,0,0,.07);cursor:pointer;scroll-snap-align:start}
+.promo-card.promo-pack{flex-basis:340px;background:linear-gradient(160deg,#1d1d1f 0%,#2c2c2e 100%);color:#f5f5f7;border-color:transparent}
+.promo-img{position:relative;height:168px;background:#f2f2f4;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.promo-img img{width:100%;height:100%;object-fit:cover}
+.promo-contain .promo-img img{object-fit:contain;padding:10px;box-sizing:border-box}
+.promo-img-pack{background:#fff;gap:0}
+.promo-img-pack img{width:50%;object-fit:contain;padding:12px;box-sizing:border-box}
+.promo-plus{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:30px;height:30px;border-radius:50%;background:#ff6b35;color:#fff;font:800 20px/30px -apple-system,system-ui,sans-serif;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+.promo-badge{position:absolute;top:12px;left:12px;padding:5px 11px;border-radius:999px;background:#ff6b35;color:#fff;font-size:12px;font-weight:700;letter-spacing:.02em;box-shadow:0 2px 8px rgba(255,107,53,.35)}
+.promo-body{display:flex;flex-direction:column;gap:5px;padding:14px 16px 16px;flex:1}
+.promo-brand{font-size:10px;color:#ff6b35;letter-spacing:.07em;font-weight:700;text-transform:uppercase}
+.promo-title{font-size:17px;font-weight:700;line-height:1.2}
+.promo-pitch{font-size:13px;line-height:1.35;color:rgba(29,29,31,.62)}
+.promo-pack .promo-pitch{color:rgba(245,245,247,.72)}
+.promo-items{margin:2px 0 0;padding:0 0 0 16px;font-size:12px;line-height:1.35;color:rgba(245,245,247,.6)}
+.promo-items li{display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
+.promo-price{margin-top:auto;padding-top:6px;font-size:20px;font-weight:800;letter-spacing:-.01em}
+.promo-price span{font-size:12px;font-weight:600;opacity:.6;letter-spacing:0}
+.promo-btn{margin-top:8px;height:40px;border:0;border-radius:12px;background:#ff6b35;color:#fff;font:700 14px -apple-system,system-ui,sans-serif;cursor:pointer}
+.promo-btn-ghost{background:rgba(255,107,53,.1);color:#ff6b35}
+.promo-body .promo-btn:first-child{margin-top:auto}
+body.presentation .promo-card:not(.promo-pack){background:rgba(44,44,46,.85);border-color:rgba(255,255,255,.08)}
+body.presentation .promo-card:not(.promo-pack) .promo-pitch{color:rgba(245,245,247,.6)}
+body.presentation .promo-img:not(.promo-img-pack){background:#2c2c2e}
+@media(min-width:768px){.promo-scroll{margin-left:-28px;margin-right:-28px;padding-left:28px;padding-right:28px}.promo-card{flex-basis:290px}.promo-card.promo-pack{flex-basis:380px}.promo-img{height:190px}}

@@ -942,7 +942,7 @@ function initAfterSQLite(pages, headerTitle, btnBack, navItems, searchOverlay, s
         }
       }
       // destacats is no longer a NAV_CATEGORY but products with cat='destacats' exist
-      catNames['destacats'] = 'Recomendats';
+      catNames['destacats'] = 'Recomanats';
       // Build variant group name + option labels lookup
       var vgLookup = {}, vgOptLookup = {};
       if(typeof insemac_variant_groups !== 'undefined'){
@@ -1087,6 +1087,12 @@ function renderHome(pages){
     quickRow.appendChild(quick);
   }
 
+  // Recomanats NEXE: just després del cercador, abans de les categories
+  var recomanatsContainer = document.createElement('div');
+  recomanatsContainer.id = 'recomanatsSection';
+  pages.home.appendChild(recomanatsContainer);
+  renderRecomanats(recomanatsContainer, pages);
+
   // Category grid
   var gridTitle = document.createElement('div');
   gridTitle.className = 'section-head';
@@ -1118,42 +1124,101 @@ function renderHome(pages){
   }
   pages.home.appendChild(grid);
 
-  // Recomendados NEXE — read from _recomanats list
-  var recomanatsContainer = document.createElement('div');
-  recomanatsContainer.id = 'recomanatsSection';
-  renderRecomanats(recomanatsContainer, pages);
-  pages.home.appendChild(recomanatsContainer);
+
 
   var homeSearch = pages.home.querySelector('#homeSearch');
   if(homeSearch) homeSearch.addEventListener('click', function(){ openSearch(); });
 }
 
+function _promoPrice(idx){
+  var p = PRODS[idx]; if(!p) return 0;
+  if(_editOverrides[idx] && _editOverrides[idx].price !== undefined) return parseFloat(_editOverrides[idx].price)||0;
+  var v = p.insemacVariants, min = null;
+  if(v && v.length){ for(var i=0;i<v.length;i++){ var x = parseFloat(v[i].price); if(x > 0 && (min === null || x < min)) min = x; } }
+  return min !== null ? min : (parseFloat(p.p)||0);
+}
+function _promoHasVariants(idx){ var p = PRODS[idx]; return !!(p && p.insemacVariants && p.insemacVariants.length > 1); }
+// Productes que la llista de recomanats tenia per defecte (no triats pel comercial)
+var _RECOM_PREFILL = ['90/FILM-EXTRA','075-030','90/PAP-180','90/PAP-MINI','4/BLA-C22'];
+
 function renderRecomanats(container, pages){
   container.innerHTML = '';
-  var recomanatsList = null;
-  for(var ri=0;ri<customLists.length;ri++){ if(customLists[ri].id === '_recomanats'){ recomanatsList = customLists[ri]; break; } }
-  var featured = [];
-  if(recomanatsList && recomanatsList.items.length){
-    for(var fi=0;fi<recomanatsList.items.length && featured.length<12;fi++){
-      var pidx = recomanatsList.items[fi];
-      if(PRODS[pidx]) featured.push({p:PRODS[pidx],idx:pidx});
+  var cards = [], used = {};
+  var promo = (typeof PROMO !== 'undefined' && PROMO.recomanats) ? PROMO.recomanats : [];
+  for(var i=0;i<promo.length;i++){
+    var r = promo[i];
+    if(r.type === 'pack'){
+      var ok = r.items.every(function(x){ return PRODS[x.idx] && PRODS[x.idx].cat !== '_removed'; });
+      if(ok){ cards.push(r); r.items.forEach(function(x){ used[x.idx] = 1; }); }
+    } else if(PRODS[r.idx] && PRODS[r.idx].cat !== '_removed'){ cards.push(r); used[r.idx] = 1; }
+  }
+  // Els que el comercial afegeixi a la llista ⭐ Recomanats també surten
+  var list = null;
+  for(var ri=0;ri<customLists.length;ri++){ if(customLists[ri].id === '_recomanats'){ list = customLists[ri]; break; } }
+  if(list && list.items.length){
+    var onlyPrefill = list.items.every(function(x){ return PRODS[x] && _RECOM_PREFILL.indexOf(PRODS[x].r) > -1; });
+    if(!onlyPrefill){
+      for(var li=0;li<list.items.length && cards.length<12;li++){
+        var ix = list.items[li];
+        if(PRODS[ix] && !used[ix]){ cards.push({idx:ix}); used[ix] = 1; }
+      }
     }
   }
-  if(featured.length){
-    var featHead = document.createElement('div');
-    featHead.className = 'section-head';
-    featHead.innerHTML = '<div><div class="section-kicker">Recomanació NEXE</div><div class="section-title">Recomendats</div></div>';
-    container.appendChild(featHead);
-    var strip = document.createElement('div'); strip.className = 'spotlight-scroll';
-    for(var sp=0;sp<featured.length;sp++){
-      (function(item){ var card = document.createElement('div'); card.className = 'spotlight-card'; card.innerHTML = '<img src="'+escHtml(getImgSrc(item.p))+'" alt="" loading="lazy"><div class="info"><div class="brand">'+escHtml(item.p.b||'')+'</div><div class="name">'+escHtml(item.p.n||'')+'</div></div>'; card.addEventListener('click', function(){ navigate('product/'+item.idx, null, pages); }); strip.appendChild(card); })(featured[sp]);
+  if(!cards.length) return;
+
+  var head = document.createElement('div');
+  head.className = 'section-head';
+  head.innerHTML = '<div><div class="section-kicker">Recomanació NEXE</div><div class="section-title">Recomanats</div></div>';
+  container.appendChild(head);
+  var strip = document.createElement('div'); strip.className = 'promo-scroll';
+  cards.forEach(function(r){
+    var card = document.createElement('div');
+    if(r.type === 'pack'){
+      card.className = 'promo-card promo-pack';
+      var total = 0, imgs = '', lines = '';
+      r.items.forEach(function(x){
+        var pp = PRODS[x.idx];
+        total += _promoPrice(x.idx) * (x.qty||1);
+        imgs += '<img src="'+escHtml(getImgSrc(pp, x.idx))+'" alt="" loading="lazy" onerror="_handleImgError(this)">';
+        lines += '<li>'+(x.qty>1?x.qty+'× ':'')+escHtml(pp.n||'')+'</li>';
+      });
+      var price = formatPrice(total);
+      card.innerHTML = '<div class="promo-img promo-img-pack">'+imgs+'<span class="promo-plus">+</span></div>'
+        + (r.badge ? '<span class="promo-badge">'+escHtml(r.badge)+'</span>' : '')
+        + '<div class="promo-body"><div class="promo-title">'+escHtml(r.title||'')+'</div>'
+        + (r.pitch ? '<div class="promo-pitch">'+escHtml(r.pitch)+'</div>' : '')
+        + '<ul class="promo-items">'+lines+'</ul>'
+        + (price ? '<div class="promo-price"><span>Total pack</span> '+price+'</div>' : '')
+        + '<button class="promo-btn" type="button">➕ Afegir el pack a la comanda</button></div>';
+      card.querySelector('.promo-btn').addEventListener('click', function(e){
+        e.stopPropagation();
+        r.items.forEach(function(x){
+          var found = false;
+          for(var k=0;k<orderItems.length;k++){
+            if(orderItems[k].idx === x.idx && !orderItems[k].variantLabel){ orderItems[k].qty += (x.qty||1); found = true; break; }
+          }
+          if(!found) orderItems.push({idx:x.idx, qty:(x.qty||1), notes:'Pack: '+(r.title||''), price:_promoPrice(x.idx), variantLabel:null});
+        });
+        saveOrder();
+        showAddToast('Pack afegit a la comanda');
+      });
+      card.addEventListener('click', function(){ navigate('product/'+r.items[0].idx, null, pages); });
+    } else {
+      var p = PRODS[r.idx];
+      card.className = 'promo-card' + (isPortraitImgProduct(p) ? ' promo-contain' : '');
+      var pr = formatPrice(_promoPrice(r.idx));
+      card.innerHTML = '<div class="promo-img"><img src="'+escHtml(getImgSrc(p, r.idx))+'" alt="" loading="lazy" onerror="_handleImgError(this)"></div>'
+        + (r.badge ? '<span class="promo-badge">'+escHtml(r.badge)+'</span>' : '')
+        + '<div class="promo-body"><div class="promo-brand">'+escHtml(p.b||'')+'</div>'
+        + '<div class="promo-title">'+escHtml(r.title || p.n || '')+'</div>'
+        + (r.pitch ? '<div class="promo-pitch">'+escHtml(r.pitch)+'</div>' : '')
+        + (pr ? '<div class="promo-price">'+(_promoHasVariants(r.idx) ? '<span>Des de</span> ' : '')+pr+'</div>' : '')
+        + '<button class="promo-btn promo-btn-ghost" type="button">Veure producte →</button></div>';
+      card.addEventListener('click', function(){ navigate('product/'+r.idx, null, pages); });
     }
-    container.appendChild(strip);
-  } else {
-    var ph = document.createElement('div'); ph.className = 'section-head';
-    ph.innerHTML = '<div><div class="section-kicker">Pròximament</div><div class="section-title">Recomendats</div></div><div style="font-size:13px;color:rgba(29,29,31,.45);padding:4px 0 12px">Els productes recomanats es configuraran manualment.</div>';
-    container.appendChild(ph);
-  }
+    strip.appendChild(card);
+  });
+  container.appendChild(strip);
 }
 
 function refreshRecomanats(){
@@ -2510,10 +2575,18 @@ function showProduct(idx){
 
   // Related
   var related = [];
-  for(var i=0;i<PRODS.length;i++){
-    if(i !== idx && (PRODS[i].cat === p.cat || PRODS[i].b === p.b)){
+  if(typeof PROMO !== 'undefined' && PROMO.crossSell){
+    for(var _csI=0;_csI<PROMO.crossSell.length;_csI++){
+      var _csW = PROMO.crossSell[_csI].when;
+      if((_csW.idx !== undefined && _csW.idx === idx) || (_csW.subcat && _csW.subcat === p.subcat)){
+        PROMO.crossSell[_csI].show.forEach(function(x){ if(x !== idx && PRODS[x] && PRODS[x].cat !== '_removed' && related.indexOf(x) < 0) related.push(x); });
+        break;
+      }
+    }
+  }
+  for(var i=0;i<PRODS.length && related.length < 10;i++){
+    if(i !== idx && related.indexOf(i) < 0 && PRODS[i].cat !== '_removed' && (PRODS[i].cat === p.cat || PRODS[i].b === p.b)){
       related.push(i);
-      if(related.length >= 10) break;
     }
   }
 
@@ -2594,7 +2667,7 @@ var _dName = (_editOverrides[idx] && _editOverrides[idx].name !== undefined) ? _
   }
   if(p.u) html += '<a class="product-source" href="'+escHtml(p.u)+'" target="_blank" rel="noopener">Veure informació del producte ↗</a>';
   if(related.length > 0){
-    html += '<div class="section-title">Productes complementaris</div><div class="rel-scroll">';
+    html += '<div class="section-title">Sovint es compra amb…</div><div class="rel-scroll">';
     for(var i=0;i<related.length;i++){
       var rp = PRODS[related[i]];
       html += '<div class="rel-card" data-idx="'+related[i]+'"><img src="'+escHtml(getImgSrc(rp))+'" alt="" loading="lazy"><div class="info"><div class="name">'+escHtml(rp.n||'')+'</div><div class="brand">'+escHtml(rp.b||'')+'</div></div></div>';

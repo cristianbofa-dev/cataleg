@@ -197,6 +197,7 @@ def build_html():
     data = {
         'products': nexe.PRODUCTS_PREFIX + nexe.compact(products) + ';',
         'variant_groups': nexe.GROUPS_PREFIX + '[];',
+        'promo': 'var PROMO = {"recomanats":[],"crossSell":[]};',
         'clients': nexe.CLIENTS_HEADER + '[];\n',
         'images': nexe.IMAGES_PREFIX + nexe.compact(images) + ';',
     }

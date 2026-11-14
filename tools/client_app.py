@@ -176,8 +176,8 @@ function tr(src){
     }
     if(w===null){
       // Prefix d'emoji o símbol: "🔪 Tall"
-      var em = core.match(/^([^A-Za-zÀ-ÿ0-9]+?)\s*([A-Za-zÀ-ÿ].*)$/);
-      if(em && em[1].trim()){ var r0 = tr(em[2]); if(r0) w = em[1] + r0; }
+      var em = core.match(/^([^A-Za-zÀ-ÿ0-9\s]+)(\s*)([A-Za-zÀ-ÿ].*)$/);
+      if(em){ var r0 = tr(em[3]); if(r0) w = em[1] + em[2] + r0; }
     }
     if(w===null){
       // Frases de l'assessor: traduir frase per frase
