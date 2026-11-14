@@ -17,10 +17,12 @@ Què el diferencia del catàleg intern:
   apps NEXE i Crown si s'obren al mateix dispositiu.
 """
 import argparse
+import base64
 import hashlib
 import json
 import os
 import re
+import shutil
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -261,6 +263,46 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
 </script>"""
 
 
+SW_CLEANUP = """/* Catàleg NEXE per a clients: web sempre en línia, sense còpia offline.
+ * Aquest service worker només elimina la còpia que desaven les versions anteriors. */
+self.addEventListener('install', function () { self.skipWaiting(); });
+self.addEventListener('activate', function (event) {
+  event.waitUntil(
+    caches.keys().then(function (keys) { return Promise.all(keys.map(function (k) { return caches.delete(k); })); })
+      .then(function () { return self.registration.unregister(); })
+      .then(function () { return self.clients.matchAll({ type: 'window' }); })
+      .then(function (list) { list.forEach(function (c) { c.navigate(c.url); }); })
+  );
+});
+"""
+
+NO_SW = """<script>/* Web per a clients: sense service worker ni còpia offline */
+(function(){ try{ if('serviceWorker' in navigator){ navigator.serviceWorker.getRegistrations().then(function(rs){ rs.forEach(function(r){ r.unregister(); }); }); }
+  if(window.caches){ caches.keys().then(function(ks){ ks.forEach(function(k){ caches.delete(k); }); }); } }catch(e){} })();</script>"""
+
+
+def externalize_images(html, dest):
+    """Treu les fotos incrustades (base64) de l'HTML i les desa com a fitxers
+    amb la mateixa ruta (imgs/...). L'app ja carrega la ruta si no la troba incrustada."""
+    a = html.index(nexe.IMAGES_PREFIX) + len(nexe.IMAGES_PREFIX)
+    # el mapa és un objecte JSON compacte que acaba amb '};'
+    b = html.index('};', a) + 1
+    imgs = json.loads(html[a:b])
+    n = 0
+    for key, uri in imgs.items():
+        m = re.match(r'data:[^;,]+;base64,(.*)$', uri, re.S)
+        if not m or not key.startswith('imgs/'):
+            continue
+        dst = os.path.join(dest, key)
+        os.makedirs(os.path.dirname(dst), exist_ok=True)
+        with open(dst, 'wb') as f:
+            f.write(base64.b64decode(m.group(1)))
+        n += 1
+    left = {k: v for k, v in imgs.items() if not k.startswith('imgs/')}
+    print('  %d fotos principals escrites com a fitxers' % n)
+    return html[:a] + json.dumps(left, ensure_ascii=False, separators=(',', ':')) + html[b:]
+
+
 def strip_prices(obj):
     """Treu tots els camps de preu i les mencions de preus dins dels textos."""
     if isinstance(obj, dict):
@@ -290,7 +332,7 @@ def strip_prices(obj):
 
 def build(dest):
     extra = []
-    html = nexe.build_html(use_private=False, light=(520, 70), extras_mode='bundle', extra_files=extra)
+    html = nexe.build_html(use_private=False, light=(520, 70), extras_mode='files', extra_files=extra)
 
     # Productes sense preus
     a = html.index(nexe.PRODUCTS_PREFIX) + len(nexe.PRODUCTS_PREFIX)
@@ -315,7 +357,8 @@ def build(dest):
     rep("function shareOrder(){",
         CLIENT_JS.replace('__WA__', WHATSAPP)
         + "\nfunction shareOrder(){ return _clientSendWhatsApp(); }\nfunction _internalShareOrder(){")
-    rep('<head>', '<head>\n' + STORAGE_SHIM)
+    rep('<head>', '<head>\n' + STORAGE_SHIM + NO_SW)
+    rep("if ('serviceWorker' in navigator && location.protocol !== 'file:') {", "if (false) { // web per a clients: sense còpia offline")
     i18n = json.load(open(os.path.join(nexe.ROOT, 'data', 'i18n-clients.json'), encoding='utf-8'))
     i18n.pop('_comment', None)
     rep('</body>', '<style>' + CLIENT_CSS + I18N_CSS + '</style>\n'
@@ -335,13 +378,19 @@ def build(dest):
         sys.exit('ATENCIÓ: queden preus a les dades (%d camps, € %s)' % (len(left), '€' in pdata))
 
     out = os.path.join(dest, 'index.html')
+    # Web sempre en línia: les fotos van com a fitxers a part (es carreguen
+    # només quan es veuen) i sense còpia per treballar sense connexió.
+    shutil.rmtree(os.path.join(dest, 'imgs'), ignore_errors=True)
+    for old in ('fotos-extra.js',):
+        if os.path.exists(os.path.join(dest, old)):
+            os.remove(os.path.join(dest, old))
+    html = externalize_images(html, dest)
     nexe.write_text(out, html)
-    nexe.write_extra_bundle(dest, sorted(set(extra)))
+    nexe.write_extra_files(dest, sorted(set(extra)), max_size=900, quality=78)
     nexe.copy_public(dest, html)
+    # Service worker que només esborra la còpia sense connexió de versions anteriors
+    nexe.write_text(os.path.join(dest, 'sw.js'), SW_CLEANUP)
     # Si hi ha un domini propi configurat (fitxer CNAME), es conserva tal qual
-    sw = nexe.read_text(os.path.join(dest, 'sw.js'))
-    sw = sw.replace('nexe-cataleg-', 'clients-cataleg-').replace("var OTHER_APPS = ['crown/', 'clients/'];", 'var OTHER_APPS = [];')
-    nexe.write_text(os.path.join(dest, 'sw.js'), sw)
     man = json.load(open(os.path.join(dest, 'manifest.json'), encoding='utf-8'))
     man.update({'name': 'Catàleg NEXE', 'short_name': 'NEXE',
                 'description': 'Catàleg NEXE: fes la teva comanda per WhatsApp'})

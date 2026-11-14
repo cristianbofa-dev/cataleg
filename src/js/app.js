@@ -889,8 +889,9 @@ function initSQLiteBridge(pages){
     }
     var waited = 0;
     var interval = setInterval(function(){
-      waited += 100;
-      if(window._sqliteReady){
+      waited += 25;
+      // false = el pont SQLite no hi és o ha fallat: seguir amb les dades del catàleg (no esperar 5 s)
+      if(window._sqliteReady !== undefined){
         clearInterval(interval);
         try{
           var bridge = window._catalogBridge;
@@ -910,7 +911,7 @@ function initSQLiteBridge(pages){
         console.warn('[SQLite] Timeout waiting for SQLite, using legacy data');
         resolve();
       }
-    }, 100);
+    }, 25);
   });
 }
 
