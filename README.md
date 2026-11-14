@@ -296,9 +296,15 @@ de la pantalla, i el script s'atura si en queda algun.
 python3 tools/client_app.py     # dist/clients/
 ```
 
-`tools/publish_pages.sh` el publica a https://cristianbofa-dev.github.io/cataleg/clients/.
-Atenció: a la mateixa web, l'adreça arrel (sense `clients/`) és el catàleg
-intern amb preus, i aquest repositori (públic) conté els preus de venda.
+Es publica en un repositori a part, `cristianbofa-dev/cataleg-clients`, que
+només conté la web sense preus i és on apunta el domini dels clients:
+
+```bash
+bash tools/publish_clients.sh     # genera i puja a ../cataleg-clients
+```
+
+Així els clients no poden arribar al catàleg intern amb preus, que continua
+a https://cristianbofa-dev.github.io/cataleg/ (aquest repositori).
 
 ---
 

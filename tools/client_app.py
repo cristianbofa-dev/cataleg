@@ -212,6 +212,7 @@ def build(dest):
     nexe.write_text(out, html)
     nexe.write_extra_bundle(dest, sorted(set(extra)))
     nexe.copy_public(dest, html)
+    # Si hi ha un domini propi configurat (fitxer CNAME), es conserva tal qual
     sw = nexe.read_text(os.path.join(dest, 'sw.js'))
     sw = sw.replace('nexe-cataleg-', 'clients-cataleg-').replace("var OTHER_APPS = ['crown/', 'clients/'];", 'var OTHER_APPS = [];')
     nexe.write_text(os.path.join(dest, 'sw.js'), sw)
