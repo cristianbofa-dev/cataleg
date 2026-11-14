@@ -120,12 +120,14 @@ function _clientSendWhatsApp(){
   }
   L.push('━━━━━━━━━━━━━━');
   if(orderNotes) L.push('📌 ' + orderNotes);
+  var lg = window._clientLang ? window._clientLang() : 'ca';
+  if(lg !== 'ca') L.push('🌐 Idioma del client: ' + {es:'castellà', en:'anglès', uk:'ucraïnès'}[lg]);
   L.push('Enviat des del catàleg NEXE');
   var url = 'https://wa.me/' + CLIENT_WA + '?text=' + encodeURIComponent(L.join('\n'));
   var a = document.createElement('a');
   a.href = url; a.target = '_blank'; a.rel = 'noopener';
   document.body.appendChild(a); a.click(); a.remove();
-  _clientToast('S\'obre WhatsApp amb la comanda: prem Enviar per fer-la arribar.');
+  _clientToast((window._clientT||String)('S\'obre WhatsApp amb la comanda: prem Enviar per fer-la arribar.'));
 }
 function _clientToast(t){
   var el = document.createElement('div');
@@ -136,6 +138,127 @@ function _clientToast(t){
 document.addEventListener('DOMContentLoaded', _clientInitForm);
 if(document.readyState !== 'loading') _clientInitForm();
 """
+
+I18N_CSS = """
+.lang-pick { position:relative; display:inline-flex; align-items:center; justify-content:center; min-width:46px; height:34px;
+  margin-right:6px; padding:0 10px; border-radius:17px; border:1px solid rgba(0,0,0,.14); background:rgba(255,255,255,.75);
+  font:700 13px -apple-system,system-ui,sans-serif; color:#1d1d1f; letter-spacing:.3px; flex:0 0 auto; }
+.lang-pick select { position:absolute; inset:0; width:100%; height:100%; opacity:0; cursor:pointer; font-size:16px; }
+body.presentation .lang-pick { background:#2c2c2e; color:#f5f5f7; border-color:rgba(255,255,255,.18); }
+.prod-detail .price:empty::before, .variant-detail .price:empty::before, #vgPrice:empty::before { content:var(--i18n-price,'Preu segons la teva tarifa') !important; }
+"""
+
+I18N_JS = r"""<script>/* Catàleg clients: idiomes (CA/ES/EN/UK) */
+(function(){
+var D = __I18N__, ORIG = new WeakMap(), AORIG = new WeakMap(), ATTRS = ['placeholder','aria-label','title'];
+var SHORT = {ca:'CA', es:'ES', en:'EN', uk:'УКР'};
+var lang = null;
+try { lang = localStorage.getItem('lang'); } catch(e){}
+if(!D.languages[lang]){
+  var n = (navigator.language||'ca').toLowerCase().slice(0,2);
+  lang = n==='ca'?'ca': n==='es'||n==='gl'||n==='eu'?'es': n==='uk'||n==='ru'?'uk': n==='en'?'en':'es';
+}
+var PATS = D.patterns.map(function(x){ return {re:new RegExp(x.re), t:x.t}; });
+function pl(n,a,b,c){ n=+n; var m10=n%10, m100=n%100;
+  return (m10===1&&m100!==11)?a:(m10>=2&&m10<=4&&(m100<10||m100>=20))?b:c; }
+function word(s){ var e=D.strings[s]; if(!e) return null; return lang==='ca' ? (e.ca||null) : (e[lang]||null); }
+function tr(src){
+  var core = src.trim(); if(!core) return null;
+  var w = word(core);
+  if(w===null){
+    for(var i=0;i<PATS.length;i++){
+      var m = core.match(PATS[i].re); if(!m) continue;
+      var t = lang==='ca' ? PATS[i].t.ca : PATS[i].t[lang]; if(!t) return null;
+      t = t.replace(/\$T(\d)/g, function(_,k){ var v=m[k]; return v.split(/, | i /).map(function(x){ var y=word(x)||word(x.charAt(0).toUpperCase()+x.slice(1)); return y?(m[k].charAt(0)===m[k].charAt(0).toLowerCase()&&lang!=='en'&&lang!=='uk'?y.charAt(0).toLowerCase()+y.slice(1):y):x; }).join(', '); })
+           .replace(/\$(\d)/g, function(_,k){ return m[k]; })
+           .replace(/\{pl:(\d+):([^|}]*)\|([^|}]*)\|([^}]*)\}/g, function(_,n,a,b,c){ return pl(n,a,b,c); });
+      w = t; break;
+    }
+    if(w===null){
+      // Prefix d'emoji o símbol: "🔪 Tall"
+      var em = core.match(/^([^A-Za-zÀ-ÿ0-9]+?)\s*([A-Za-zÀ-ÿ].*)$/);
+      if(em && em[1].trim()){ var r0 = tr(em[2]); if(r0) w = em[1] + r0; }
+    }
+    if(w===null){
+      // Frases de l'assessor: traduir frase per frase
+      var parts = core.match(/[^.]+\.(\s|$)/g);
+      if(parts && parts.length>1 && parts.join('').trim()===core){
+        var any=false, out = parts.map(function(p){ var r=tr(p.trim()); if(r){any=true;return r;} return p.trim(); });
+        if(any) w = out.join(' ');
+      }
+    }
+    if(w===null) return null;
+  }
+  return src.replace(core, w);
+}
+var busy=false, OBS=null;
+function doText(node){
+  var o = ORIG.has(node) ? ORIG.get(node) : node.nodeValue;
+  if(!ORIG.has(node)) ORIG.set(node, o);
+  var t = lang==='ca' && !hasCa(o) ? o : (tr(o) || o);
+  if(node.nodeValue !== t) node.nodeValue = t;
+}
+function hasCa(o){ var c=o.trim(); var e=D.strings[c]; if(e&&e.ca) return true;
+  for(var i=0;i<PATS.length;i++) if(PATS[i].t.ca && PATS[i].re.test(c)) return true; return false; }
+function doEl(el){
+  var m = AORIG.get(el); if(!m){ m={}; AORIG.set(el,m); }
+  ATTRS.forEach(function(a){
+    if(!el.hasAttribute(a)) return;
+    if(!(a in m)) m[a]=el.getAttribute(a);
+    var t = tr(m[a]) || m[a]; if(el.getAttribute(a)!==t) el.setAttribute(a,t);
+  });
+}
+var SKIP = {SCRIPT:1, STYLE:1, NOSCRIPT:1};
+function walk(root){
+  if(root.nodeType===3){ if(root.parentNode && !SKIP[root.parentNode.nodeName] && root.parentNode.nodeName!=='TEXTAREA') doText(root); return; }
+  if(root.nodeType!==1 || SKIP[root.nodeName] || root.id==='langPick') return;
+  doEl(root);
+  var w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT|NodeFilter.SHOW_ELEMENT, {acceptNode:function(n){
+    if(n.nodeType===1) return (SKIP[n.nodeName]||n.id==='langPick') ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT;
+    return NodeFilter.FILTER_ACCEPT; }});
+  var n; while((n=w.nextNode())){ if(n.nodeType===3){ if(n.parentNode.nodeName!=='TEXTAREA') doText(n); } else doEl(n); }
+}
+function apply(){
+  busy=true;
+  document.documentElement.lang = lang;
+  var pr = word('Preu segons la teva tarifa') || 'Preu segons la teva tarifa';
+  document.documentElement.style.setProperty('--i18n-price', JSON.stringify(pr));
+  walk(document.body);
+  var t = word('Catàleg NEXE'); document.title = t || 'Catàleg NEXE';
+  var b = document.getElementById('langPickLabel'); if(b) b.textContent = SHORT[lang];
+  if(OBS) OBS.takeRecords();
+  busy=false;
+}
+window._clientLang = function(){ return lang; };
+window._clientT = function(s){ return lang==='ca' ? s : (tr(s)||s); };
+function setLang(l){ lang=l; try{ localStorage.setItem('lang', l); }catch(e){} apply(); }
+function addPicker(){
+  var h = document.getElementById('header'); if(!h || document.getElementById('langPick')) return;
+  var box = document.createElement('label'); box.className='lang-pick'; box.id='langPick';
+  var sp = document.createElement('span'); sp.id='langPickLabel'; sp.textContent=SHORT[lang]; box.appendChild(sp);
+  var sel = document.createElement('select'); sel.setAttribute('aria-label','Idioma / Language');
+  Object.keys(D.languages).forEach(function(k){ var o=document.createElement('option'); o.value=k; o.textContent=D.languages[k]; if(k===lang) o.selected=true; sel.appendChild(o); });
+  sel.addEventListener('change', function(){ setLang(sel.value); });
+  box.appendChild(sel);
+  var ob = document.getElementById('orderBtn'); h.insertBefore(box, ob || null);
+}
+function start(){
+  addPicker(); apply();
+  OBS = new MutationObserver(function(ms){
+    if(busy) return; busy=true;
+    ms.forEach(function(m){
+      if(m.type==='characterData'){ ORIG.set(m.target, m.target.nodeValue); doText(m.target); }
+      else if(m.type==='attributes'){ var mm=AORIG.get(m.target); if(!mm){ doEl(m.target); } else { var v=m.target.getAttribute(m.attributeName);
+          var cur = tr(mm[m.attributeName]||'')||mm[m.attributeName]; if(v!==cur){ mm[m.attributeName]=v; doEl(m.target);} } }
+      else m.addedNodes.forEach(function(n){ walk(n); });
+    });
+    OBS.takeRecords(); busy=false;
+  });
+  OBS.observe(document.body, {childList:true, subtree:true, characterData:true, attributes:true, attributeFilter:ATTRS});
+}
+if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', start); else start();
+})();
+</script>"""
 
 
 def strip_prices(obj):
@@ -193,7 +316,10 @@ def build(dest):
         CLIENT_JS.replace('__WA__', WHATSAPP)
         + "\nfunction shareOrder(){ return _clientSendWhatsApp(); }\nfunction _internalShareOrder(){")
     rep('<head>', '<head>\n' + STORAGE_SHIM)
-    rep('</body>', '<style>' + CLIENT_CSS + '</style>\n</body>')
+    i18n = json.load(open(os.path.join(nexe.ROOT, 'data', 'i18n-clients.json'), encoding='utf-8'))
+    i18n.pop('_comment', None)
+    rep('</body>', '<style>' + CLIENT_CSS + I18N_CSS + '</style>\n'
+        + I18N_JS.replace('__I18N__', json.dumps(i18n, ensure_ascii=False).replace('</', '<\\/')) + '\n</body>')
     html = html.replace('🛒 Pedido</span>', '🛒 La teva comanda</span>')
     html = html.replace('Veure pedido →', 'Veure comanda →')
     html = html.replace('➕ Afegir al pedido', '➕ Afegir a la comanda')

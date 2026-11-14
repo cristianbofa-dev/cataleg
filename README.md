@@ -316,3 +316,11 @@ a https://cristianbofa-dev.github.io/cataleg/ (aquest repositori).
 - Qualsevol versió anterior es recupera amb `git log` i `git checkout <commit>`.
 - `python3 tools/nexe.py verify <fitxer.html>` comprova que un build
   coincideix amb un HTML de referència (codi idèntic i dades idèntiques).
+
+### Idiomes del catàleg per a clients
+
+El catàleg per a clients es pot llegir en català, castellà, anglès i ucraïnès (botó `CA/ES/EN/УКР` a la capçalera, sense banderes). L'idioma inicial surt de l'idioma del mòbil (si no és cap d'aquests, castellà) i queda recordat.
+
+- Les traduccions són a `data/i18n-clients.json`: la clau és el text tal com surt a l'app i al costat hi ha `es`, `en`, `uk` (i `ca` quan cal corregir l'original). Per canviar una traducció, edita el fitxer i torna a publicar amb `bash tools/publish_clients.sh`.
+- Es tradueix la interfície i les categories; els noms i descripcions dels productes es queden com els dona el proveïdor.
+- La comanda de WhatsApp sempre arriba en català, amb una línia que diu l'idioma del client si no és el català.
