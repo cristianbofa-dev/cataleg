@@ -333,3 +333,12 @@ El catàleg per a clients es pot llegir en català, castellà, anglès i ucraïn
 - `crossSell`: regles per subcategoria (`{"subcat": "discs-tall"}`) o per producte concret (`{"idx": 970}`); val la primera que coincideix. Si falten productes, s'omple amb altres de la mateixa categoria.
 - Cada producte porta `idx` i `ref`; si l'índex deixa d'apuntar a la mateixa referència, el build s'atura i avisa.
 - Els productes que afegeixis a la llista ⭐ Recomanats des de l'app també surten a la portada, darrere dels de `promo.json`.
+
+### Catàleg amb contrasenya (GitHub Pages)
+
+`tools/publish_pages.sh` publica el catàleg NEXE **xifrat**: porta preus, clients i costos (si hi ha `private/`), però sense la contrasenya és illegible, encara que el repositori i la web siguin públics. L'app Crown (`/crown/`) i el web de clients no canvien.
+
+- Xifratge: `tools/xifrar.py` (ECDH P-256 + AES-256-GCM; la clau privada va dins `clau.json` protegida amb la contrasenya, PBKDF2-SHA256 de 600.000 iteracions). La pàgina d'entrada és `src/xifrat.html`.
+- **Canviar la contrasenya** des de l'iPad: obrir la web amb `?clau` al final (o l'enllaç "Canviar la contrasenya"), posar l'actual i la nova, copiar el text i enganxar-lo a `clau.json` de la branca `gh-pages` a GitHub. Les publicacions següents agafen sempre el `clau.json` publicat, així que el canvi no es perd.
+- **Oblidar l'iPad** (tornar a demanar la contrasenya): obrir la web amb `?oblidar`.
+- Si s'oblida la contrasenya: `python3 tools/xifrar.py init` crea una clau nova (`data/clau-pagina.json`); cal esborrar `clau.json` de `gh-pages` abans de tornar a publicar.

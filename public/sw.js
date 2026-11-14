@@ -8,7 +8,7 @@
  */
 var VERSION = '__BUILD_VERSION__';
 var CACHE = 'nexe-cataleg-' + VERSION;
-var CORE = ['./', './index.html', './fotos-extra.js', './manifest.json',
+var CORE = ['./', './index.html', './fotos-extra.js', './manifest.json', './clau.json',
             './icons/icon-192.png', './icons/icon-512.png', './icons/apple-touch-icon.png'];
 var OTHER_APPS = ['crown/', 'clients/']; // subcarpetes amb una app independent
 var NETWORK_TIMEOUT = 4000; // amb poca cobertura, no esperar més: obrir la còpia desada
@@ -82,6 +82,17 @@ self.addEventListener('fetch', function (event) {
           return hit || caches.match('./');
         });
       })
+    );
+    return;
+  }
+
+  // clau.json (catàleg amb contrasenya): la xarxa primer, per si s'ha canviat la contrasenya
+  if (rel === 'clau.json') {
+    event.respondWith(
+      fromNetwork(req, NETWORK_TIMEOUT).then(function (res) {
+        if (res.ok) { var copy = res.clone(); caches.open(CACHE).then(function (c) { c.put('./clau.json', copy); }); }
+        return res;
+      }).catch(function () { return caches.match('./clau.json'); })
     );
     return;
   }
