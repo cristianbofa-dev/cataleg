@@ -14269,7 +14269,7 @@
   "n": "Colorante Universal Tenax 75ml. / Colorantes",
   "r": "1/",
   "d": "Pasta colorante universal para masillas y resinas de poliéster y sistemas epoxi.\n\nPara mármol, piedra, porcelánico, granito, cuarzo y hormigón.\n\n(El set de 10 colores contiene los colores amarillo, marrón, blanco, negro, rojo, verde, azul, gris oscuro y color crema).\n\n                        Plazo de entrega: De 5 a 7 días",
-  "p": "15.95",
+  "p": 15.5,
   "b": "SPRINT",
   "s": "COLORANTES",
   "i": "imgs/products-2657-1-m.jpeg",
@@ -14288,67 +14288,67 @@
    {
     "id": 2658,
     "label": "Rojo / Rosa",
-    "price": 15.95,
+    "price": 15.5,
     "star": 0
    },
    {
     "id": 2659,
     "label": "Amarillo",
-    "price": 15.95,
+    "price": 15.5,
     "star": 0
    },
    {
     "id": 2660,
     "label": "Rojo / Marrón",
-    "price": 15.95,
+    "price": 15.5,
     "star": 0
    },
    {
     "id": 2661,
     "label": "Verde",
-    "price": 15.95,
+    "price": 15.5,
     "star": 0
    },
    {
     "id": 2662,
     "label": "Gris",
-    "price": 15.95,
+    "price": 15.5,
     "star": 0
    },
    {
     "id": 2663,
     "label": "Blanco",
-    "price": 15.95,
+    "price": 15.5,
     "star": 0
    },
    {
     "id": 2664,
     "label": "Marrón",
-    "price": 15.95,
+    "price": 15.5,
     "star": 0
    },
    {
     "id": 2665,
     "label": "Negro",
-    "price": 15.95,
+    "price": 15.5,
     "star": 0
    },
    {
     "id": 2666,
     "label": "Buff",
-    "price": 15.95,
+    "price": 15.5,
     "star": 0
    },
    {
     "id": 3325,
     "label": "Azul",
-    "price": 15.95,
+    "price": 15.5,
     "star": 0
    },
    {
     "id": 2667,
     "label": "Set 10 colores",
-    "price": 82,
+    "price": 102,
     "star": 0
    }
   ],
