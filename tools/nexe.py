@@ -364,6 +364,11 @@ def make_light(products, images, code_text, max_size, quality, extra_size=300, e
     return out
 
 
+# Ports Crown: PORTS_COMANDA € per comanda (productes CROWN), gratuïts a partir de
+# PORTS_LLINDAR € de productes Crown. Els preus Crown no porten ports.
+PORTS_LLINDAR = 450
+PORTS_COMANDA = 10
+
 def load_promo(products):
     """Recomanats de portada i venda creuada (data/promo.json), comprovant que
     cada índex continua apuntant a la mateixa referència."""
@@ -418,7 +423,7 @@ def build_html(use_private=False, light=None, extras_mode='web', extra_files=Non
     data = {
         'products': PRODUCTS_PREFIX + compact(products) + ';',
         'variant_groups': GROUPS_PREFIX + compact(groups) + ';',
-        'promo': 'var PROMO = ' + compact(promo) + ';',
+        'promo': 'var PROMO = ' + compact(promo) + ';\nvar PORTS_LLINDAR = %d;\nvar PORTS_COMANDA = %d;' % (PORTS_LLINDAR, PORTS_COMANDA),
         'clients': CLIENTS_HEADER + js_safe(json.dumps(clients, ensure_ascii=False, indent=2)) + ';\n',
         'images': IMAGES_PREFIX + compact(images) + ';' + (
             # Fotos addicionals en un fitxer a part (--extras bundle)

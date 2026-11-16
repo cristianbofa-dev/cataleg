@@ -76,8 +76,8 @@ TIPUS_TXT = {
 }
 
 # Ports: PORTS_COMANDA € per comanda, gratuïts a partir de PORTS_LLINDAR € de compra
-PORTS_LLINDAR = 450
-PORTS_COMANDA = 10
+PORTS_LLINDAR = nexe.PORTS_LLINDAR
+PORTS_COMANDA = nexe.PORTS_COMANDA
 
 STORAGE_SHIM = """<script>/* Catàleg Crown: memòria del navegador separada del catàleg NEXE */
 (function(){try{var P='crown_',S=Storage.prototype,L=window.localStorage;
