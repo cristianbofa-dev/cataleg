@@ -75,6 +75,9 @@ TIPUS_TXT = {
     'I': 'Instrument de mesura.',
 }
 
+# Comanda a partir d'aquest import (preus de venda): es descompten els ports de cada màquina
+PORTS_LLINDAR = 520
+
 STORAGE_SHIM = """<script>/* Catàleg Crown: memòria del navegador separada del catàleg NEXE */
 (function(){try{var P='crown_',S=Storage.prototype,L=window.localStorage;
 ['getItem','setItem','removeItem'].forEach(function(m){var o=S[m];S[m]=function(k){var a=Array.prototype.slice.call(arguments);
@@ -129,6 +132,8 @@ def products_and_images():
             desc.append('Es ven el cos de la màquina, sense bateria ni carregador.')
         if it['ref'].startswith('CAB'):
             desc.append('Promoció: comprant 2 bateries a la mateixa comanda, 5 € de descompte.')
+        if it.get('ports'):
+            desc.append('Comandes a partir de %d €: ports gratuïts.' % PORTS_LLINDAR)
         desc.append('Preu sense IVA. Fullet Crown tardor-hivern 2026 (vigència fins a gener 2027).')
         p = {
             'n': it['nom'], 'r': it['ref'], 'b': 'CROWN', 'p': it['preu'],
@@ -139,6 +144,8 @@ def products_and_images():
         }
         if it['ref'].startswith('CAB'):
             p['promoBateria'] = True
+        if it.get('ports'):
+            p['ports'] = it['ports']
         products.append(p)
     return products, images
 
@@ -197,7 +204,7 @@ def build_html():
     data = {
         'products': nexe.PRODUCTS_PREFIX + nexe.compact(products) + ';',
         'variant_groups': nexe.GROUPS_PREFIX + '[];',
-        'promo': 'var PROMO = {"recomanats":[],"crossSell":[]};',
+        'promo': 'var PROMO = {"recomanats":[],"crossSell":[]};\nvar PORTS_LLINDAR = %d;' % PORTS_LLINDAR,
         'clients': nexe.CLIENTS_HEADER + '[];\n',
         'images': nexe.IMAGES_PREFIX + nexe.compact(images) + ';',
     }

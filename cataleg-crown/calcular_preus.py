@@ -30,6 +30,7 @@ import generar_pdf as gp  # noqa: E402
 
 LLINDAR_PORTS = 300.0
 MARGE_MIN = 0.30
+PVP_SENSE_MINIM = 500.0
 # Referència del catàleg -> referència de l'Excel quan no coincideixen
 ALIES = {
     'CT21129HBX-2C1 BMC': 'CT21129HBX-2C1B', 'CT21151HMX-2C1 BMC': 'CT21151HMX-2C1',
@@ -74,7 +75,8 @@ def main():
         ports = 0 if (fix or cost >= LLINDAR_PORTS) else gp.RECARREC[it['tipus']]
         base = round(it['fullet'] + ports, 2)
         minim = amunt_90(cost / (1 - MARGE_MIN)) + ports
-        preu = max(base, round(minim, 2))
+        # Màquines de més de 500 € al fullet: es manté el preu del catàleg encara que no arribi al 30 %
+        preu = base if it['fullet'] > PVP_SENSE_MINIM else max(base, round(minim, 2))
         preus[it['ref']] = {'preu': preu, 'ports': ports}
         costos[it['ref']] = cost
         files.append([it['ref'], it['nom'], it['tipus'], cost, it['fullet'], ports, preu,

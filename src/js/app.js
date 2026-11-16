@@ -3345,8 +3345,23 @@ function getOrderBatteryCount(){
   }
   return n;
 }
-function getOrderDiscount(){
+function getOrderBatteryDiscount(){
   return Math.floor(getOrderBatteryCount() / 2) * PROMO_BATERIA_DTE;
+}
+// Ports gratuïts (app Crown): si la comanda arriba a PORTS_LLINDAR € es descompten
+// els ports inclosos al preu de cada màquina (camp p.ports).
+function getOrderPortsDiscount(){
+  if(typeof PORTS_LLINDAR === 'undefined' || !PORTS_LLINDAR) return 0;
+  if(getOrderSubtotal() < PORTS_LLINDAR) return 0;
+  var d = 0;
+  for(var i=0;i<orderItems.length;i++){
+    var p = PRODS[orderItems[i].idx];
+    if(p && p.ports) d += p.ports * orderItems[i].qty;
+  }
+  return d;
+}
+function getOrderDiscount(){
+  return getOrderBatteryDiscount() + getOrderPortsDiscount();
 }
 function getOrderTotal(){
   return Math.max(0, getOrderSubtotal() - getOrderDiscount());
@@ -3553,7 +3568,17 @@ function renderOrderPanel(){
     if(item.notes) html += '<div class="order-item-notes">'+escHtml(item.notes)+'</div>';
     html += '</div></div>';
   }
-  var _dte = getOrderDiscount();
+  var _dte = getOrderBatteryDiscount();
+  var _dp = getOrderPortsDiscount();
+  if(_dp > 0){
+    html += '<div class="order-item order-promo" style="display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 14px;margin-top:6px;border-radius:12px;background:rgba(36,138,61,.10);color:#1d6b31;font-weight:600">'
+      + '<span>🚚 Ports gratuïts (comanda de més de '+formatPrice(PORTS_LLINDAR).replace(',00','')+')</span>'
+      + '<span>−'+formatPrice(_dp)+'</span></div>';
+  } else if(typeof PORTS_LLINDAR !== 'undefined' && PORTS_LLINDAR && orderItems.length && getOrderSubtotal() < PORTS_LLINDAR){
+    var _falta = PORTS_LLINDAR - getOrderSubtotal();
+    html += '<div class="order-item order-promo-hint" style="padding:10px 14px;margin-top:6px;border-radius:12px;background:rgba(0,0,0,.04);color:#6e6e73;font-size:13px">'
+      + '🚚 Falten '+formatPrice(_falta)+' per tenir els ports gratuïts (a partir de '+formatPrice(PORTS_LLINDAR).replace(',00','')+')</div>';
+  }
   if(_dte > 0){
     var _nb = getOrderBatteryCount();
     html += '<div class="order-item order-promo" style="display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 14px;margin-top:6px;border-radius:12px;background:rgba(36,138,61,.10);color:#1d6b31;font-weight:600">'
@@ -3619,7 +3644,8 @@ function shareOrder(){
   lines.push('━'.repeat(30));
   if(getOrderDiscount() > 0){
     lines.push('Subtotal: '+formatPrice(getOrderSubtotal()));
-    lines.push('🔋 Promoció bateries ('+getOrderBatteryCount()+' bateries): −'+formatPrice(getOrderDiscount()));
+    if(getOrderPortsDiscount() > 0) lines.push('🚚 Ports gratuïts: −'+formatPrice(getOrderPortsDiscount()));
+    if(getOrderBatteryDiscount() > 0) lines.push('🔋 Promoció bateries ('+getOrderBatteryCount()+' bateries): −'+formatPrice(getOrderBatteryDiscount()));
   }
   lines.push('*TOTAL: '+formatPrice(getOrderTotal())+'*');
   if(orderNotes) lines.push('📌 '+orderNotes);

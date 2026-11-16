@@ -124,6 +124,8 @@ def construir(items, sortida):
     story = [Spacer(1, 62 * mm), Paragraph('Màquines Crown', st['cov']), Spacer(1, 5 * mm),
              Paragraph('Catàleg NEXE · Tardor-hivern 2026', st['covs']),
              Paragraph('Preus sense IVA · Vigència fins a gener 2027 o fins a exhaurir existències', st['covs']),
+             Spacer(1, 4 * mm),
+             Paragraph('<b>Ports inclosos al preu.</b> Comandes a partir de 520 €: es descompten els ports de cada màquina.', st['covs']),
              Spacer(1, 16 * mm)]
     toc = []
     for titol, tipus in GRUPS:
