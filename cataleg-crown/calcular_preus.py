@@ -5,14 +5,15 @@ Preus NEXE de les màquines Crown a partir dels costos (preu net del fullet).
   python3 cataleg-crown/calcular_preus.py [private/crown_netos_2026.xlsx]
 
 Regles:
-  - Ports (recàrrec) segons el tipus de maquines.txt: C +10, M +5, P +10, B +5, I +5.
-    Carregadors (CAC/CAU): sense ports.
-  - Si el cost de la màquina és de 300 € o més, no porta ports (el proveïdor no en cobra).
-  - Preu = preu del fullet + ports, però mai per sota de cost / 0,7 (30 % de marge
-    sobre el preu de venda) + ports. Si cal pujar-lo, s'arrodoneix amunt a ,90.
+  - Els ports NO van dins del preu: són 10 € per comanda, gratuïts a partir de 450 €
+    (ho calcula l'app, tools/crown_app.py).
+  - Preu = preu del fullet, però mai per sota de cost / 0,7 (30 % de marge sobre el preu
+    de venda). Si cal pujar-lo, s'arrodoneix amunt a ,90 o ,00.
+  - Excepcions al mínim: carregadors (CAC/CAU) i màquines de més de 500 € al fullet,
+    que es queden al preu del fullet.
 
 Escriu:
-  cataleg-crown/preus_nexe.json   (públic: preu i ports de cada referència, sense costos)
+  cataleg-crown/preus_nexe.json   (públic: preu de cada referència, sense costos)
   private/crown_costos.json       (privat: cost de cada referència)
   dist/Crown_marges.csv           (privat: taula per revisar marges)
 """
@@ -28,7 +29,6 @@ ARREL = os.path.dirname(AQUI)
 sys.path.insert(0, AQUI)
 import generar_pdf as gp  # noqa: E402
 
-LLINDAR_PORTS = 300.0
 MARGE_MIN = 0.30
 PVP_SENSE_MINIM = 500.0
 # Referència del catàleg -> referència de l'Excel quan no coincideixen
@@ -72,11 +72,11 @@ def main():
         if cost is None:
             falten.append(it['ref'])
             continue
-        ports = 0 if (fix or cost >= LLINDAR_PORTS) else gp.RECARREC[it['tipus']]
-        base = round(it['fullet'] + ports, 2)
-        minim = amunt_90(cost / (1 - MARGE_MIN)) + ports
-        # Màquines de més de 500 € al fullet: es manté el preu del catàleg encara que no arribi al 30 %
-        preu = base if it['fullet'] > PVP_SENSE_MINIM else max(base, round(minim, 2))
+        ports = 0
+        base = it['fullet']
+        minim = amunt_90(cost / (1 - MARGE_MIN))
+        # Carregadors i màquines de més de 500 € al fullet: preu del fullet encara que no arribi al 30 %
+        preu = base if (fix or it['fullet'] > PVP_SENSE_MINIM) else max(base, minim)
         preus[it['ref']] = {'preu': preu, 'ports': ports}
         costos[it['ref']] = cost
         files.append([it['ref'], it['nom'], it['tipus'], cost, it['fullet'], ports, preu,
@@ -91,8 +91,7 @@ def main():
         w.writerow(['Referència', 'Nom', 'Tipus', 'Cost', 'PVP fullet', 'Ports', 'Preu NEXE', 'Marge % (sense ports)', 'Nota'])
         for r in files:
             w.writerow([str(x).replace('.', ',') if isinstance(x, float) else x for x in r])
-    print('%d preus calculats, %d pujats al mínim del 30 %%, %d sense ports per cost >= 300 €' % (
-        len(preus), sum(1 for r in files if r[8]), sum(1 for r in files if r[5] == 0 and not (r[0].startswith(gp.PREU_FIX_PREFIXOS)))))
+    print('%d preus calculats, %d pujats al mínim del 30 %%' % (len(preus), sum(1 for r in files if r[8])))
     if falten:
         print('Sense cost a l\'Excel (es queden amb la regla de sempre):', ', '.join(falten))
 

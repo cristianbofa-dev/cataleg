@@ -5,14 +5,9 @@ Catàleg de màquines Crown (fullet tardor-hivern 2026) amb preus NEXE.
   python3 cataleg-crown/generar_pdf.py            # -> dist/Cataleg_Crown_NEXE.pdf
   python3 cataleg-crown/generar_pdf.py --llista   # també dist/Crown_preus.csv
 
-Preu de venda = preu del fullet (€ + IVA) + ports, segons el tipus de
-maquines.txt:
-  C  elèctrica de cable                 +10 €
-  M  màquina a bateria                   +5 €
-  P  pack màquina + bateria              +10 €
-  B  bateria o kit de recàrrega          +5 € (carregadors: preu de fullet)
-  I  instrument de mesura a piles         +5 €
-(Els carregadors i les referències de PREU_FIX van a preu de fullet.)
+Preu de venda = preu NEXE de preus_nexe.json (calcular_preus.py: preu del fullet,
+amb un mínim del 30 % de marge). Si no hi és, preu del fullet.
+Ports a part: 10 € per comanda, gratuïts a partir de 450 €.
 
 Requisits: pip3 install reportlab pillow
 """
@@ -31,7 +26,7 @@ from reportlab.platypus import (Image, KeepTogether, PageBreak, Paragraph,
 
 AQUI = os.path.dirname(os.path.abspath(__file__))
 ARREL = os.path.dirname(AQUI)
-RECARREC = {'C': 10, 'M': 5, 'P': 10, 'B': 5, 'I': 5}
+RECARREC = {'C': 0, 'M': 0, 'P': 0, 'B': 0, 'I': 0}  # els ports ja no van dins del preu
 # Carregadors (CAC… i el carregador USB CAU…): a preu de fullet, sense ports
 PREU_FIX_PREFIXOS = ('CAC', 'CAU')
 PREU_FIX = set()  # altres referències concretes a preu de fullet
@@ -125,7 +120,7 @@ def construir(items, sortida):
              Paragraph('Catàleg NEXE · Tardor-hivern 2026', st['covs']),
              Paragraph('Preus sense IVA · Vigència fins a gener 2027 o fins a exhaurir existències', st['covs']),
              Spacer(1, 4 * mm),
-             Paragraph('<b>Ports inclosos al preu.</b> Si en demanes diverses, només es paguen 10 € de ports per comanda. A partir de 520 €, ports gratuïts.', st['covs']),
+             Paragraph('<b>Ports: 10 € per comanda.</b> Gratuïts a partir de 450 €.', st['covs']),
              Spacer(1, 16 * mm)]
     toc = []
     for titol, tipus in GRUPS:
@@ -195,7 +190,7 @@ def main():
         csvp = os.path.join(os.path.dirname(os.path.abspath(a.out)), 'Crown_preus.csv')
         with open(csvp, 'w', newline='', encoding='utf-8-sig') as f:
             w = csv.writer(f, delimiter=';')
-            w.writerow(['Referència', 'Nom', 'Tipus', 'Preu fullet', 'Ports', 'Preu NEXE', 'Pàgina fullet'])
+            w.writerow(['Referència', 'Nom', 'Tipus', 'Preu fullet', 'Ports', 'Preu NEXE', 'Pàgina fullet'])  # ports: 0, van per comanda
             for i in items:
                 w.writerow([i['ref'], i['nom'], i['tipus'], ('%.2f' % i['fullet']).replace('.', ','),
                             ('%.2f' % i['ports']).replace('.', ','),

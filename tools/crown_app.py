@@ -2,7 +2,7 @@
 """
 App "Catàleg Crown": el mateix catàleg que NEXE (fitxes, cerca, comandes,
 mode edició, sense connexió…) però només amb les màquines Crown de
-cataleg-crown/maquines.txt i els preus NEXE (fullet + ports).
+cataleg-crown/maquines.txt i els preus NEXE (fullet; ports a part, per comanda).
 
   python3 tools/crown_app.py                # -> dist/crown/index.html (+ manifest, sw.js, icones)
   python3 tools/crown_app.py --out f.html   # un sol fitxer (p. ex. per a l'app Documents)
@@ -75,9 +75,8 @@ TIPUS_TXT = {
     'I': 'Instrument de mesura.',
 }
 
-# Comanda a partir d'aquest import (preus de venda): es descompten els ports de cada màquina
-PORTS_LLINDAR = 520
-# Ports reals per comanda: amb diverses màquines es descompta el que passa d'aquest import
+# Ports: PORTS_COMANDA € per comanda, gratuïts a partir de PORTS_LLINDAR € de compra
+PORTS_LLINDAR = 450
 PORTS_COMANDA = 10
 
 STORAGE_SHIM = """<script>/* Catàleg Crown: memòria del navegador separada del catàleg NEXE */
@@ -134,8 +133,7 @@ def products_and_images():
             desc.append('Es ven el cos de la màquina, sense bateria ni carregador.')
         if it['ref'].startswith('CAB'):
             desc.append('Promoció: comprant 2 bateries a la mateixa comanda, 5 € de descompte.')
-        if it.get('ports'):
-            desc.append('Ports inclosos al preu. Si en demanes diverses, només es paguen %d € de ports per comanda; a partir de %d €, ports gratuïts.' % (PORTS_COMANDA, PORTS_LLINDAR))
+        desc.append('Ports: %d € per comanda; gratuïts a partir de %d €.' % (PORTS_COMANDA, PORTS_LLINDAR))
         desc.append('Preu sense IVA. Fullet Crown tardor-hivern 2026 (vigència fins a gener 2027).')
         p = {
             'n': it['nom'], 'r': it['ref'], 'b': 'CROWN', 'p': it['preu'],
@@ -146,8 +144,6 @@ def products_and_images():
         }
         if it['ref'].startswith('CAB'):
             p['promoBateria'] = True
-        if it.get('ports'):
-            p['ports'] = it['ports']
         products.append(p)
     return products, images
 
