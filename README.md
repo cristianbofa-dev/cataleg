@@ -348,3 +348,7 @@ El catàleg per a clients es pot llegir en català, castellà, anglès i ucraïn
 `tools/publish_clients.sh` també hi publica l'app Crown (amb preus) a `/crown/` (www.nexeindustrial.es/crown/). La neteja de còpies offline del web de clients no toca la de Crown.
 
 El web de clients (`tools/client_app.py`) no es descarrega sencer: l'HTML només porta les dades (uns 2 MB, mig MB comprimit) i les fotos són fitxers a `imgs/` que es carreguen quan es veuen. No té còpia sense connexió; el seu `sw.js` només esborra la que desaven les versions anteriors.
+
+### Preus Crown a partir dels costos
+
+`python3 cataleg-crown/calcular_preus.py` llegeix els costos (`private/crown_netos_2026.xlsx`, no es publica) i escriu `cataleg-crown/preus_nexe.json` (només preu i ports, sense costos), que fan servir el PDF, l'app Crown i el catàleg general. Regles: ports segons el tipus (+10/+5, carregadors 0); sense ports si el cost és de 300 € o més; preu mínim = cost / 0,7 (30 % de marge sobre venda) + ports, arrodonit amunt a ,90 o ,00. També deixa `dist/Crown_marges.csv` per revisar marges.

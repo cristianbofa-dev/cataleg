@@ -49,7 +49,13 @@ GRIS = colors.HexColor('#6e6e73')
 LINIA = colors.HexColor('#e5e5ea')
 
 
-def llegir():
+def llegir(sense_preus_nexe=False):
+    # Preus calculats amb els costos (calcular_preus.py); si no n'hi ha, regla fullet + ports
+    pn = {}
+    fp = os.path.join(AQUI, 'preus_nexe.json')
+    if not sense_preus_nexe and os.path.exists(fp):
+        import json
+        pn = json.load(open(fp, encoding='utf-8'))
     items = []
     with open(os.path.join(AQUI, 'maquines.txt'), encoding='utf-8') as f:
         for l in f:
@@ -60,7 +66,10 @@ def llegir():
             preu = float(preu)
             fix = ref in PREU_FIX or ref.startswith(PREU_FIX_PREFIXOS)
             venda = preu if fix else preu + RECARREC[tipus]
-            items.append({'pag': int(pag), 'ref': ref, 'nom': nom, 'fullet': preu,
+            ports = 0 if fix else RECARREC[tipus]
+            if ref in pn:
+                venda, ports = pn[ref]['preu'], pn[ref]['ports']
+            items.append({'pag': int(pag), 'ref': ref, 'nom': nom, 'fullet': preu, 'ports': ports,
                           'tipus': tipus, 'seccio': seccio, 'preu': round(venda, 2),
                           'foto': os.path.join(AQUI, 'fotos', re.sub(r'[^\w\-]', '_', ref) + '.jpg')})
     return items
@@ -187,7 +196,7 @@ def main():
             w.writerow(['Referència', 'Nom', 'Tipus', 'Preu fullet', 'Ports', 'Preu NEXE', 'Pàgina fullet'])
             for i in items:
                 w.writerow([i['ref'], i['nom'], i['tipus'], ('%.2f' % i['fullet']).replace('.', ','),
-                            ('%.2f' % (i['preu'] - i['fullet'])).replace('.', ','),
+                            ('%.2f' % i['ports']).replace('.', ','),
                             ('%.2f' % i['preu']).replace('.', ','), i['pag']])
         print('CSV: %s' % csvp)
 

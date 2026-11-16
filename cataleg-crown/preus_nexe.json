@@ -1,0 +1,814 @@
+{
+ "CT22024 MC": {
+  "preu": 51.9,
+  "ports": 5
+ },
+ "CT22053 TB": {
+  "preu": 50.9,
+  "ports": 5
+ },
+ "CT21072HX-2 BMC": {
+  "preu": 139.9,
+  "ports": 10
+ },
+ "CT21081HQ-2BMC": {
+  "preu": 169.0,
+  "ports": 10
+ },
+ "CT21129HBX-2C1 BMC": {
+  "preu": 139.9,
+  "ports": 10
+ },
+ "CT21129HQX-2 BMC": {
+  "preu": 169.9,
+  "ports": 10
+ },
+ "CT21129HMX-2C1 BMC": {
+  "preu": 139.0,
+  "ports": 10
+ },
+ "CT21151HMX-2C1 BMC": {
+  "preu": 149.0,
+  "ports": 10
+ },
+ "CAB122006XE": {
+  "preu": 34.9,
+  "ports": 5
+ },
+ "CAB122020X": {
+  "preu": 37.9,
+  "ports": 5
+ },
+ "CAC122001X": {
+  "preu": 24.9,
+  "ports": 0
+ },
+ "CAC121018X": {
+  "preu": 14.9,
+  "ports": 0
+ },
+ "CT21128HMX": {
+  "preu": 104.9,
+  "ports": 5
+ },
+ "CT21145HMX": {
+  "preu": 114.9,
+  "ports": 5
+ },
+ "CT21075HMX 2BMC": {
+  "preu": 189.9,
+  "ports": 10
+ },
+ "CT21127HMX": {
+  "preu": 184.9,
+  "ports": 5
+ },
+ "CT21112HMX": {
+  "preu": 204.9,
+  "ports": 5
+ },
+ "CT21153HMX": {
+  "preu": 224.9,
+  "ports": 5
+ },
+ "CT21128HMX-BOLSA": {
+  "preu": 149.9,
+  "ports": 10
+ },
+ "CT21128HMX-2IMC": {
+  "preu": 175.9,
+  "ports": 10
+ },
+ "CT21145HMX-13-2BMC": {
+  "preu": 169.9,
+  "ports": 10
+ },
+ "CT21127HMX-4BMC": {
+  "preu": 339.9,
+  "ports": 10
+ },
+ "CT21127HMX-5IMC": {
+  "preu": 389.9,
+  "ports": 10
+ },
+ "CT21112HMX-5IMC": {
+  "preu": 449.9,
+  "ports": 10
+ },
+ "CT21153HMX-5IMC": {
+  "preu": 459.9,
+  "ports": 10
+ },
+ "CT21153HMX-8IMC": {
+  "preu": 529.9,
+  "ports": 0
+ },
+ "CT22051HX": {
+  "preu": 104.9,
+  "ports": 5
+ },
+ "CT22050HX": {
+  "preu": 144.9,
+  "ports": 5
+ },
+ "CT22062HX": {
+  "preu": 170.9,
+  "ports": 5
+ },
+ "CT22057HX": {
+  "preu": 194.9,
+  "ports": 5
+ },
+ "CT22058HX": {
+  "preu": 294.9,
+  "ports": 5
+ },
+ "CT22060HX": {
+  "preu": 404.9,
+  "ports": 5
+ },
+ "CT22051HX-BOLSA": {
+  "preu": 181.9,
+  "ports": 10
+ },
+ "CT22050HX-2IMC": {
+  "preu": 309.9,
+  "ports": 10
+ },
+ "CT22062HX-2IMC": {
+  "preu": 339.9,
+  "ports": 10
+ },
+ "CT22051HX-5IMC": {
+  "preu": 267,
+  "ports": 10
+ },
+ "CT22050HX-5IMC": {
+  "preu": 359.9,
+  "ports": 10
+ },
+ "CT22062HX-5IMC": {
+  "preu": 401.9,
+  "ports": 10
+ },
+ "CT22057HX-5IMC": {
+  "preu": 409.9,
+  "ports": 10
+ },
+ "CT22058HX-5IMC": {
+  "preu": 499.9,
+  "ports": 0
+ },
+ "CT22060-5IMC": {
+  "preu": 639.9,
+  "ports": 0
+ },
+ "CT22057HX-8IMC": {
+  "preu": 529.9,
+  "ports": 0
+ },
+ "CT22058HX-8IMC": {
+  "preu": 639.9,
+  "ports": 0
+ },
+ "CT22060HX-8 IMC": {
+  "preu": 779.9,
+  "ports": 0
+ },
+ "CT28018HX": {
+  "preu": 194.9,
+  "ports": 5
+ },
+ "CT28018HX-2C4BMC": {
+  "preu": 309.9,
+  "ports": 10
+ },
+ "CT28001HX": {
+  "preu": 274.9,
+  "ports": 5
+ },
+ "CT28001HX-4 IMC": {
+  "preu": 459.9,
+  "ports": 10
+ },
+ "CT26012HX": {
+  "preu": 224.9,
+  "ports": 5
+ },
+ "CT23001-125HX": {
+  "preu": 169.9,
+  "ports": 5
+ },
+ "CT23008-125HX": {
+  "preu": 174.9,
+  "ports": 5
+ },
+ "K-DC07IMC": {
+  "preu": 389.9,
+  "ports": 10
+ },
+ "CT23007HX": {
+  "preu": 134.9,
+  "ports": 5
+ },
+ "CT23018HX": {
+  "preu": 134.9,
+  "ports": 5
+ },
+ "CT25030HX BMC": {
+  "preu": 354.9,
+  "ports": 5
+ },
+ "CT25040-150HX": {
+  "preu": 304.9,
+  "ports": 5
+ },
+ "CT25040-150HX-5IMC": {
+  "preu": 499.9,
+  "ports": 0
+ },
+ "CT25003HX": {
+  "preu": 164.9,
+  "ports": 5
+ },
+ "CT25002-165HX": {
+  "preu": 194.9,
+  "ports": 5
+ },
+ "CT24001HX": {
+  "preu": 134.9,
+  "ports": 5
+ },
+ "CT25007HX": {
+  "preu": 129.9,
+  "ports": 5
+ },
+ "CT61001HX": {
+  "preu": 144.9,
+  "ports": 5
+ },
+ "CT26010HX": {
+  "preu": 174.9,
+  "ports": 5
+ },
+ "CT23010HX": {
+  "preu": 80.9,
+  "ports": 5
+ },
+ "CT23011HX": {
+  "preu": 80.9,
+  "ports": 5
+ },
+ "CT63001HX": {
+  "preu": 94.9,
+  "ports": 5
+ },
+ "CT29002HX": {
+  "preu": 84.9,
+  "ports": 5
+ },
+ "CT60001HX": {
+  "preu": 104.9,
+  "ports": 5
+ },
+ "CT26018HX": {
+  "preu": 64.9,
+  "ports": 5
+ },
+ "CT26008HX": {
+  "preu": 38.9,
+  "ports": 5
+ },
+ "CT29001HX": {
+  "preu": 170.9,
+  "ports": 5
+ },
+ "CT29001HX-2 TB": {
+  "preu": 269.0,
+  "ports": 10
+ },
+ "CT29018HX": {
+  "preu": 224.9,
+  "ports": 5
+ },
+ "CT29013HX": {
+  "preu": 94.9,
+  "ports": 5
+ },
+ "CT29053HX": {
+  "preu": 124.9,
+  "ports": 5
+ },
+ "CT29006HX": {
+  "preu": 204.9,
+  "ports": 5
+ },
+ "CT29012HX": {
+  "preu": 94.9,
+  "ports": 5
+ },
+ "CT29015HX": {
+  "preu": 104.9,
+  "ports": 5
+ },
+ "CAB202013XE": {
+  "preu": 47.9,
+  "ports": 5
+ },
+ "CAB205014XE": {
+  "preu": 84.9,
+  "ports": 5
+ },
+ "CAB208016XE CB": {
+  "preu": 124.9,
+  "ports": 5
+ },
+ "CAC202001X": {
+  "preu": 39.9,
+  "ports": 0
+ },
+ "CAC204001X": {
+  "preu": 49.9,
+  "ports": 0
+ },
+ "CAC204003X": {
+  "preu": 65.9,
+  "ports": 0
+ },
+ "CAC209001X": {
+  "preu": 89.9,
+  "ports": 0
+ },
+ "CAU02X": {
+  "preu": 25.9,
+  "ports": 0
+ },
+ "K-R06": {
+  "preu": 84.9,
+  "ports": 5
+ },
+ "K-R01": {
+  "preu": 137.9,
+  "ports": 5
+ },
+ "K-R03": {
+  "preu": 194.9,
+  "ports": 5
+ },
+ "K-R08": {
+  "preu": 216.9,
+  "ports": 5
+ },
+ "K-R04": {
+  "preu": 344.9,
+  "ports": 5
+ },
+ "K-DC24 IMC": {
+  "preu": 409.9,
+  "ports": 10
+ },
+ "K-DC25 IMC": {
+  "preu": 359.9,
+  "ports": 10
+ },
+ "K-DC29 IMC": {
+  "preu": 359.9,
+  "ports": 10
+ },
+ "K-DC01 IMC": {
+  "preu": 529.0,
+  "ports": 0
+ },
+ "K-DC13 IMC": {
+  "preu": 599.9,
+  "ports": 0
+ },
+ "K-DC04 IMC": {
+  "preu": 699.9,
+  "ports": 0
+ },
+ "K-DC27 IMC": {
+  "preu": 959.0,
+  "ports": 0
+ },
+ "CT10126C": {
+  "preu": 59.9,
+  "ports": 10
+ },
+ "CT10151": {
+  "preu": 69.9,
+  "ports": 10
+ },
+ "CT10152F": {
+  "preu": 109.9,
+  "ports": 10
+ },
+ "CT10143-13C": {
+  "preu": 79.9,
+  "ports": 10
+ },
+ "CT12018": {
+  "preu": 139.9,
+  "ports": 10
+ },
+ "CT10128C": {
+  "preu": 69.9,
+  "ports": 10
+ },
+ "CT10129C": {
+  "preu": 79.9,
+  "ports": 10
+ },
+ "CT10130C": {
+  "preu": 109.9,
+  "ports": 10
+ },
+ "CT10032": {
+  "preu": 149.9,
+  "ports": 10
+ },
+ "CT10148": {
+  "preu": 125.9,
+  "ports": 10
+ },
+ "CT10049": {
+  "preu": 139.9,
+  "ports": 10
+ },
+ "CT10182": {
+  "preu": 159.0,
+  "ports": 10
+ },
+ "CT13563-150 BMC": {
+  "preu": 409.9,
+  "ports": 10
+ },
+ "CT18180 BMC": {
+  "preu": 129.9,
+  "ports": 10
+ },
+ "CT18209 BMC": {
+  "preu": 159.9,
+  "ports": 10
+ },
+ "CT18116 BMC": {
+  "preu": 159.9,
+  "ports": 10
+ },
+ "CT18118V BMC": {
+  "preu": 389.9,
+  "ports": 10
+ },
+ "CT18190 BMC": {
+  "preu": 769.9,
+  "ports": 0
+ },
+ "CT18233 BMC": {
+  "preu": 179.0,
+  "ports": 10
+ },
+ "CT18245 BMC": {
+  "preu": 299.9,
+  "ports": 10
+ },
+ "CT18173M BMC": {
+  "preu": 329.9,
+  "ports": 10
+ },
+ "CT18123V BMC": {
+  "preu": 439.9,
+  "ports": 10
+ },
+ "CT18124 BMC": {
+  "preu": 679.9,
+  "ports": 0
+ },
+ "CT13499-115R": {
+  "preu": 62.9,
+  "ports": 10
+ },
+ "CT13499-125R": {
+  "preu": 67,
+  "ports": 10
+ },
+ "CT13571-115R": {
+  "preu": 78.9,
+  "ports": 10
+ },
+ "CT13571-125R": {
+  "preu": 79.9,
+  "ports": 10
+ },
+ "CT13676-125RSC": {
+  "preu": 149.9,
+  "ports": 10
+ },
+ "CT13677-125RSVC": {
+  "preu": 169.9,
+  "ports": 10
+ },
+ "CT13678-125RSVC": {
+  "preu": 189.9,
+  "ports": 10
+ },
+ "CT13502-115R": {
+  "preu": 96.9,
+  "ports": 10
+ },
+ "CT13502-125R": {
+  "preu": 97.9,
+  "ports": 10
+ },
+ "CT13506-125V": {
+  "preu": 109.9,
+  "ports": 10
+ },
+ "CT13507-150": {
+  "preu": 129.9,
+  "ports": 10
+ },
+ "CT13500-180S": {
+  "preu": 122.9,
+  "ports": 10
+ },
+ "CT13500-230S": {
+  "preu": 124.9,
+  "ports": 10
+ },
+ "CT13489-230S": {
+  "preu": 159.9,
+  "ports": 10
+ },
+ "CT13308": {
+  "preu": 99.9,
+  "ports": 10
+ },
+ "CT13307": {
+  "preu": 109.9,
+  "ports": 10
+ },
+ "CT15232": {
+  "preu": 279.9,
+  "ports": 10
+ },
+ "CT13302": {
+  "preu": 129.9,
+  "ports": 10
+ },
+ "CT13528": {
+  "preu": 169.9,
+  "ports": 10
+ },
+ "CT13545": {
+  "preu": 79.9,
+  "ports": 10
+ },
+ "CT13546": {
+  "preu": 99.9,
+  "ports": 10
+ },
+ "CT13547": {
+  "preu": 129.9,
+  "ports": 10
+ },
+ "CT13551-110RSV": {
+  "preu": 179.9,
+  "ports": 10
+ },
+ "CT15187-165": {
+  "preu": 122.9,
+  "ports": 10
+ },
+ "CT15188-190": {
+  "preu": 135.9,
+  "ports": 10
+ },
+ "CT15210-235": {
+  "preu": 199.9,
+  "ports": 10
+ },
+ "CT15134-165": {
+  "preu": 199.9,
+  "ports": 10
+ },
+ "SET CROWN 10": {
+  "preu": 349.9,
+  "ports": 10
+ },
+ "CT15233P": {
+  "preu": 459.9,
+  "ports": 10
+ },
+ "CT15286S": {
+  "preu": 599.9,
+  "ports": 0
+ },
+ "CT15305KF": {
+  "preu": 857,
+  "ports": 0
+ },
+ "CT15212": {
+  "preu": 84.9,
+  "ports": 10
+ },
+ "CT15189": {
+  "preu": 119.9,
+  "ports": 10
+ },
+ "CT15181": {
+  "preu": 134.9,
+  "ports": 10
+ },
+ "CT15133": {
+  "preu": 129.9,
+  "ports": 10
+ },
+ "CT31013": {
+  "preu": 79.9,
+  "ports": 10
+ },
+ "CT31014": {
+  "preu": 109.9,
+  "ports": 10
+ },
+ "CT19041K": {
+  "preu": 59.9,
+  "ports": 10
+ },
+ "CT19042K": {
+  "preu": 79.9,
+  "ports": 10
+ },
+ "CT19043K": {
+  "preu": 99.9,
+  "ports": 10
+ },
+ "CT13637": {
+  "preu": 64.9,
+  "ports": 10
+ },
+ "CT13638": {
+  "preu": 69.9,
+  "ports": 10
+ },
+ "CT13633V": {
+  "preu": 99.9,
+  "ports": 10
+ },
+ "CT13311": {
+  "preu": 109.9,
+  "ports": 10
+ },
+ "CT13394": {
+  "preu": 79.9,
+  "ports": 10
+ },
+ "CT13560V": {
+  "preu": 82.9,
+  "ports": 10
+ },
+ "CT13663V": {
+  "preu": 89.9,
+  "ports": 10
+ },
+ "CT13395": {
+  "preu": 99.9,
+  "ports": 10
+ },
+ "CT13713SV": {
+  "preu": 309.9,
+  "ports": 10
+ },
+ "CT13704SV": {
+  "preu": 309.9,
+  "ports": 10
+ },
+ "CT13714L TB": {
+  "preu": 409.9,
+  "ports": 10
+ },
+ "K-DW01": {
+  "preu": 699.9,
+  "ports": 0
+ },
+ "CT12001": {
+  "preu": 109.9,
+  "ports": 10
+ },
+ "CT16008 BMC": {
+  "preu": 124.9,
+  "ports": 10
+ },
+ "CT11023S": {
+  "preu": 199.9,
+  "ports": 10
+ },
+ "CT11020": {
+  "preu": 109.9,
+  "ports": 10
+ },
+ "CT11001": {
+  "preu": 229.9,
+  "ports": 10
+ },
+ "CT14019X": {
+  "preu": 119.9,
+  "ports": 10
+ },
+ "CT17010V-A": {
+  "preu": 77.9,
+  "ports": 10
+ },
+ "CT42032F": {
+  "preu": 329.9,
+  "ports": 10
+ },
+ "CT33102 IMC": {
+  "preu": 179.9,
+  "ports": 10
+ },
+ "CT44028": {
+  "preu": 60.9,
+  "ports": 5
+ },
+ "CT44035": {
+  "preu": 84.9,
+  "ports": 5
+ },
+ "CT44051": {
+  "preu": 33.9,
+  "ports": 5
+ },
+ "CT44053": {
+  "preu": 34.9,
+  "ports": 5
+ },
+ "CT44095 TB": {
+  "preu": 104.0,
+  "ports": 5
+ },
+ "CT44037": {
+  "preu": 34.9,
+  "ports": 5
+ },
+ "CT44092": {
+  "preu": 29.9,
+  "ports": 5
+ },
+ "CT44047": {
+  "preu": 104.9,
+  "ports": 5
+ },
+ "CT44088-R TB": {
+  "preu": 244.9,
+  "ports": 5
+ },
+ "CT36118": {
+  "preu": 159.9,
+  "ports": 10
+ },
+ "CT36090": {
+  "preu": 181.9,
+  "ports": 10
+ },
+ "CT36094": {
+  "preu": 381.9,
+  "ports": 10
+ },
+ "CT42020": {
+  "preu": 159.9,
+  "ports": 10
+ },
+ "CT42022": {
+  "preu": 209.9,
+  "ports": 10
+ },
+ "CT42024": {
+  "preu": 289.9,
+  "ports": 10
+ },
+ "CT35046F": {
+  "preu": 209.9,
+  "ports": 10
+ },
+ "CT35047": {
+  "preu": 259.9,
+  "ports": 10
+ },
+ "XL35 MAG-BOR": {
+  "preu": 629.0,
+  "ports": 0
+ },
+ "MB38 MAG-BOR": {
+  "preu": 1000,
+  "ports": 0
+ },
+ "MB50 MAG-BOR": {
+  "preu": 1290.0,
+  "ports": 0
+ },
+ "MB100 MAG-BOR": {
+  "preu": 1890.0,
+  "ports": 0
+ }
+}
