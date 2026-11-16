@@ -3994,11 +3994,11 @@ var _fbReady = false;
 function initFirebase(callback){
   if(_fbReady){ if(callback) callback(_fbReady); return; }
   if(location.protocol === 'file:'){ if(callback) callback(false); return; }
+  // Versions sense dades privades (Crown, web pública): no hi ha Firebase configurat
+  var _fbUrl = "{{firebase:databaseURL}}";
+  if(!/^https:\/\//.test(_fbUrl)){ if(callback) callback(false); return; }
   if(typeof firebase === 'undefined'){
-    var scriptsToLoad = 0;
     function onScriptLoaded(){
-      scriptsToLoad++;
-      if(scriptsToLoad < 3) return;
       try{
         firebase.initializeApp({
           apiKey: "{{firebase:apiKey}}",
@@ -4020,13 +4020,16 @@ function initFirebase(callback){
         });
       }catch(e){ if(callback) callback(false); }
     }
-    ['firebase-app-compat','firebase-database-compat','firebase-auth-compat'].forEach(function(m){
+    // Un darrere l'altre: database i auth necessiten que firebase-app ja hi sigui
+    var mods = ['firebase-app-compat','firebase-database-compat','firebase-auth-compat'];
+    (function loadNext(k){
+      if(k >= mods.length){ onScriptLoaded(); return; }
       var sc = document.createElement('script');
-      sc.src = 'https://www.gstatic.com/firebasejs/9.23.0/'+m+'.js';
-      sc.onload = onScriptLoaded;
-      sc.onerror = function(){ console.warn('[FB] Failed to load', m); if(callback) callback(false); };
+      sc.src = 'https://www.gstatic.com/firebasejs/9.23.0/'+mods[k]+'.js';
+      sc.onload = function(){ loadNext(k + 1); };
+      sc.onerror = function(){ console.warn('[FB] Failed to load', mods[k]); if(callback) callback(false); };
       document.head.appendChild(sc);
-    });
+    })(0);
   }else{
     try{
       _fbDb = firebase.database();
