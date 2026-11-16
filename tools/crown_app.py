@@ -79,6 +79,11 @@ TIPUS_TXT = {
 PORTS_LLINDAR = nexe.PORTS_LLINDAR
 PORTS_COMANDA = nexe.PORTS_COMANDA
 
+PUBLIC_SHIM = """<script>var NEXE_PUBLIC = true;</script>
+<style>/* Versió publicada: sense clients ni mode edició */
+.nav-item[data-page="clients"], #btnEditMode, #orderPanelClient, .cart-bar-client, .edit-only, .edit-variants-btn { display:none !important; }
+</style>"""
+
 STORAGE_SHIM = """<script>/* Catàleg Crown: memòria del navegador separada del catàleg NEXE */
 (function(){try{var P='crown_',S=Storage.prototype,L=window.localStorage;
 ['getItem','setItem','removeItem'].forEach(function(m){var o=S[m];S[m]=function(k){var a=Array.prototype.slice.call(arguments);
@@ -186,7 +191,7 @@ def build_html():
     app = app.replace("lines.push('🧾 *PEDIDO NEXE*')", "lines.push('🧾 *PEDIDO NEXE · CROWN*')")
 
     template = nexe.read_text(nexe.TEMPLATE)
-    template = template.replace('<head>', '<head>\n' + STORAGE_SHIM, 1)
+    template = template.replace('<head>', '<head>\n' + STORAGE_SHIM + PUBLIC_SHIM, 1)
     template = template.replace('content="Nexe Catàleg"', 'content="Catàleg Crown"')
     template = template.replace('<title>Nexe Catàleg</title>', '<title>Catàleg Crown</title>')
     template = template.replace('glow-text">Nexe Catàleg<', 'glow-text">Catàleg Crown<')

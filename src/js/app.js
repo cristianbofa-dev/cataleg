@@ -408,6 +408,7 @@ function _applyEditModeUI(){
 }
 
 function _restoreEditMode(){
+  if(_isPublicApp()) return;
   try{
     if(localStorage.getItem('nexe_edit_mode') === '1'){
       var hasOverrides = false;
@@ -427,7 +428,10 @@ if(document.readyState === 'complete' || document.readyState === 'interactive'){
   document.addEventListener('DOMContentLoaded', _restoreEditMode);
 }
 
+// Versions publicades (Crown, web de clients): sense pestanya de clients ni mode edició
+function _isPublicApp(){ return typeof NEXE_PUBLIC !== 'undefined' && NEXE_PUBLIC; }
 function toggleEditMode(){
+  if(_isPublicApp()){ _editMode = false; return; }
   _editMode = !_editMode;
   try{ localStorage.setItem('nexe_edit_mode', _editMode ? '1' : '0'); }catch(e){}
   _applyEditModeUI();
@@ -1537,7 +1541,7 @@ function showPage(page, data, pages, headerTitle, btnBack, navItems, skipNavStac
 
   if(page === 'home'){ showHome(pages); return; }
   if(page === 'advisor'){ pages.advisor.classList.add('active'); return; }
-  if(page === 'clients'){ showClients(pages); return; }
+  if(page === 'clients'){ if(_isPublicApp()){ navigate('home', null, pages); return; } showClients(pages); return; }
   if(page === 'lists'){ showLists(pages); return; }
   if(page.startsWith('list/')){ showListDetail(page.split('/')[1], pages); return; }
   if(page === 'settings'){ showSettings(pages); return; }
@@ -3637,7 +3641,7 @@ function shareOrder(){
   var lines = [];
   lines.push('🧾 *PEDIDO NEXE*');
   if(orderClientId && orderClientName){
-    lines.push('👤 *Client:* '+orderClientName);
+    if(!_isPublicApp()) lines.push('👤 *Client:* '+orderClientName);
     var c = getClient(orderClientId);
     if(c){
       var sa = getClientShippingAddress(c);

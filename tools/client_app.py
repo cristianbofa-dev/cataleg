@@ -277,8 +277,8 @@ self.addEventListener('activate', function (event) {
 """
 
 NO_SW = r"""<script>/* Web per a clients: sense service worker ni còpia offline */
-(function(){ try{ if('serviceWorker' in navigator){ navigator.serviceWorker.getRegistrations().then(function(rs){ rs.forEach(function(r){ if(!/\/crown\/$/.test(r.scope)) r.unregister(); }); }); }
-  if(window.caches){ caches.keys().then(function(ks){ ks.forEach(function(k){ if(k.indexOf('crown-')!==0) caches.delete(k); }); }); } }catch(e){} })();</script>"""
+(function(){ try{ if('serviceWorker' in navigator){ navigator.serviceWorker.getRegistrations().then(function(rs){ rs.forEach(function(r){ if(!/\/crown\/$/.test(r.scope)) r.unregister(); }); }).catch(function(){}); }
+  if(window.caches){ caches.keys().then(function(ks){ ks.forEach(function(k){ if(k.indexOf('crown-')!==0) caches.delete(k); }); }).catch(function(){}); } }catch(e){} })();</script>"""
 
 
 def externalize_images(html, dest):
@@ -357,7 +357,7 @@ def build(dest):
     rep("function shareOrder(){",
         CLIENT_JS.replace('__WA__', WHATSAPP)
         + "\nfunction shareOrder(){ return _clientSendWhatsApp(); }\nfunction _internalShareOrder(){")
-    rep('<head>', '<head>\n' + STORAGE_SHIM + NO_SW)
+    rep('<head>', '<head>\n' + STORAGE_SHIM + NO_SW + '<script>var NEXE_PUBLIC = true;</script>')
     rep('var PORTS_LLINDAR = %d;' % nexe.PORTS_LLINDAR, 'var PORTS_LLINDAR = 0; // sense preus: sense línia de ports')
     rep("if ('serviceWorker' in navigator && location.protocol !== 'file:') {", "if (false) { // web per a clients: sense còpia offline")
     i18n = json.load(open(os.path.join(nexe.ROOT, 'data', 'i18n-clients.json'), encoding='utf-8'))
