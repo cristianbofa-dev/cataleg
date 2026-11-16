@@ -77,6 +77,8 @@ TIPUS_TXT = {
 
 # Comanda a partir d'aquest import (preus de venda): es descompten els ports de cada màquina
 PORTS_LLINDAR = 520
+# Ports reals per comanda: amb diverses màquines es descompta el que passa d'aquest import
+PORTS_COMANDA = 10
 
 STORAGE_SHIM = """<script>/* Catàleg Crown: memòria del navegador separada del catàleg NEXE */
 (function(){try{var P='crown_',S=Storage.prototype,L=window.localStorage;
@@ -133,7 +135,7 @@ def products_and_images():
         if it['ref'].startswith('CAB'):
             desc.append('Promoció: comprant 2 bateries a la mateixa comanda, 5 € de descompte.')
         if it.get('ports'):
-            desc.append('Comandes a partir de %d €: ports gratuïts.' % PORTS_LLINDAR)
+            desc.append('Ports inclosos al preu. Si en demanes diverses, només es paguen %d € de ports per comanda; a partir de %d €, ports gratuïts.' % (PORTS_COMANDA, PORTS_LLINDAR))
         desc.append('Preu sense IVA. Fullet Crown tardor-hivern 2026 (vigència fins a gener 2027).')
         p = {
             'n': it['nom'], 'r': it['ref'], 'b': 'CROWN', 'p': it['preu'],
@@ -204,7 +206,7 @@ def build_html():
     data = {
         'products': nexe.PRODUCTS_PREFIX + nexe.compact(products) + ';',
         'variant_groups': nexe.GROUPS_PREFIX + '[];',
-        'promo': 'var PROMO = {"recomanats":[],"crossSell":[]};\nvar PORTS_LLINDAR = %d;' % PORTS_LLINDAR,
+        'promo': 'var PROMO = {"recomanats":[],"crossSell":[]};\nvar PORTS_LLINDAR = %d;\nvar PORTS_COMANDA = %d;' % (PORTS_LLINDAR, PORTS_COMANDA),
         'clients': nexe.CLIENTS_HEADER + '[];\n',
         'images': nexe.IMAGES_PREFIX + nexe.compact(images) + ';',
     }

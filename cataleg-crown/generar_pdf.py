@@ -125,7 +125,7 @@ def construir(items, sortida):
              Paragraph('Catàleg NEXE · Tardor-hivern 2026', st['covs']),
              Paragraph('Preus sense IVA · Vigència fins a gener 2027 o fins a exhaurir existències', st['covs']),
              Spacer(1, 4 * mm),
-             Paragraph('<b>Ports inclosos al preu.</b> Comandes a partir de 520 €: es descompten els ports de cada màquina.', st['covs']),
+             Paragraph('<b>Ports inclosos al preu.</b> Si en demanes diverses, només es paguen 10 € de ports per comanda. A partir de 520 €, ports gratuïts.', st['covs']),
              Spacer(1, 16 * mm)]
     toc = []
     for titol, tipus in GRUPS:
