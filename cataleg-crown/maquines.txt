@@ -1,0 +1,207 @@
+# Màquines Crown del fullet "Promociones otoño-invierno 2026" (vigència fins a gener 2027).
+# pàgina | referència | nom | preu fullet (€ + IVA) | tipus | secció
+# Tipus: C = elèctrica de cable (+10 €) · M = màquina a bateria (+5 €) · P = pack màquina + bateria (+10 €)
+#        B = bateria, carregador o kit de recàrrega (+5 €) · I = instrument de mesura a piles (+5 €)
+6|CT22024 MC|Destornillador sin cable 3,6 V 1,5 Ah, con set de 30 puntas|46.90|M|Taladros y atornilladores 3,6 V · 4 V · 12 V
+6|CT22053 TB|Destornillador sin cable 4 V 2 Ah, con kit de 26 puntas|45.90|M|Taladros y atornilladores 3,6 V · 4 V · 12 V
+7|CT21072HX-2 BMC|Destornillador sin cable 12 V, 2 baterías 2 Ah + cargador, maletín|129.90|P|Taladros y atornilladores 3,6 V · 4 V · 12 V
+7|CT21081HQ-2BMC|Taladro y destornillador 12 V cabezal de cambio rápido, 2 baterías + cargador, maletín|159.00|P|Taladros y atornilladores 3,6 V · 4 V · 12 V
+8|CT21129HBX-2C1 BMC|Atornillador brushless 12 V 1/4" hex, 2 baterías 2 Ah + cargador USB-C, maletín|129.90|P|Taladros y atornilladores 3,6 V · 4 V · 12 V
+8|CT21129HQX-2 BMC|Taladro atornillador brushless 12 V cabezal de cambio rápido, 2 baterías + cargador, maletín|159.90|P|Taladros y atornilladores 3,6 V · 4 V · 12 V
+9|CT21129HMX-2C1 BMC|Taladro atornillador brushless 12 V, 2 baterías 2 Ah + cargador USB-C, maletín|129.00|P|Taladros y atornilladores 3,6 V · 4 V · 12 V
+9|CT21151HMX-2C1 BMC|Taladro atornillador con percusión brushless 12 V, 2 baterías + cargador USB-C, maletín|139.00|P|Taladros y atornilladores 3,6 V · 4 V · 12 V
+9|CAB122006XE|Batería 12 V 2 Ah|29.90|B|Baterías y cargadores 12 V
+9|CAB122020X|Batería 12 V 2 Ah USB-C|32.90|B|Baterías y cargadores 12 V
+9|CAC122001X|Cargador 12 V 2 A|24.90|B|Baterías y cargadores 12 V
+9|CAC121018X|Cargador 12 V 1 A USB-C|14.90|B|Baterías y cargadores 12 V
+14|CT21128HMX|Taladro atornillador brushless 20 V Max, 50 Nm (cuerpo)|99.90|M|Taladros y percutores 20 V Max
+14|CT21145HMX|Taladro percutor brushless 20 V Max, 30/50 Nm (cuerpo)|109.90|M|Taladros y percutores 20 V Max
+14|CT21075HMX 2BMC|Taladro percutor 20 V Max 40/60 Nm, 2 baterías + cargador, maletín|179.90|P|Taladros y percutores 20 V Max
+15|CT21127HMX|Taladro percutor brushless 20 V Max, 100 Nm (cuerpo)|179.90|M|Taladros y percutores 20 V Max
+15|CT21112HMX|Taladro percutor brushless 20 V Max, 120 Nm (cuerpo)|199.90|M|Taladros y percutores 20 V Max
+15|CT21153HMX|Taladro percutor brushless 20 V Max, 70/160 Nm (cuerpo)|219.90|M|Taladros y percutores 20 V Max
+14|CT21128HMX-BOLSA|Taladro atornillador 20 V Max + baterías, cargador y bolsa de herramientas|139.90|P|Taladros y percutores 20 V Max
+14|CT21128HMX-2IMC|Taladro atornillador 20 V Max + baterías, cargador y maletín apilable|159.90|P|Taladros y percutores 20 V Max
+14|CT21145HMX-13-2BMC|Taladro percutor 20 V Max + baterías, cargador y maletín|159.90|P|Taladros y percutores 20 V Max
+14|CT21127HMX-4BMC|Taladro percutor 100 Nm 20 V Max + baterías, cargador y maletín|329.90|P|Taladros y percutores 20 V Max
+15|CT21127HMX-5IMC|Taladro percutor 100 Nm 20 V Max + baterías 5 Ah, cargador y maletín apilable|379.90|P|Taladros y percutores 20 V Max
+15|CT21112HMX-5IMC|Taladro percutor 120 Nm 20 V Max + baterías 5 Ah, cargador y maletín apilable|439.90|P|Taladros y percutores 20 V Max
+15|CT21153HMX-5IMC|Taladro percutor 70/160 Nm 20 V Max + baterías 5 Ah, cargador y maletín apilable|449.90|P|Taladros y percutores 20 V Max
+15|CT21153HMX-8IMC|Taladro percutor 70/160 Nm 20 V Max + baterías 8 Ah, cargador y maletín apilable|529.90|P|Taladros y percutores 20 V Max
+16|CT22051HX|Atornillador de impacto 20 V Max 1/4" hex, 280 Nm (cuerpo)|99.90|M|Atornilladores y llaves de impacto 20 V Max
+16|CT22050HX|Llave de impacto 20 V Max 1/2", 350 Nm (cuerpo)|139.90|M|Atornilladores y llaves de impacto 20 V Max
+16|CT22062HX|Llave de impacto 20 V Max 1/2", 550 Nm (cuerpo)|165.90|M|Atornilladores y llaves de impacto 20 V Max
+17|CT22057HX|Llave de impacto 20 V Max 1/2", 600/800 Nm (cuerpo)|189.90|M|Atornilladores y llaves de impacto 20 V Max
+17|CT22058HX|Llave de impacto 20 V Max 3/4", 1500/1800 Nm (cuerpo)|289.90|M|Atornilladores y llaves de impacto 20 V Max
+17|CT22060HX|Llave de impacto 20 V Max 1", 2200/2400 Nm (cuerpo)|399.90|M|Atornilladores y llaves de impacto 20 V Max
+16|CT22051HX-BOLSA|Atornillador de impacto 280 Nm + baterías, cargador y bolsa|169.90|P|Atornilladores y llaves de impacto 20 V Max
+16|CT22050HX-2IMC|Llave de impacto 350 Nm + baterías, cargador y maletín apilable|299.90|P|Atornilladores y llaves de impacto 20 V Max
+16|CT22062HX-2IMC|Llave de impacto 550 Nm + baterías, cargador y maletín apilable|329.90|P|Atornilladores y llaves de impacto 20 V Max
+16|CT22051HX-5IMC|Atornillador de impacto 280 Nm + baterías 5 Ah, cargador y maletín apilable|249.90|P|Atornilladores y llaves de impacto 20 V Max
+16|CT22050HX-5IMC|Llave de impacto 350 Nm + baterías 5 Ah, cargador y maletín apilable|349.90|P|Atornilladores y llaves de impacto 20 V Max
+16|CT22062HX-5IMC|Llave de impacto 550 Nm + baterías 5 Ah, cargador y maletín apilable|389.90|P|Atornilladores y llaves de impacto 20 V Max
+17|CT22057HX-5IMC|Llave de impacto 600 Nm + baterías 5 Ah, cargador y maletín apilable|399.90|P|Atornilladores y llaves de impacto 20 V Max
+17|CT22058HX-5IMC|Llave de impacto 1500 Nm + baterías 5 Ah, cargador y maletín apilable|499.90|P|Atornilladores y llaves de impacto 20 V Max
+17|CT22060-5IMC|Llave de impacto 2200 Nm + baterías 5 Ah, cargador y maletín apilable|639.90|P|Atornilladores y llaves de impacto 20 V Max
+17|CT22057HX-8IMC|Llave de impacto 600 Nm + baterías 8 Ah, cargador y maletín apilable|529.90|P|Atornilladores y llaves de impacto 20 V Max
+17|CT22058HX-8IMC|Llave de impacto 1500 Nm + baterías 8 Ah, cargador y maletín apilable|639.90|P|Atornilladores y llaves de impacto 20 V Max
+17|CT22060HX-8 IMC|Llave de impacto 2200 Nm + 2 baterías 8 Ah, cargador 9 A y maletín apilable|779.90|P|Atornilladores y llaves de impacto 20 V Max
+18|CT28018HX|Martillo rotativo SDS-Plus brushless 20 V Max, 1,4 J (cuerpo)|189.90|M|Martillos y mezcladora 20 V Max
+18|CT28018HX-2C4BMC|Martillo rotativo SDS-Plus 1,4 J + 2 baterías 2 Ah, cargador y maletín|299.90|P|Martillos y mezcladora 20 V Max
+19|CT28001HX|Martillo combinado SDS-Plus brushless 20 V Max, 2,3 J (cuerpo)|269.90|M|Martillos y mezcladora 20 V Max
+19|CT28001HX-4 IMC|Martillo combinado SDS-Plus 2,3 J + 2 baterías 4 Ah, cargador y maletín|449.90|P|Martillos y mezcladora 20 V Max
+19|CT26012HX|Mezcladora brushless 20 V Max, M14, Ø 120 mm (cuerpo)|219.90|M|Martillos y mezcladora 20 V Max
+20|CT23001-125HX|Amoladora angular brushless 20 V Max, 125 mm (cuerpo)|164.90|M|Trabajo del metal 20 V Max
+20|CT23008-125HX|Amoladora angular brushless 20 V Max, 125 mm, velocidad variable (cuerpo)|169.90|M|Trabajo del metal 20 V Max
+20|K-DC07IMC|Amoladora angular brushless 125 mm + 2 baterías 5 Ah, cargador y maletín apilable|379.90|P|Trabajo del metal 20 V Max
+21|CT23007HX|Amoladora recta brushless 20 V Max, pinza 6/8 mm (cuerpo)|129.90|M|Trabajo del metal 20 V Max
+21|CT23018HX|Pulidora 20 V Max, Ø 180 mm, velocidad variable (cuerpo)|129.90|M|Trabajo del metal 20 V Max
+21|CT25030HX BMC|Cortadora de varillas de acero brushless 20 V Max, hasta Ø 16 mm, maletín|349.90|M|Trabajo del metal 20 V Max
+22|CT25040-150HX|Sierra circular compacta para metal brushless 20 V Max, 150 mm (sin batería ni cargador)|299.90|M|Trabajo del metal 20 V Max
+22|CT25040-150HX-5IMC|Sierra circular compacta para metal 150 mm + 2 baterías 5 Ah, cargador 4 A y maletín|499.90|P|Trabajo del metal 20 V Max
+23|CT25003HX|Sierra de calar brushless 20 V Max, péndulo 4 niveles (cuerpo)|159.90|M|Carpintería 20 V Max
+23|CT25002-165HX|Sierra circular brushless 20 V Max, 165 mm (cuerpo)|189.90|M|Carpintería 20 V Max
+23|CT24001HX|Cepillo 20 V Max, 82 mm (cuerpo)|129.90|M|Carpintería 20 V Max
+23|CT25007HX|Sierra de sable 20 V Max, velocidad variable (cuerpo)|124.90|M|Carpintería 20 V Max
+23|CT61001HX|Clavadora-grapadora 20 V Max, clavos y grapas 18 GA (cuerpo)|139.90|M|Carpintería 20 V Max
+23|CT26010HX|Fresadora brushless 20 V Max, pinza 6/8 mm (cuerpo)|169.90|M|Carpintería 20 V Max
+24|CT23010HX|Lijadora orbital 20 V Max, 100 × 150 mm (sin batería ni cargador)|75.90|M|Carpintería 20 V Max
+24|CT23011HX|Lijadora rotoorbital 20 V Max, Ø 125 mm (sin batería ni cargador)|75.90|M|Carpintería 20 V Max
+25|CT63001HX|Aspirador de mano 20 V Max, 500 ml, con accesorios (cuerpo)|89.90|M|Aspiración, soplado, iluminación y jardín 20 V Max
+25|CT29002HX|Soplador-aspirador de taller 20 V Max (cuerpo)|79.90|M|Aspiración, soplado, iluminación y jardín 20 V Max
+26|CT60001HX|Decapador 20 V Max, 550 °C, con boquillas (cuerpo)|99.90|M|Aspiración, soplado, iluminación y jardín 20 V Max
+26|CT26018HX|Foco LED 20 V Max, 2000 lm (cuerpo)|59.90|M|Aspiración, soplado, iluminación y jardín 20 V Max
+26|CT26008HX|Linterna LED 20 V Max, 250 lm (cuerpo)|33.90|M|Aspiración, soplado, iluminación y jardín 20 V Max
+27|CT29001HX|Tijera de poda brushless 20 V Max, corte Ø 30 mm (cuerpo)|165.90|M|Aspiración, soplado, iluminación y jardín 20 V Max
+27|CT29001HX-2 TB|Tijera de poda + 2 baterías 2 Ah, cargador y bolsa|259.00|P|Aspiración, soplado, iluminación y jardín 20 V Max
+28|CT29018HX|Cortacésped brushless 40 V (2 × 20 V Max), 38 cm (cuerpo)|219.90|M|Aspiración, soplado, iluminación y jardín 20 V Max
+28|CT29013HX|Soplador 20 V Max, 36 m/s (cuerpo)|89.90|M|Aspiración, soplado, iluminación y jardín 20 V Max
+29|CT29053HX|Minisierra de poda brushless 20 V Max, espada 12,7 cm (cuerpo)|119.90|M|Aspiración, soplado, iluminación y jardín 20 V Max
+29|CT29006HX|Motosierra brushless 20 V Max, espada 25,5 cm (cuerpo)|199.90|M|Aspiración, soplado, iluminación y jardín 20 V Max
+29|CT29012HX|Recortabordes 20 V Max, 30,5 cm (cuerpo)|89.90|M|Aspiración, soplado, iluminación y jardín 20 V Max
+29|CT29015HX|Cortasetos 20 V Max, hoja 56 cm (cuerpo)|99.90|M|Aspiración, soplado, iluminación y jardín 20 V Max
+30|CAB202013XE|Batería 20 V Max 2 Ah|42.90|B|Baterías, cargadores y kits de energía 20 V Max
+30|CAB205014XE|Batería 20 V Max 5 Ah|79.90|B|Baterías, cargadores y kits de energía 20 V Max
+30|CAB208016XE CB|Batería 20 V Max 8 Ah extracompacta|119.90|B|Baterías, cargadores y kits de energía 20 V Max
+30|CAC202001X|Cargador 20 V Max 2 A|39.90|B|Baterías, cargadores y kits de energía 20 V Max
+30|CAC204001X|Cargador 20 V Max 4 A|49.90|B|Baterías, cargadores y kits de energía 20 V Max
+30|CAC204003X|Cargador doble 20 V Max 4 A|65.90|B|Baterías, cargadores y kits de energía 20 V Max
+30|CAC209001X|Cargador rápido 20 V Max 9,6 A|89.90|B|Baterías, cargadores y kits de energía 20 V Max
+26|CAU02X|Cargador USB para baterías 20 V Max (2 puertos USB)|25.90|B|Baterías, cargadores y kits de energía 20 V Max
+31|K-R06|Kit de recarga: 1 batería 2 Ah + cargador 2 A|79.90|B|Baterías, cargadores y kits de energía 20 V Max
+31|K-R01|Kit de recarga: 2 baterías 2 Ah + cargador 4 A|132.90|B|Baterías, cargadores y kits de energía 20 V Max
+31|K-R03|Kit de recarga: 2 baterías 5 Ah + cargador 4 A + bolsa de regalo|189.90|B|Baterías, cargadores y kits de energía 20 V Max
+31|K-R08|Kit de recarga: 2 baterías 5 Ah + cargador doble 4 A + bolsa de regalo|209.90|B|Baterías, cargadores y kits de energía 20 V Max
+31|K-R04|Kit de recarga: 2 baterías 8 Ah + cargador 9,6 A + bolsa de regalo|339.90|B|Baterías, cargadores y kits de energía 20 V Max
+33|K-DC24 IMC|Kit: amoladora 125 mm + taladro percutor + 2 baterías 2 Ah + cargador, maletín apilable|399.90|P|Kits y combos 20 V Max
+33|K-DC25 IMC|Kit: llave de impacto 1/2" + taladro percutor + 2 baterías 2 Ah + cargador, maletín apilable|349.90|P|Kits y combos 20 V Max
+33|K-DC29 IMC|Kit: llave de impacto 1/2" + atornillador de impacto + 2 baterías 2 Ah + cargador, maletín apilable|349.90|P|Kits y combos 20 V Max
+34|K-DC01 IMC|Combo: taladro percutor + amoladora 125 mm + 2 baterías 5 Ah + cargador 4 A, maletín|529.00|P|Kits y combos 20 V Max
+34|K-DC13 IMC|Combo: martillo SDS-Plus + 2 baterías 8 Ah + cargador 9 A, maletín|599.00|P|Kits y combos 20 V Max
+35|K-DC04 IMC|Combo: martillo SDS-Plus + amoladora 125 mm + 3 baterías 5 Ah + cargador 4 A, 2 maletines|699.00|P|Kits y combos 20 V Max
+35|K-DC27 IMC|Combo: taladro percutor + amoladora + martillo SDS-Plus + 4 baterías 5 Ah + cargador doble, maletines|959.00|P|Kits y combos 20 V Max
+36|CT10126C|Taladro 400 W, portabrocas automático 10 mm|49.90|C|Taladros y llave de impacto
+36|CT10151|Taladro atornillador 230 W, 2 velocidades|59.90|C|Taladros y llave de impacto
+36|CT10152F|Taladro percutor 420 W, 2 velocidades, 13 mm|99.90|C|Taladros y llave de impacto
+36|CT10143-13C|Taladro 550 W, portabrocas automático 13 mm|69.90|C|Taladros y llave de impacto
+36|CT12018|Llave de impacto eléctrica 900 W, 1/2", 320 Nm|129.90|C|Taladros y llave de impacto
+37|CT10128C|Taladro percutor 600 W, 13 mm|59.90|C|Taladros y llave de impacto
+37|CT10129C|Taladro percutor 750 W, 13 mm|69.90|C|Taladros y llave de impacto
+37|CT10130C|Taladro percutor 810 W, portabrocas metálico 13 mm|99.90|C|Taladros y llave de impacto
+37|CT10032|Taladro percutor 1050 W, 2 velocidades, 16 mm|139.90|C|Taladros y llave de impacto
+37|CT10148|Taladro mezclador baja velocidad 1200 W, 16 mm|115.90|C|Taladros y llave de impacto
+38|CT10049|Mezclador 1100 W, M14, doble velocidad|129.90|C|Mezcladores y rozadora
+38|CT10182|Mezclador 1600 W, M14, doble velocidad|149.00|C|Mezcladores y rozadora
+39|CT13563-150 BMC|Rozadora de paredes 2400 W, disco 150 mm, 3 discos de diamante, maletín|399.90|C|Mezcladores y rozadora
+41|CT18180 BMC|Martillo SDS-Plus 650 W, 1,7 J, 3 modos, maletín|119.90|C|Martillos y demoledores
+41|CT18209 BMC|Martillo SDS-Plus 800 W, 3 J, 3 modos, maletín|149.90|C|Martillos y demoledores
+41|CT18116 BMC|Martillo SDS-Plus 1050 W, 4,8 J, 3 modos, maletín|149.90|C|Martillos y demoledores
+41|CT18118V BMC|Martillo perforador SDS-Max 1250 W, 0-10 J, maletín|379.90|C|Martillos y demoledores
+41|CT18190 BMC|Martillo perforador SDS-Max 1700 W, 5-19 J, maletín|769.90|C|Martillos y demoledores
+42|CT18233 BMC|Demoledor SDS-Plus 950 W, 5 J, maletín|169.00|C|Martillos y demoledores
+42|CT18245 BMC|Demoledor SDS-Max 1350 W, 12 J, maletín|289.90|C|Martillos y demoledores
+43|CT18173M BMC|Demoledor SDS-Max 1300 W, 20 J, maletín|319.90|C|Martillos y demoledores
+43|CT18123V BMC|Demoledor SDS-Max 1500 W, 8-25 J, maletín|429.90|C|Martillos y demoledores
+43|CT18124 BMC|Demoledor Hex 30 1750 W, 48 J, maletín|679.90|C|Martillos y demoledores
+44|CT13499-115R|Amoladora angular 720 W, 115 mm|52.90|C|Amoladoras, pulidoras y satinadora
+44|CT13499-125R|Amoladora angular 720 W, 125 mm|56.90|C|Amoladoras, pulidoras y satinadora
+44|CT13571-115R|Amoladora angular 900 W, 115 mm, cuerpo extracompacto|68.90|C|Amoladoras, pulidoras y satinadora
+44|CT13571-125R|Amoladora angular 900 W, 125 mm, cuerpo extracompacto|69.90|C|Amoladoras, pulidoras y satinadora
+44|CT13676-125RSC|Amoladora angular 1300 W, 125 mm, empuñadura antivibraciones|139.90|C|Amoladoras, pulidoras y satinadora
+44|CT13677-125RSVC|Amoladora angular 1500 W, 125 mm, velocidad variable|159.90|C|Amoladoras, pulidoras y satinadora
+44|CT13678-125RSVC|Amoladora angular 1700 W, 125 mm, velocidad variable|179.90|C|Amoladoras, pulidoras y satinadora
+45|CT13502-115R|Amoladora angular 1010 W, 115 mm|86.90|C|Amoladoras, pulidoras y satinadora
+45|CT13502-125R|Amoladora angular 1010 W, 125 mm|87.90|C|Amoladoras, pulidoras y satinadora
+45|CT13506-125V|Amoladora angular 1200 W, 125 mm, velocidad variable|99.90|C|Amoladoras, pulidoras y satinadora
+45|CT13507-150|Amoladora angular 1500 W, 150 mm|119.90|C|Amoladoras, pulidoras y satinadora
+46|CT13500-180S|Amoladora angular 2200 W, 180 mm|112.90|C|Amoladoras, pulidoras y satinadora
+46|CT13500-230S|Amoladora angular 2200 W, 230 mm|114.90|C|Amoladoras, pulidoras y satinadora
+46|CT13489-230S|Amoladora angular 2600 W, 230 mm|149.90|C|Amoladoras, pulidoras y satinadora
+46|CT13308|Amoladora recta 600 W, pinza 6 mm, velocidad variable|89.90|C|Amoladoras, pulidoras y satinadora
+46|CT13307|Amoladora recta 600 W, cuello largo, velocidad variable|99.90|C|Amoladoras, pulidoras y satinadora
+46|CT15232|Tronzadora 2200 W, disco 355 mm|269.90|C|Amoladoras, pulidoras y satinadora
+47|CT13302|Pulidora 1300 W, Ø 180 mm, velocidad variable|119.90|C|Amoladoras, pulidoras y satinadora
+47|CT13528|Pulidora 1500 W, Ø 180 mm, velocidad variable|159.90|C|Amoladoras, pulidoras y satinadora
+47|CT13545|Esmeriladora de banco 170 W, 125 mm|69.90|C|Amoladoras, pulidoras y satinadora
+47|CT13546|Esmeriladora de banco 250 W, 150 mm|89.90|C|Amoladoras, pulidoras y satinadora
+47|CT13547|Esmeriladora de banco 350 W, 200 mm|119.90|C|Amoladoras, pulidoras y satinadora
+48|CT13551-110RSV|Satinadora 1400 W, cepillo Ø 110 mm (cepillo no incluido)|169.90|C|Amoladoras, pulidoras y satinadora
+49|CT15187-165|Sierra circular 1200 W, 165 mm|112.90|C|Sierras
+49|CT15188-190|Sierra circular 1500 W, 190 mm|125.90|C|Sierras
+49|CT15210-235|Sierra circular 2000 W, 235 mm|189.90|C|Sierras
+49|CT15134-165|Sierra de incisión 1300 W, 165 mm|189.90|C|Sierras
+49|SET CROWN 10|Sierra de incisión 1300 W + 2 guías + 2 sargentos de regalo|339.90|C|Sierras
+50|CT15233P|Ingletadora telescópica 1800 W, 255 mm|449.90|C|Sierras
+50|CT15286S|Banco de sierra 3000 W, 254 mm|599.90|C|Sierras
+51|CT15305KF|Ingletadora con mesa superior 1700 W, 305 mm|799.90|C|Sierras
+52|CT15212|Sierra caladora 550 W|74.90|C|Sierras
+52|CT15189|Sierra caladora 710 W|109.90|C|Sierras
+52|CT15181|Sierra caladora 710 W, agarre de pomo|124.90|C|Sierras
+53|CT15133|Sierra de sable 1010 W|119.90|C|Sierras
+53|CT31013|Pistola de pintura 400 W, 900 ml|69.90|C|Pintura, decapado y lijado
+53|CT31014|Pistola de pintura 600 W, 900 ml, con estación|99.90|C|Pintura, decapado y lijado
+53|CT19041K|Pistola de aire caliente 2000 W, 3 ajustes, con boquillas|49.90|C|Pintura, decapado y lijado
+53|CT19042K|Pistola de aire caliente 2000 W, temperatura regulable, con boquillas|69.90|C|Pintura, decapado y lijado
+53|CT19043K|Pistola de aire caliente 2000 W, digital, con boquillas|89.90|C|Pintura, decapado y lijado
+54|CT13637|Lijadora de palma 180 W, 100 × 150 mm|54.90|C|Pintura, decapado y lijado
+54|CT13638|Lijadora 240 W, 110 × 100 mm|59.90|C|Pintura, decapado y lijado
+54|CT13633V|Lijadora orbital 360 W, 115 × 230 mm, velocidad variable|89.90|C|Pintura, decapado y lijado
+54|CT13311|Lijadora de banda 810 W, 533 × 76 mm|99.90|C|Pintura, decapado y lijado
+55|CT13394|Lijadora rotoorbital 240 W, Ø 125 mm|69.90|C|Pintura, decapado y lijado
+55|CT13560V|Lijadora rotoorbital 300 W, Ø 125 mm, velocidad variable|72.90|C|Pintura, decapado y lijado
+55|CT13663V|Lijadora rotoorbital 320 W, Ø 125 mm, velocidad variable|79.90|C|Pintura, decapado y lijado
+55|CT13395|Lijadora rotoorbital 450 W, Ø 150 mm, velocidad variable|89.90|C|Pintura, decapado y lijado
+57|CT13713SV|Lijadora rotoorbital brushless 350 W, Ø 125/150 mm, excentricidad 2,5 mm|299.90|C|Pintura, decapado y lijado
+57|CT13704SV|Lijadora rotoorbital brushless 350 W, Ø 125/150 mm, excentricidad 5 mm|299.90|C|Pintura, decapado y lijado
+58|CT13714L TB|Lijadora de paredes brushless 350 W, Ø 225 mm, con tubo de aspiración y bolsa|399.90|C|Pintura, decapado y lijado
+59|K-DW01|Kit lijadora de paredes CT13714LTB + aspirador CT42032F|699.90|C|Pintura, decapado y lijado
+59|CT12001|Atornillador para pladur 710 W, 1/4" hex|99.90|C|Carpintería y multiherramienta
+60|CT16008 BMC|Herramienta multifunción 500 W, con accesorios y maletín|114.90|C|Carpintería y multiherramienta
+61|CT11023S|Fresadora recortadora multifunción 710 W, con 4 bases y bolsa|189.90|C|Carpintería y multiherramienta
+61|CT11020|Fresadora de cantos y perfiladora 430 W|99.90|C|Carpintería y multiherramienta
+61|CT11001|Fresadora vertical 2100 W, pinza 8-12 mm|219.90|C|Carpintería y multiherramienta
+61|CT14019X|Cepillo 710 W, 82 mm|109.90|C|Carpintería y multiherramienta
+61|CT17010V-A|Soplador-aspirador de taller 710 W|67.90|C|Carpintería y multiherramienta
+62|CT42032F|Aspirador industrial sólidos y líquidos 1600 W, 30 L|319.90|C|Aspiración y soldadura
+63|CT33102 IMC|Soldador inverter MMA 30-150 A, con maletín y accesorios|169.90|C|Aspiración y soldadura
+64|CT44028|Medidor láser 40 m|55.90|I|Medición y láser
+64|CT44035|Medidor láser 100 m|79.90|I|Medición y láser
+64|CT44051|Multímetro digital 600 V|28.90|I|Medición y láser
+64|CT44053|Pinza amperimétrica digital 600 V|29.90|I|Medición y láser
+65|CT44095 TB|Detector de metales 100 mm|99.00|I|Medición y láser
+65|CT44037|Detector térmico -50 a +600 °C|29.90|I|Medición y láser
+65|CT44092|Detector de tensión 1000 V|24.90|I|Medición y láser
+65|CT44047|Nivel láser 2 líneas, 30 m|99.90|I|Medición y láser
+65|CT44088-R TB|Nivel láser verde 3 líneas 360°, con mando y maletín|239.90|I|Medición y láser
+66|CT36118|Compresor sin aceite silencioso 1 CV, 8 L|149.90|C|Compresores, hidrolimpiadoras y bombas
+66|CT36090|Compresor sin aceite silencioso 2 CV, 24 L|169.90|C|Compresores, hidrolimpiadoras y bombas
+66|CT36094|Compresor sin aceite silencioso 4 CV, 50 L|369.90|C|Compresores, hidrolimpiadoras y bombas
+67|CT42020|Hidrolimpiadora 1400 W, 100 bar|149.90|C|Compresores, hidrolimpiadoras y bombas
+67|CT42022|Hidrolimpiadora 1800 W, 140 bar, enrollador de manguera|199.90|C|Compresores, hidrolimpiadoras y bombas
+67|CT42024|Hidrolimpiadora 2000 W, 150 bar, enrollador de manguera|279.90|C|Compresores, hidrolimpiadoras y bombas
+67|CT35046F|Bomba sumergible 1200 W, 6,5 m³/h, interruptor flotante|199.90|C|Compresores, hidrolimpiadoras y bombas
+67|CT35047|Bomba sumergible automática 1200 W, 6,5 m³/h|249.90|C|Compresores, hidrolimpiadoras y bombas
+68|XL35 MAG-BOR|Taladro de base magnética 1600 W, corte Ø 35 mm|629.00|C|Taladros de base magnética
+68|MB38 MAG-BOR|Taladro de base magnética 1160 W, corte Ø 40 mm|990.00|C|Taladros de base magnética
+68|MB50 MAG-BOR|Taladro de base magnética 1210 W, corte Ø 50 mm, cono Morse 2|1290.00|C|Taladros de base magnética
+68|MB100 MAG-BOR|Taladro de base magnética 1760 W, corte Ø 102 mm, cono Morse 3|1890.00|C|Taladros de base magnética

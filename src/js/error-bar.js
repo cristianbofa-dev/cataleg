@@ -1,0 +1,2 @@
+
+window.addEventListener('error',function(e){try{var d=document.getElementById('__errbar');if(!d){d=document.createElement('div');d.id='__errbar';d.style.cssText='position:fixed;left:0;right:0;bottom:0;z-index:99999;background:#b00020;color:#fff;font:12px/1.35 -apple-system,sans-serif;padding:8px 10px;max-height:40vh;overflow:auto;white-space:pre-wrap';(document.body||document.documentElement).appendChild(d);}d.textContent+=((e.message||'error')+' (linia '+(e.lineno||'?')+':'+(e.colno||'?')+')\n');}catch(x){}});

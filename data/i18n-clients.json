@@ -1,0 +1,1483 @@
+{
+ "_comment": "Traduccions de la interfície del catàleg per a clients. Clau = text original tal com surt a l'app. 'ca' només quan cal corregir l'original. Els noms i descripcions dels productes no es tradueixen.",
+ "languages": {
+  "ca": "Català",
+  "es": "Castellano",
+  "en": "English",
+  "uk": "Українська"
+ },
+ "strings": {
+  "Nexe Catàleg": {
+   "es": "Catálogo Nexe",
+   "en": "Nexe Catalogue",
+   "uk": "Каталог Nexe"
+  },
+  "Catàleg NEXE": {
+   "es": "Catálogo NEXE",
+   "en": "NEXE Catalogue",
+   "uk": "Каталог NEXE"
+  },
+  "Catàleg professional": {
+   "es": "Catálogo profesional",
+   "en": "Professional catalogue",
+   "uk": "Професійний каталог"
+  },
+  "Cerca productes, marques o referències": {
+   "es": "Busca productos, marcas o referencias",
+   "en": "Search products, brands or references",
+   "uk": "Пошук товарів, брендів або артикулів"
+  },
+  "Cerca productes, marques, refs...": {
+   "es": "Busca productos, marcas, refs...",
+   "en": "Search products, brands, refs...",
+   "uk": "Пошук товарів, брендів, артикулів..."
+  },
+  "Cerca": {
+   "es": "Buscar",
+   "en": "Search",
+   "uk": "Пошук"
+  },
+  "Cercar": {
+   "es": "Buscar",
+   "en": "Search",
+   "uk": "Пошук"
+  },
+  "Explora": {
+   "es": "Explora",
+   "en": "Explore",
+   "uk": "Огляд"
+  },
+  "Categories": {
+   "es": "Categorías",
+   "en": "Categories",
+   "uk": "Категорії"
+  },
+  "Recomanats": {
+   "es": "Recomendados",
+   "en": "Recommended",
+   "uk": "Рекомендовані"
+  },
+  "Recomendats": {
+   "es": "Recomendados",
+   "en": "Recommended",
+   "uk": "Рекомендовані",
+   "ca": "Recomanats"
+  },
+  "Recomanació NEXE": {
+   "es": "Recomendación NEXE",
+   "en": "NEXE recommendation",
+   "uk": "Рекомендація NEXE"
+  },
+  "Disc": {
+   "es": "Disco",
+   "en": "Disc",
+   "uk": "Диск"
+  },
+  "Adhesiu": {
+   "es": "Adhesivo",
+   "en": "Adhesive",
+   "uk": "Клей"
+  },
+  "Ventosa": {
+   "es": "Ventosa",
+   "en": "Suction cup",
+   "uk": "Присоска"
+  },
+  "Compresor": {
+   "es": "Compresor",
+   "en": "Compressor",
+   "uk": "Компресор",
+   "ca": "Compressor"
+  },
+  "Lija": {
+   "es": "Lija",
+   "en": "Sandpaper",
+   "uk": "Наждачний папір",
+   "ca": "Llija"
+  },
+  "Inici": {
+   "es": "Inicio",
+   "en": "Home",
+   "uk": "Головна"
+  },
+  "Llistes": {
+   "es": "Listas",
+   "en": "Lists",
+   "uk": "Списки"
+  },
+  "Anterior": {
+   "es": "Anterior",
+   "en": "Previous",
+   "uk": "Попереднє"
+  },
+  "Següent": {
+   "es": "Siguiente",
+   "en": "Next",
+   "uk": "Наступне"
+  },
+  "Tancar": {
+   "es": "Cerrar",
+   "en": "Close",
+   "uk": "Закрити"
+  },
+  "Enrere": {
+   "es": "Atrás",
+   "en": "Back",
+   "uk": "Назад"
+  },
+  "‹ Enrere": {
+   "es": "‹ Atrás",
+   "en": "‹ Back",
+   "uk": "‹ Назад"
+  },
+  "Eliminar": {
+   "es": "Eliminar",
+   "en": "Remove",
+   "uk": "Видалити"
+  },
+  "Favorit": {
+   "es": "Favorito",
+   "en": "Favourite",
+   "uk": "Обране"
+  },
+  "Favorits": {
+   "es": "Favoritos",
+   "en": "Favourites",
+   "uk": "Обране"
+  },
+  "Pedido": {
+   "es": "Pedido",
+   "en": "Order",
+   "uk": "Замовлення",
+   "ca": "Comanda"
+  },
+  "Tema fosc": {
+   "es": "Tema oscuro",
+   "en": "Dark mode",
+   "uk": "Темна тема"
+  },
+  "Fons fosc per a presentacions davant del client": {
+   "es": "Fondo oscuro, más cómodo para ver el catálogo",
+   "en": "Dark background, easier on the eyes",
+   "uk": "Темний фон, зручніше для перегляду",
+   "ca": "Fons fosc, més còmode per mirar el catàleg"
+  },
+  "Visualització": {
+   "es": "Visualización",
+   "en": "Display",
+   "uk": "Вигляд"
+  },
+  "Catàleg": {
+   "es": "Catálogo",
+   "en": "Catalogue",
+   "uk": "Каталог"
+  },
+  "Productes": {
+   "es": "Productos",
+   "en": "Products",
+   "uk": "Товари"
+  },
+  "Versió": {
+   "es": "Versión",
+   "en": "Version",
+   "uk": "Версія"
+  },
+  "Sobre": {
+   "es": "Acerca de",
+   "en": "About",
+   "uk": "Про застосунок"
+  },
+  "Llistes de favorits": {
+   "es": "Listas de favoritos",
+   "en": "Favourite lists",
+   "uk": "Списки обраного"
+  },
+  "Comandes per WhatsApp al 610 73 20 47": {
+   "es": "Pedidos por WhatsApp al 610 73 20 47",
+   "en": "Orders via WhatsApp: +34 610 73 20 47",
+   "uk": "Замовлення через WhatsApp: +34 610 73 20 47"
+  },
+  "Online": {
+   "es": "En línea",
+   "en": "Online",
+   "uk": "Онлайн"
+  },
+  "Tots": {
+   "es": "Todos",
+   "en": "All",
+   "uk": "Усі"
+  },
+  "Tall": {
+   "es": "Corte",
+   "en": "Cutting",
+   "uk": "Різання"
+  },
+  "Discs de tall": {
+   "es": "Discos de corte",
+   "en": "Cutting discs",
+   "uk": "Відрізні диски"
+  },
+  "Freses i broques": {
+   "es": "Fresas y brocas",
+   "en": "Router and drill bits",
+   "uk": "Фрези та свердла"
+  },
+  "Guies i suports": {
+   "es": "Guías y soportes",
+   "en": "Guides and supports",
+   "uk": "Напрямні та тримачі"
+  },
+  "Polit i acabat": {
+   "es": "Pulido y acabado",
+   "en": "Polishing and finishing",
+   "uk": "Полірування та оздоблення"
+  },
+  "Màquines de polit": {
+   "es": "Máquinas de pulido",
+   "en": "Polishing machines",
+   "uk": "Полірувальні машини"
+  },
+  "Lijes i papers": {
+   "es": "Lijas y papeles",
+   "en": "Sanding discs and papers",
+   "uk": "Шліфувальні диски та папір",
+   "ca": "Llixes i papers"
+  },
+  "Corones abrasives": {
+   "es": "Coronas abrasivas",
+   "en": "Abrasive cup wheels",
+   "uk": "Абразивні чашки"
+  },
+  "Rodets i plats": {
+   "es": "Rodillos y platos",
+   "en": "Rollers and backing pads",
+   "uk": "Ролики та тарілки"
+  },
+  "Cepells d'envellir": {
+   "es": "Cepillos de envejecer",
+   "en": "Antiquing brushes",
+   "uk": "Щітки для брашування",
+   "ca": "Raspalls d'envellir"
+  },
+  "Abrillantadors i ceres": {
+   "es": "Abrillantadores y ceras",
+   "en": "Polishes and waxes",
+   "uk": "Поліролі та воски"
+  },
+  "Adhesius i segellat": {
+   "es": "Adhesivos y sellado",
+   "en": "Adhesives and sealing",
+   "uk": "Клеї та герметизація"
+  },
+  "Adhesius": {
+   "es": "Adhesivos",
+   "en": "Adhesives",
+   "uk": "Клеї"
+  },
+  "Massilles i pegaments": {
+   "es": "Masillas y pegamentos",
+   "en": "Mastics and glues",
+   "uk": "Мастики та клеї"
+  },
+  "Silicones i polímers MS": {
+   "es": "Siliconas y polímeros MS",
+   "en": "Silicones and MS polymers",
+   "uk": "Силікони та MS-полімери"
+  },
+  "Pistolets i broquets": {
+   "es": "Pistolas y boquillas",
+   "en": "Guns and nozzles",
+   "uk": "Пістолети та насадки"
+  },
+  "Juntes invisibles": {
+   "es": "Juntas invisibles",
+   "en": "Invisible joints",
+   "uk": "Невидимі шви"
+  },
+  "Químics i reparació": {
+   "es": "Químicos y reparación",
+   "en": "Chemicals and repair",
+   "uk": "Хімія та ремонт"
+  },
+  "Químics": {
+   "es": "Químicos",
+   "en": "Chemicals",
+   "uk": "Хімія"
+  },
+  "Neteja i manteniment": {
+   "es": "Limpieza y mantenimiento",
+   "en": "Cleaning and maintenance",
+   "uk": "Очищення та догляд"
+  },
+  "Protecció de la pedra": {
+   "es": "Protección de la piedra",
+   "en": "Stone protection",
+   "uk": "Захист каменю"
+  },
+  "Decapat i colorants": {
+   "es": "Decapado y colorantes",
+   "en": "Strippers and colourants",
+   "uk": "Засоби для зняття покриттів та барвники"
+  },
+  "Antilliscants i reparació": {
+   "es": "Antideslizantes y reparación",
+   "en": "Anti-slip and repair",
+   "uk": "Протиковзні засоби та ремонт"
+  },
+  "Manipulació i instal·lació": {
+   "es": "Manipulación e instalación",
+   "en": "Handling and installation",
+   "uk": "Переміщення та монтаж"
+  },
+  "Manipulació": {
+   "es": "Manipulación",
+   "en": "Handling",
+   "uk": "Переміщення"
+  },
+  "Instal·lació": {
+   "es": "Instalación",
+   "en": "Installation",
+   "uk": "Монтаж"
+  },
+  "Ventoses": {
+   "es": "Ventosas",
+   "en": "Suction cups",
+   "uk": "Присоски"
+  },
+  "Carros i caballets": {
+   "es": "Carros y caballetes",
+   "en": "Trolleys and trestles",
+   "uk": "Візки та козли",
+   "ca": "Carros i cavallets"
+  },
+  "Pinces i grapes": {
+   "es": "Pinzas y grapas",
+   "en": "Clamps and grips",
+   "uk": "Затискачі та захвати"
+  },
+  "Reforços i anclatges": {
+   "es": "Refuerzos y anclajes",
+   "en": "Reinforcements and anchors",
+   "uk": "Підсилення та анкери",
+   "ca": "Reforços i ancoratges"
+  },
+  "Nivellació i mesura": {
+   "es": "Nivelación y medición",
+   "en": "Levelling and measuring",
+   "uk": "Нівелювання та вимірювання"
+  },
+  "Maquinària": {
+   "es": "Maquinaria",
+   "en": "Machinery",
+   "uk": "Обладнання"
+  },
+  "Amoladores i talladores": {
+   "es": "Amoladoras y cortadoras",
+   "en": "Grinders and cutters",
+   "uk": "Шліфмашини та різаки"
+  },
+  "Taladres": {
+   "es": "Taladros",
+   "en": "Drills",
+   "uk": "Дрилі",
+   "ca": "Trepants"
+  },
+  "Compressors": {
+   "es": "Compresores",
+   "en": "Compressors",
+   "uk": "Компресори"
+  },
+  "Eines neumàtiques": {
+   "es": "Herramientas neumáticas",
+   "en": "Pneumatic tools",
+   "uk": "Пневмоінструмент"
+  },
+  "Bateries i carregadors": {
+   "es": "Baterías y cargadores",
+   "en": "Batteries and chargers",
+   "uk": "Акумулятори та зарядні пристрої"
+  },
+  "Seguretat i taller": {
+   "es": "Seguridad y taller",
+   "en": "Safety and workshop",
+   "uk": "Безпека та майстерня"
+  },
+  "Equip": {
+   "es": "Equipo",
+   "en": "Equipment",
+   "uk": "Спорядження"
+  },
+  "Emmagatzematge": {
+   "es": "Almacenaje",
+   "en": "Storage",
+   "uk": "Зберігання"
+  },
+  "Calçat de seguretat": {
+   "es": "Calzado de seguridad",
+   "en": "Safety footwear",
+   "uk": "Захисне взуття"
+  },
+  "Mascaretes i protecció": {
+   "es": "Mascarillas y protección",
+   "en": "Masks and protection",
+   "uk": "Маски та захист"
+  },
+  "Roba i guants": {
+   "es": "Ropa y guantes",
+   "en": "Clothing and gloves",
+   "uk": "Одяг та рукавиці"
+  },
+  "Eines de taller": {
+   "es": "Herramientas de taller",
+   "en": "Workshop tools",
+   "uk": "Інструменти для майстерні"
+  },
+  "Higiene i consumibles": {
+   "es": "Higiene y consumibles",
+   "en": "Hygiene and consumables",
+   "uk": "Гігієна та витратні матеріали"
+  },
+  "Art funerari": {
+   "es": "Arte funerario",
+   "en": "Funerary art",
+   "uk": "Ритуальні вироби"
+  },
+  "Per a què serveix": {
+   "es": "Para qué sirve",
+   "en": "What it's for",
+   "uk": "Призначення"
+  },
+  "Material": {
+   "es": "Material",
+   "en": "Material",
+   "uk": "Матеріал"
+  },
+  "Treball": {
+   "es": "Trabajo",
+   "en": "Work",
+   "uk": "Робота"
+  },
+  "Nivell": {
+   "es": "Nivel",
+   "en": "Level",
+   "uk": "Рівень"
+  },
+  "Consultar compatibilitat": {
+   "es": "Consultar compatibilidad",
+   "en": "Ask about compatibility",
+   "uk": "Уточнюйте сумісність"
+  },
+  "Treball de taller": {
+   "es": "Trabajo de taller",
+   "en": "Workshop work",
+   "uk": "Робота в майстерні"
+  },
+  "Unió i muntatge": {
+   "es": "Unión y montaje",
+   "en": "Joining and assembly",
+   "uk": "З'єднання та монтаж"
+  },
+  "Tall i desbast": {
+   "es": "Corte y desbaste",
+   "en": "Cutting and grinding",
+   "uk": "Різання та обдирання"
+  },
+  "Bàsic": {
+   "es": "Básico",
+   "en": "Basic",
+   "uk": "Базовий"
+  },
+  "Tècnic": {
+   "es": "Técnico",
+   "en": "Technical",
+   "uk": "Технічний"
+  },
+  "Professional": {
+   "es": "Profesional",
+   "en": "Professional",
+   "uk": "Професійний"
+  },
+  "Eina necessària": {
+   "es": "Herramienta necesaria",
+   "en": "Required tool",
+   "uk": "Потрібний інструмент"
+  },
+  "Eines necessàries": {
+   "es": "Herramientas necesarias",
+   "en": "Required tools",
+   "uk": "Потрібні інструменти"
+  },
+  "Eina professional": {
+   "es": "Herramienta profesional",
+   "en": "Professional tool",
+   "uk": "Професійний інструмент"
+  },
+  "Amoladora o talladora": {
+   "es": "Amoladora o cortadora",
+   "en": "Grinder or cutter",
+   "uk": "Шліфмашина або різак"
+  },
+  "Amoladora, Talladora de pont": {
+   "es": "Amoladora, cortadora de puente",
+   "en": "Grinder, bridge saw",
+   "uk": "Шліфмашина, мостовий верстат"
+  },
+  "Amoladora": {
+   "es": "Amoladora",
+   "en": "Grinder",
+   "uk": "Шліфмашина"
+  },
+  "Talladora de pont": {
+   "es": "Cortadora de puente",
+   "en": "Bridge saw",
+   "uk": "Мостовий верстат"
+  },
+  "Pulidora": {
+   "es": "Pulidora",
+   "en": "Polisher",
+   "uk": "Полірувальна машина",
+   "ca": "Polidora"
+  },
+  "Polidora": {
+   "es": "Pulidora",
+   "en": "Polisher",
+   "uk": "Полірувальна машина"
+  },
+  "Eina manual": {
+   "es": "Herramienta manual",
+   "en": "Hand tool",
+   "uk": "Ручний інструмент"
+  },
+  "Taladre": {
+   "es": "Taladro",
+   "en": "Drill",
+   "uk": "Дриль",
+   "ca": "Trepant"
+  },
+  "Compressor": {
+   "es": "Compresor",
+   "en": "Compressor",
+   "uk": "Компресор"
+  },
+  "Aplicador manual": {
+   "es": "Aplicador manual",
+   "en": "Manual applicator",
+   "uk": "Ручний аплікатор"
+  },
+  "Manipulació manual": {
+   "es": "Manipulación manual",
+   "en": "Manual handling",
+   "uk": "Ручне переміщення"
+  },
+  "Fitxa tècnica": {
+   "es": "Ficha técnica",
+   "en": "Technical data",
+   "uk": "Технічні характеристики"
+  },
+  "Materials compatibles": {
+   "es": "Materiales compatibles",
+   "en": "Compatible materials",
+   "uk": "Сумісні матеріали"
+  },
+  "Materials NO compatibles": {
+   "es": "Materiales NO compatibles",
+   "en": "NOT compatible with",
+   "uk": "Несумісні матеріали"
+  },
+  "Materials i aplicacions": {
+   "es": "Materiales y aplicaciones",
+   "en": "Materials and applications",
+   "uk": "Матеріали та застосування"
+  },
+  "Aplicació": {
+   "es": "Aplicación",
+   "en": "Application",
+   "uk": "Застосування"
+  },
+  "Ús": {
+   "es": "Uso",
+   "en": "Use",
+   "uk": "Використання"
+  },
+  "Ús interior": {
+   "es": "Uso interior",
+   "en": "Indoor use",
+   "uk": "Для приміщень"
+  },
+  "Ús exterior": {
+   "es": "Uso exterior",
+   "en": "Outdoor use",
+   "uk": "Для вулиці"
+  },
+  "Resistència UV": {
+   "es": "Resistencia UV",
+   "en": "UV resistance",
+   "uk": "Стійкість до УФ"
+  },
+  "Resistència química": {
+   "es": "Resistencia química",
+   "en": "Chemical resistance",
+   "uk": "Хімічна стійкість"
+  },
+  "Contacte amb aliments": {
+   "es": "Contacto con alimentos",
+   "en": "Food contact",
+   "uk": "Контакт із харчовими продуктами"
+  },
+  "Temperatura de treball": {
+   "es": "Temperatura de trabajo",
+   "en": "Working temperature",
+   "uk": "Робоча температура"
+  },
+  "Temps obert": {
+   "es": "Tiempo abierto",
+   "en": "Open time",
+   "uk": "Відкритий час"
+  },
+  "Viscositat": {
+   "es": "Viscosidad",
+   "en": "Viscosity",
+   "uk": "В'язкість"
+  },
+  "Color": {
+   "es": "Color",
+   "en": "Colour",
+   "uk": "Колір"
+  },
+  "Sí": {
+   "es": "Sí",
+   "en": "Yes",
+   "uk": "Так"
+  },
+  "No": {
+   "es": "No",
+   "en": "No",
+   "uk": "Ні"
+  },
+  "Nivell de dificultat": {
+   "es": "Nivel de dificultad",
+   "en": "Difficulty level",
+   "uk": "Рівень складності"
+  },
+  "Productes complementaris": {
+   "es": "Productos complementarios",
+   "en": "Complementary products",
+   "uk": "Супутні товари"
+  },
+  "Veure informació del producte ↗": {
+   "es": "Ver información del producto ↗",
+   "en": "View product information ↗",
+   "uk": "Інформація про товар ↗"
+  },
+  "Elige tu modelo:": {
+   "es": "Elige tu modelo:",
+   "en": "Choose your model:",
+   "uk": "Оберіть модель:",
+   "ca": "Tria el model:"
+  },
+  "Afegir a la comanda": {
+   "es": "Añadir al pedido",
+   "en": "Add to order",
+   "uk": "Додати до замовлення"
+  },
+  "➕ Afegir a la comanda": {
+   "es": "➕ Añadir al pedido",
+   "en": "➕ Add to order",
+   "uk": "➕ Додати до замовлення"
+  },
+  "Afegir a llista": {
+   "es": "Añadir a lista",
+   "en": "Add to list",
+   "uk": "Додати до списку"
+  },
+  "📋 Afegir a llista": {
+   "es": "📋 Añadir a lista",
+   "en": "📋 Add to list",
+   "uk": "📋 Додати до списку"
+  },
+  "Quantitat": {
+   "es": "Cantidad",
+   "en": "Quantity",
+   "uk": "Кількість"
+  },
+  "Observacions (opcional)": {
+   "es": "Observaciones (opcional)",
+   "en": "Notes (optional)",
+   "uk": "Примітки (необов'язково)"
+  },
+  "Cancel·lar": {
+   "es": "Cancelar",
+   "en": "Cancel",
+   "uk": "Скасувати"
+  },
+  "Preu segons la teva tarifa": {
+   "es": "Precio según tu tarifa",
+   "en": "Price according to your rate",
+   "uk": "Ціна за вашим тарифом"
+  },
+  "🛒 La teva comanda": {
+   "es": "🛒 Tu pedido",
+   "en": "🛒 Your order",
+   "uk": "🛒 Ваше замовлення"
+  },
+  "Veure comanda →": {
+   "es": "Ver pedido →",
+   "en": "View order →",
+   "uk": "Переглянути замовлення →"
+  },
+  "Les teves dades": {
+   "es": "Tus datos",
+   "en": "Your details",
+   "uk": "Ваші дані"
+  },
+  "Rebràs la confirmació i el preu de la comanda del teu comercial.": {
+   "es": "Recibirás la confirmación y el precio del pedido de tu comercial.",
+   "en": "Your sales rep will send you the confirmation and the price of your order.",
+   "uk": "Ваш менеджер надішле вам підтвердження та ціну замовлення."
+  },
+  "Nom i cognoms *": {
+   "es": "Nombre y apellidos *",
+   "en": "Full name *",
+   "uk": "Ім'я та прізвище *"
+  },
+  "Empresa *": {
+   "es": "Empresa *",
+   "en": "Company *",
+   "uk": "Компанія *"
+  },
+  "Telèfon *": {
+   "es": "Teléfono *",
+   "en": "Phone *",
+   "uk": "Телефон *"
+  },
+  "Població": {
+   "es": "Población",
+   "en": "Town",
+   "uk": "Місто"
+  },
+  "Observacions (lloc d'entrega, urgència…)": {
+   "es": "Observaciones (lugar de entrega, urgencia…)",
+   "en": "Notes (delivery place, urgency…)",
+   "uk": "Примітки (місце доставки, терміновість…)"
+  },
+  "Buida": {
+   "es": "Vaciar",
+   "en": "Clear",
+   "uk": "Очистити"
+  },
+  "Enviar per WhatsApp": {
+   "es": "Enviar por WhatsApp",
+   "en": "Send via WhatsApp",
+   "uk": "Надіслати через WhatsApp"
+  },
+  "S'obre WhatsApp amb la comanda: prem Enviar per fer-la arribar.": {
+   "es": "Se abre WhatsApp con el pedido: pulsa Enviar para que llegue.",
+   "en": "WhatsApp will open with your order: tap Send to deliver it.",
+   "uk": "Відкриється WhatsApp із замовленням: натисніть «Надіслати»."
+  },
+  "Pedido buit": {
+   "es": "Pedido vacío",
+   "en": "Your order is empty",
+   "uk": "Замовлення порожнє",
+   "ca": "Comanda buida"
+  },
+  "Afegeix productes des de la fitxa de cada producte": {
+   "es": "Añade productos desde la ficha de cada producto",
+   "en": "Add products from each product page",
+   "uk": "Додавайте товари зі сторінки кожного товару"
+  },
+  "No s'han trobat resultats": {
+   "es": "No se han encontrado resultados",
+   "en": "No results found",
+   "uk": "Нічого не знайдено"
+  },
+  "Les meves llistes": {
+   "es": "Mis listas",
+   "en": "My lists",
+   "uk": "Мої списки"
+  },
+  "➕ Nova llista": {
+   "es": "➕ Nueva lista",
+   "en": "➕ New list",
+   "uk": "➕ Новий список"
+  },
+  "Nova llista": {
+   "es": "Nueva lista",
+   "en": "New list",
+   "uk": "Новий список"
+  },
+  "Crear llista": {
+   "es": "Crear lista",
+   "en": "Create list",
+   "uk": "Створити список"
+  },
+  "Nom de la llista": {
+   "es": "Nombre de la lista",
+   "en": "List name",
+   "uk": "Назва списку"
+  },
+  "Ex: Productes estrella": {
+   "es": "Ej.: Productos estrella",
+   "en": "E.g.: Best sellers",
+   "uk": "Напр.: Хіти продажу"
+  },
+  "Desar": {
+   "es": "Guardar",
+   "en": "Save",
+   "uk": "Зберегти"
+  },
+  "Preparant catàleg offline": {
+   "es": "Preparando el catálogo sin conexión",
+   "en": "Preparing the offline catalogue",
+   "uk": "Підготовка офлайн-каталогу",
+   "ca": "Preparant el catàleg sense connexió"
+  },
+  "Descarregant tots els productes i imatges per funcionar sense connexió": {
+   "es": "Descargando todos los productos e imágenes para funcionar sin conexión",
+   "en": "Downloading all products and images to work offline",
+   "uk": "Завантаження всіх товарів і зображень для роботи без інтернету"
+  },
+  "Iniciant...": {
+   "es": "Iniciando...",
+   "en": "Starting...",
+   "uk": "Запуск..."
+  },
+  "✓ Catàleg desat: ja funciona sense connexió": {
+   "es": "✓ Catálogo guardado: ya funciona sin conexión",
+   "en": "✓ Catalogue saved: it now works offline",
+   "uk": "✓ Каталог збережено: тепер працює без інтернету"
+  },
+  "⏳ Desant el catàleg per fer-lo servir sense connexió… Deixa l'app oberta.": {
+   "es": "⏳ Guardando el catálogo para usarlo sin conexión… Deja la app abierta.",
+   "en": "⏳ Saving the catalogue for offline use… Keep the app open.",
+   "uk": "⏳ Зберігаємо каталог для роботи без інтернету… Не закривайте застосунок."
+  },
+  "Assessor NEXE": {
+   "es": "Asesor NEXE",
+   "en": "NEXE advisor",
+   "uk": "Порадник NEXE"
+  },
+  "Quin treball s’ha de fer?": {
+   "es": "¿Qué trabajo hay que hacer?",
+   "en": "What job needs doing?",
+   "uk": "Яку роботу потрібно виконати?"
+  },
+  "Aquesta decisió defineix l’ordre de les recomanacions.": {
+   "es": "Esta decisión define el orden de las recomendaciones.",
+   "en": "This choice sets the order of the recommendations.",
+   "uk": "Цей вибір визначає порядок рекомендацій."
+  },
+  "Disc, refrigeració i guia": {
+   "es": "Disco, refrigeración y guía",
+   "en": "Disc, cooling and guide",
+   "uk": "Диск, охолодження та напрямна"
+  },
+  "Enganxat": {
+   "es": "Pegado",
+   "en": "Bonding",
+   "uk": "Склеювання"
+  },
+  "Adhesiu, preparació i unió": {
+   "es": "Adhesivo, preparación y unión",
+   "en": "Adhesive, preparation and joining",
+   "uk": "Клей, підготовка та з'єднання"
+  },
+  "Polit": {
+   "es": "Pulido",
+   "en": "Polishing",
+   "uk": "Полірування"
+  },
+  "Abrasius, polit i acabat": {
+   "es": "Abrasivos, pulido y acabado",
+   "en": "Abrasives, polishing and finishing",
+   "uk": "Абразиви, полірування та оздоблення"
+  },
+  "Reparació": {
+   "es": "Reparación",
+   "en": "Repair",
+   "uk": "Ремонт"
+  },
+  "Reomplir, consolidar i acabar": {
+   "es": "Rellenar, consolidar y acabar",
+   "en": "Fill, consolidate and finish",
+   "uk": "Заповнення, зміцнення та оздоблення"
+  },
+  "Manipulació, fixació i segellat": {
+   "es": "Manipulación, fijación y sellado",
+   "en": "Handling, fixing and sealing",
+   "uk": "Переміщення, кріплення та герметизація"
+  },
+  "Quin material treballareu?": {
+   "es": "¿Qué material vais a trabajar?",
+   "en": "Which material will you work with?",
+   "uk": "З яким матеріалом працюватимете?"
+  },
+  "La compatibilitat del material pesa més que la marca.": {
+   "es": "La compatibilidad del material pesa más que la marca.",
+   "en": "Material compatibility matters more than the brand.",
+   "uk": "Сумісність із матеріалом важливіша за бренд."
+  },
+  "Granit": {
+   "es": "Granito",
+   "en": "Granite",
+   "uk": "Граніт"
+  },
+  "Dur i abrasiu": {
+   "es": "Duro y abrasivo",
+   "en": "Hard and abrasive",
+   "uk": "Твердий та абразивний"
+  },
+  "Marbre": {
+   "es": "Mármol",
+   "en": "Marble",
+   "uk": "Мармур"
+  },
+  "Més sensible": {
+   "es": "Más sensible",
+   "en": "More delicate",
+   "uk": "Більш делікатний"
+  },
+  "Porcellànic": {
+   "es": "Porcelánico",
+   "en": "Porcelain tile",
+   "uk": "Керамограніт"
+  },
+  "Tècnic i compacte": {
+   "es": "Técnico y compacto",
+   "en": "Technical and compact",
+   "uk": "Технічний та щільний"
+  },
+  "Quars": {
+   "es": "Cuarzo",
+   "en": "Quartz",
+   "uk": "Кварц"
+  },
+  "Compacte": {
+   "es": "Compacto",
+   "en": "Compact",
+   "uk": "Щільний"
+  },
+  "Sinteritzat": {
+   "es": "Sinterizado",
+   "en": "Sintered stone",
+   "uk": "Спечений камінь"
+  },
+  "Superfície tècnica": {
+   "es": "Superficie técnica",
+   "en": "Technical surface",
+   "uk": "Технічна поверхня"
+  },
+  "Quin gruix té la peça?": {
+   "es": "¿Qué grosor tiene la pieza?",
+   "en": "How thick is the piece?",
+   "uk": "Яка товщина виробу?"
+  },
+  "Ajusta el control, la velocitat i l’eina de treball.": {
+   "es": "Ajusta el control, la velocidad y la herramienta de trabajo.",
+   "en": "It sets the control, speed and tool to use.",
+   "uk": "Визначає контроль, швидкість та інструмент."
+  },
+  "Fins a 12 mm": {
+   "es": "Hasta 12 mm",
+   "en": "Up to 12 mm",
+   "uk": "До 12 мм"
+  },
+  "Peça lleugera": {
+   "es": "Pieza ligera",
+   "en": "Light piece",
+   "uk": "Легкий виріб"
+  },
+  "Gruix estàndard": {
+   "es": "Grosor estándar",
+   "en": "Standard thickness",
+   "uk": "Стандартна товщина"
+  },
+  "Més de 20 mm": {
+   "es": "Más de 20 mm",
+   "en": "Over 20 mm",
+   "uk": "Понад 20 мм"
+  },
+  "Peça massissa": {
+   "es": "Pieza maciza",
+   "en": "Solid piece",
+   "uk": "Масивний виріб"
+  },
+  "On quedarà la peça?": {
+   "es": "¿Dónde quedará la pieza?",
+   "en": "Where will the piece go?",
+   "uk": "Де буде розташований виріб?"
+  },
+  "Condiciona la resistència de l’adhesiu i el segellat.": {
+   "es": "Condiciona la resistencia del adhesivo y del sellado.",
+   "en": "It affects how resistant the adhesive and sealing must be.",
+   "uk": "Впливає на стійкість клею та герметика."
+  },
+  "Interior": {
+   "es": "Interior",
+   "en": "Indoors",
+   "uk": "Всередині"
+  },
+  "Condicions controlades": {
+   "es": "Condiciones controladas",
+   "en": "Controlled conditions",
+   "uk": "Контрольовані умови"
+  },
+  "Exterior": {
+   "es": "Exterior",
+   "en": "Outdoors",
+   "uk": "Назовні"
+  },
+  "Humitat, UV i temperatura": {
+   "es": "Humedad, UV y temperatura",
+   "en": "Damp, UV and temperature",
+   "uk": "Вологість, УФ та температура"
+  },
+  "On es farà el treball?": {
+   "es": "¿Dónde se hará el trabajo?",
+   "en": "Where will the work be done?",
+   "uk": "Де виконуватиметься робота?"
+  },
+  "La mobilitat i la neteja canvien l’elecció de l’eina.": {
+   "es": "La movilidad y la limpieza cambian la elección de la herramienta.",
+   "en": "Mobility and cleanliness change the choice of tool.",
+   "uk": "Мобільність і чистота впливають на вибір інструменту."
+  },
+  "Taller": {
+   "es": "Taller",
+   "en": "Workshop",
+   "uk": "Майстерня"
+  },
+  "Precisió i producció": {
+   "es": "Precisión y producción",
+   "en": "Precision and production",
+   "uk": "Точність та виробництво"
+  },
+  "Obra": {
+   "es": "Obra",
+   "en": "On site",
+   "uk": "Об'єкт"
+  },
+  "Mobilitat i muntatge": {
+   "es": "Movilidad y montaje",
+   "en": "Mobility and installation",
+   "uk": "Мобільність та монтаж"
+  },
+  "Quin nivell d’acabat necessita?": {
+   "es": "¿Qué nivel de acabado necesita?",
+   "en": "What finish level is needed?",
+   "uk": "Який рівень оздоблення потрібен?"
+  },
+  "Prioritza velocitat, qualitat visual o una junta discreta.": {
+   "es": "Prioriza velocidad, calidad visual o una junta discreta.",
+   "en": "Prioritise speed, visual quality or a discreet joint.",
+   "uk": "Пріоритет: швидкість, вигляд або непомітний шов."
+  },
+  "Funcional": {
+   "es": "Funcional",
+   "en": "Functional",
+   "uk": "Функціональне"
+  },
+  "Resistent i àgil": {
+   "es": "Resistente y ágil",
+   "en": "Strong and quick",
+   "uk": "Міцне та швидке"
+  },
+  "Premium": {
+   "es": "Premium",
+   "en": "Premium",
+   "uk": "Преміум"
+  },
+  "Acabat molt uniforme": {
+   "es": "Acabado muy uniforme",
+   "en": "Very even finish",
+   "uk": "Дуже рівне оздоблення"
+  },
+  "Junta invisible": {
+   "es": "Junta invisible",
+   "en": "Invisible joint",
+   "uk": "Невидимий шов"
+  },
+  "Màxima integració visual": {
+   "es": "Máxima integración visual",
+   "en": "Maximum visual blending",
+   "uk": "Максимальна візуальна цілісність"
+  },
+  "Quina màquina utilitzarà?": {
+   "es": "¿Qué máquina utilizará?",
+   "en": "Which machine will be used?",
+   "uk": "Яке обладнання використовуватиметься?"
+  },
+  "Evitem recomanar consumibles incompatibles amb el vostre equip.": {
+   "es": "Evitamos recomendar consumibles incompatibles con vuestro equipo.",
+   "en": "We avoid recommending consumables that don't fit your equipment.",
+   "uk": "Ми не рекомендуємо витратні матеріали, несумісні з вашим обладнанням."
+  },
+  "Tall i desbast manual": {
+   "es": "Corte y desbaste manual",
+   "en": "Manual cutting and grinding",
+   "uk": "Ручне різання та обдирання"
+  },
+  "Tall recte amb aigua": {
+   "es": "Corte recto con agua",
+   "en": "Straight wet cutting",
+   "uk": "Пряме різання з водою"
+  },
+  "CNC": {
+   "es": "CNC",
+   "en": "CNC",
+   "uk": "ЧПК"
+  },
+  "Producció i perfils": {
+   "es": "Producción y perfiles",
+   "en": "Production and profiles",
+   "uk": "Виробництво та профілі"
+  },
+  "Manual": {
+   "es": "Manual",
+   "en": "Manual",
+   "uk": "Вручну"
+  },
+  "Muntatge i reparació": {
+   "es": "Montaje y reparación",
+   "en": "Assembly and repair",
+   "uk": "Монтаж та ремонт"
+  },
+  "Consumible de tall": {
+   "es": "Consumible de corte",
+   "en": "Cutting consumable",
+   "uk": "Витратні матеріали для різання"
+  },
+  "Seleccionat segons el material, el gruix i la màquina.": {
+   "es": "Seleccionado según el material, el grosor y la máquina.",
+   "en": "Chosen for the material, thickness and machine.",
+   "uk": "Підібрано з урахуванням матеріалу, товщини та обладнання."
+  },
+  "Guia o control de tall": {
+   "es": "Guía o control de corte",
+   "en": "Cutting guide or control",
+   "uk": "Напрямна або контроль різання"
+  },
+  "Ajuda a mantenir un tall estable i repetible.": {
+   "es": "Ayuda a mantener un corte estable y repetible.",
+   "en": "Helps keep a stable, repeatable cut.",
+   "uk": "Допомагає зберігати стабільний і повторюваний різ."
+  },
+  "Adhesiu estructural": {
+   "es": "Adhesivo estructural",
+   "en": "Structural adhesive",
+   "uk": "Конструкційний клей"
+  },
+  "Escollit per unió i compatibilitat amb el material.": {
+   "es": "Elegido por unión y compatibilidad con el material.",
+   "en": "Chosen for bonding and material compatibility.",
+   "uk": "Обрано за міцністю з'єднання та сумісністю з матеріалом."
+  },
+  "Eina d'aplicació": {
+   "es": "Herramienta de aplicación",
+   "en": "Application tool",
+   "uk": "Інструмент для нанесення"
+  },
+  "Permet una dosificació neta i controlada.": {
+   "es": "Permite una dosificación limpia y controlada.",
+   "en": "Allows clean, controlled dispensing.",
+   "uk": "Забезпечує чисте та контрольоване дозування."
+  },
+  "Segellat final": {
+   "es": "Sellado final",
+   "en": "Final sealing",
+   "uk": "Фінальна герметизація"
+  },
+  "Protecció de la junta segons l'entorn.": {
+   "es": "Protección de la junta según el entorno.",
+   "en": "Joint protection suited to the environment.",
+   "uk": "Захист шва відповідно до умов."
+  },
+  "Eina de polit": {
+   "es": "Herramienta de pulido",
+   "en": "Polishing tool",
+   "uk": "Інструмент для полірування"
+  },
+  "Compatible amb el procés de polit seleccionat.": {
+   "es": "Compatible con el proceso de pulido seleccionado.",
+   "en": "Compatible with the selected polishing process.",
+   "uk": "Сумісний з обраним процесом полірування."
+  },
+  "Abrasiu de polit": {
+   "es": "Abrasivo de pulido",
+   "en": "Polishing abrasive",
+   "uk": "Полірувальний абразив"
+  },
+  "Progressió per arribar al nivell d'acabat indicat.": {
+   "es": "Progresión para llegar al nivel de acabado indicado.",
+   "en": "A progression to reach the chosen finish.",
+   "uk": "Послідовність для досягнення потрібного оздоблення."
+  },
+  "Acabat i protecció": {
+   "es": "Acabado y protección",
+   "en": "Finish and protection",
+   "uk": "Оздоблення та захист"
+  },
+  "Finalitza el procés segons l'acabat desitjat.": {
+   "es": "Finaliza el proceso según el acabado deseado.",
+   "en": "Completes the process for the desired finish.",
+   "uk": "Завершує процес відповідно до бажаного оздоблення."
+  },
+  "Producte de reparació": {
+   "es": "Producto de reparación",
+   "en": "Repair product",
+   "uk": "Засіб для ремонту"
+  },
+  "Per consolidar o reomplir la zona afectada.": {
+   "es": "Para consolidar o rellenar la zona afectada.",
+   "en": "To consolidate or fill the damaged area.",
+   "uk": "Для зміцнення або заповнення пошкодженої ділянки."
+  },
+  "Acabat de reparació": {
+   "es": "Acabado de reparación",
+   "en": "Repair finish",
+   "uk": "Ремонтне оздоблення"
+  },
+  "Per integrar visualment la reparació.": {
+   "es": "Para integrar visualmente la reparación.",
+   "en": "To blend the repair in visually.",
+   "uk": "Щоб ремонт був непомітним."
+  },
+  "Manipulació de la peça": {
+   "es": "Manipulación de la pieza",
+   "en": "Handling the piece",
+   "uk": "Переміщення виробу"
+  },
+  "Adaptada al gruix i al muntatge en obra.": {
+   "es": "Adaptada al grosor y al montaje en obra.",
+   "en": "Suited to the thickness and on-site installation.",
+   "uk": "Підходить для товщини та монтажу на об'єкті."
+  },
+  "Fixació o unió": {
+   "es": "Fijación o unión",
+   "en": "Fixing or joining",
+   "uk": "Кріплення або з'єднання"
+  },
+  "Recomanat segons material i condicions de servei.": {
+   "es": "Recomendado según material y condiciones de servicio.",
+   "en": "Recommended for the material and service conditions.",
+   "uk": "Рекомендовано з урахуванням матеріалу та умов експлуатації."
+  },
+  "Accessoris de muntatge": {
+   "es": "Accesorios de montaje",
+   "en": "Installation accessories",
+   "uk": "Монтажні аксесуари"
+  },
+  "Per a un posicionament precís.": {
+   "es": "Para un posicionamiento preciso.",
+   "en": "For precise positioning.",
+   "uk": "Для точного позиціонування."
+  },
+  "Pensat per a ús interior.": {
+   "es": "Pensado para uso interior.",
+   "en": "Intended for indoor use.",
+   "uk": "Призначено для використання в приміщенні."
+  },
+  "S'ha valorat l'ús a exterior.": {
+   "es": "Se ha valorado el uso en exterior.",
+   "en": "Outdoor use has been taken into account.",
+   "uk": "Враховано використання надворі."
+  },
+  "Recomanació": {
+   "es": "Recomendación",
+   "en": "Recommendation",
+   "uk": "Рекомендація"
+  },
+  "Tornar a començar": {
+   "es": "Volver a empezar",
+   "en": "Start again",
+   "uk": "Почати знову"
+  },
+  "Afegir al pedido": {
+   "ca": "Afegir a la comanda",
+   "es": "Añadir al pedido",
+   "en": "Add to order",
+   "uk": "Додати до замовлення"
+  },
+  "Sovint es compra amb…": {
+   "es": "Se suele comprar con…",
+   "en": "Often bought with…",
+   "uk": "Часто купують разом з…"
+  },
+  "Total pack": {
+   "es": "Total pack",
+   "en": "Pack total",
+   "uk": "Разом за набір"
+  },
+  "Des de": {
+   "es": "Desde",
+   "en": "From",
+   "uk": "Від"
+  },
+  "Veure producte →": {
+   "es": "Ver producto →",
+   "en": "View product →",
+   "uk": "Переглянути товар →"
+  },
+  "➕ Afegir el pack a la comanda": {
+   "es": "➕ Añadir el pack al pedido",
+   "en": "➕ Add the pack to the order",
+   "uk": "➕ Додати набір до замовлення"
+  },
+  "✓ Pack afegit a la comanda": {
+   "es": "✓ Pack añadido al pedido",
+   "en": "✓ Pack added to the order",
+   "uk": "✓ Набір додано до замовлення"
+  },
+  "Pack complet": {
+   "es": "Pack completo",
+   "en": "Complete pack",
+   "uk": "Повний набір"
+  },
+  "Recomanat": {
+   "es": "Recomendado",
+   "en": "Recommended",
+   "uk": "Рекомендовано"
+  },
+  "Destacat": {
+   "es": "Destacado",
+   "en": "Featured",
+   "uk": "Хіт"
+  },
+  "Amoladora a bateria Crown + kit de 2 bateries": {
+   "es": "Amoladora a batería Crown + kit de 2 baterías",
+   "en": "Crown cordless grinder + 2-battery kit",
+   "uk": "Акумуляторна шліфмашина Crown + набір із 2 акумуляторів"
+  },
+  "Brushless Ø125 sense cable · 2 bateries 5 Ah, carregador i bossa de transport": {
+   "es": "Brushless Ø125 sin cable · 2 baterías 5 Ah, cargador y bolsa de transporte",
+   "en": "Brushless Ø125, cordless · 2 × 5 Ah batteries, charger and carry bag",
+   "uk": "Безщітковий двигун, Ø125, без кабелю · 2 акумулятори 5 А·год, зарядний пристрій і сумка"
+  },
+  "Silicona neutra Collak": {
+   "es": "Silicona neutra Collak",
+   "en": "Collak neutral silicone",
+   "uk": "Нейтральний силікон Collak"
+  },
+  "Blanca i transparent · per a juntes, banys i cuines": {
+   "es": "Blanca y transparente · para juntas, baños y cocinas",
+   "en": "White and clear · for joints, bathrooms and kitchens",
+   "uk": "Білий і прозорий · для швів, ванних і кухонь"
+  },
+  "Broques Red Shine": {
+   "es": "Brocas Red Shine",
+   "en": "Red Shine core drill bits",
+   "uk": "Свердла Red Shine"
+  },
+  "Granit, quars i porcellànic · de Ø16 a Ø140 mm": {
+   "es": "Granito, cuarzo y porcelánico · de Ø16 a Ø140 mm",
+   "en": "Granite, quartz and porcelain · Ø16 to Ø140 mm",
+   "uk": "Граніт, кварц і керамограніт · від Ø16 до Ø140 мм"
+  }
+ },
+ "patterns": [
+  {
+   "re": "^(\\d+) productes$",
+   "t": {
+    "es": "$1 productos",
+    "en": "$1 products",
+    "uk": "$1 {pl:$1:товар|товари|товарів}"
+   }
+  },
+  {
+   "re": "^(\\d+) producte$",
+   "t": {
+    "es": "$1 producto",
+    "en": "$1 product",
+    "uk": "$1 товар"
+   }
+  },
+  {
+   "re": "^🔧 (\\d+) variants$",
+   "t": {
+    "es": "🔧 $1 variantes",
+    "en": "🔧 $1 options",
+    "uk": "🔧 $1 {pl:$1:варіант|варіанти|варіантів}"
+   }
+  },
+  {
+   "re": "^(\\d+) llistes$",
+   "t": {
+    "es": "$1 listas",
+    "en": "$1 lists",
+    "uk": "$1 {pl:$1:список|списки|списків}"
+   }
+  },
+  {
+   "re": "^(\\d+) llista$",
+   "t": {
+    "es": "$1 lista",
+    "en": "$1 list",
+    "uk": "$1 список"
+   }
+  },
+  {
+   "re": "^(\\d+) categories · (.+)$",
+   "t": {
+    "es": "$1 categorías · $2",
+    "en": "$1 categories · $2",
+    "uk": "$1 {pl:$1:категорія|категорії|категорій} · $2"
+   }
+  },
+  {
+   "re": "^Assessor NEXE · (\\d+) de (\\d+)$",
+   "t": {
+    "es": "Asesor NEXE · $1 de $2",
+    "en": "NEXE advisor · $1 of $2",
+    "uk": "Порадник NEXE · $1 з $2"
+   }
+  },
+  {
+   "re": "^Imatge (\\d+)$",
+   "t": {
+    "es": "Imagen $1",
+    "en": "Image $1",
+    "uk": "Зображення $1"
+   }
+  },
+  {
+   "re": "^Ref\\. (.+)$",
+   "t": {
+    "es": "Ref. $1",
+    "en": "Ref. $1",
+    "uk": "Арт. $1"
+   }
+  },
+  {
+   "re": "^(\\d+)% confiança$",
+   "t": {
+    "es": "$1% de confianza",
+    "en": "$1% match",
+    "uk": "збіг $1%"
+   }
+  },
+  {
+   "re": "^Compatible amb (.+)\\.$",
+   "t": {
+    "es": "Compatible con $1.",
+    "en": "Compatible with $1.",
+    "uk": "Сумісно з: $1."
+   }
+  },
+  {
+   "re": "^Nivell (.+)\\.$",
+   "t": {
+    "es": "Nivel $T1.",
+    "en": "Level: $T1.",
+    "uk": "Рівень: $T1."
+   }
+  },
+  {
+   "re": "^Requereix (.+)\\.$",
+   "t": {
+    "es": "Requiere $T1.",
+    "en": "Requires: $T1.",
+    "uk": "Потрібно: $T1."
+   }
+  }
+ ]
+}

@@ -1,0 +1,4 @@
+{
+ "_comment": "Productes (per referència) que a la versió lleugera (build --light) conserven totes les fotos en lloc d'una sola.",
+ "keepAllImages": ["FOTOCER/OVAL-RECT", "5/ALUANTI"]
+}
