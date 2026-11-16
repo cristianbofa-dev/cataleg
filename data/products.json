@@ -33681,23 +33681,28 @@
   "star": 0
  },
  {
-  "n": "INTEGRA Surface Bonder - Adhesivo juntas invisibles",
-  "r": "INTEGRA/SURFACE-BONDER",
-  "d": "Adhesivo para juntas invisibles INTEGRA Surface Bonder. Todos los colores al mismo precio.",
+  "n": "INTEGRA Horizon 10:1 250 ml - Adhesivo juntas invisibles",
+  "r": "INTEGRA/HORIZON-250",
+  "d": "El adhesivo INTEGRA Horizon 10:1 es un adhesivo bicomponente de metacrilato de alto rendimiento, en cartucho de 250 ml, diseñado para crear juntas invisibles en superficies sólidas, porcelánico, piedra sinterizada, cuarzo y piedra natural. Proporciona una unión resistente y duradera, con un acabado prácticamente imperceptible, tanto en interior como en exterior.\n\nCARACTERÍSTICAS\nAdhesivo bicomponente de metacrilato 10:1 / Tiempo de trabajo de 9 a 14 minutos / Fórmula No Sag (antidescuelgue), ideal para aplicaciones verticales / Alta resistencia a los rayos UV, la intemperie, la humedad y los cambios de temperatura / Excelente estabilidad del color y resistencia al envejecimiento / Elevada resistencia mecánica y gran durabilidad.\nCOLORES: compatible con colores de Dekton®, Silestone®, Techlam® y Laminam®. Todos los colores al mismo precio.\nSe aplica con la pistola Integra de 250 ml y boquillas de mezclado Integra.",
   "p": "29.50",
   "b": "INTEGRA",
   "s": "ADHESIVO PARA JUNTAS INVISIBLES",
-  "i": "imgs/products-1493-1-m.jpeg",
-  "u": "",
+  "i": "imgs/integra-horizon-250.jpg",
+  "u": "https://www.insemactools.es/cygnus-pearl-2195.html",
   "fam": "quimics",
-  "aplic": [],
+  "aplic": [
+   "Porcelánico",
+   "Piedra sinterizada",
+   "Cuarzo",
+   "Superficies sólidas",
+   "Piedra natural"
+  ],
   "cat": "adhesius",
   "subcat": "juntes-invisibles",
   "colorGroup": null,
   "featured": null,
   "imgs": [
-   "imgs/products-1493-1-m.jpeg",
-   "imgs/products-1493-2-m.jpeg"
+   "imgs/integra-horizon-250.jpg"
   ],
   "star": 0,
   "insemacVariants": [
@@ -34084,6 +34089,24 @@
     "label": "alpha brown 2006",
     "price": 29.5,
     "star": 0
+   }
+  ],
+  "specs": [
+   {
+    "label": "Formato",
+    "value": "Cartucho 250 ml"
+   },
+   {
+    "label": "Mezcla",
+    "value": "10:1 (metacrilato bicomponente)"
+   },
+   {
+    "label": "Tiempo de trabajo",
+    "value": "9 a 14 min"
+   },
+   {
+    "label": "Uso",
+    "value": "Interior y exterior"
    }
   ]
  },

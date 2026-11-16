@@ -270,7 +270,18 @@ var SECTION_KNOWLEDGE = {
 };
 
 /* ── ATRIBUTS PER PRODUCTE (per ref, override) ── */
-var PRODUCT_KNOWLEDGE = {};
+var PRODUCT_KNOWLEDGE = {
+  // INTEGRA Horizon 10:1 (dades de la fitxa d'Insemac)
+  'INTEGRA/HORIZON-250': {
+    uso: ['pegado'],
+    tiempoAbierto: '9-14 min',
+    resistenciaUV: true,
+    interior: true, exterior: true,
+    viscosidad: 'No Sag (antidescuelgue)',
+    dificultad: 'tecnico',
+    herramientas: ['manual']
+  }
+};
 
 /* ── FUNCIÓ PRINCIPAL: obté coneixement complet d'un producte ── */
 function getProductKnowledge(p, idx){

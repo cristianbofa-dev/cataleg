@@ -187,7 +187,7 @@
     },
     {
      "idx": 959,
-     "ref": "INTEGRA/SURFACE-BONDER"
+     "ref": "INTEGRA/HORIZON-250"
     },
     {
      "idx": 241,
@@ -196,6 +196,60 @@
     {
      "idx": 251,
      "ref": "1/BOQ.INT"
+    },
+    {
+     "idx": 460,
+     "ref": "2/VMD89"
+    }
+   ]
+  },
+  {
+   "when": {
+    "idx": 247
+   },
+   "show": [
+    {
+     "idx": 243,
+     "ref": "1/P400"
+    },
+    {
+     "idx": 241,
+     "ref": "1/TIPCB"
+    },
+    {
+     "idx": 565,
+     "ref": "1/SINK"
+    },
+    {
+     "idx": 460,
+     "ref": "2/VMD89"
+    }
+   ]
+  },
+  {
+   "when": {
+    "idx": 959
+   },
+   "show": [
+    {
+     "idx": 250,
+     "ref": "1/P250"
+    },
+    {
+     "idx": 251,
+     "ref": "1/BOQ.INT"
+    },
+    {
+     "idx": 534,
+     "ref": "50/SP-E2W-M14"
+    },
+    {
+     "idx": 536,
+     "ref": "50/NIVEL115"
+    },
+    {
+     "idx": 537,
+     "ref": "50/NIVEL150"
     },
     {
      "idx": 460,
