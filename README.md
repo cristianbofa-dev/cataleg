@@ -345,4 +345,6 @@ El catàleg per a clients es pot llegir en català, castellà, anglès i ucraïn
 
 ### Web per a clients: sempre en línia
 
+`tools/publish_clients.sh` també hi publica l'app Crown (amb preus) a `/crown/` (www.nexeindustrial.es/crown/). La neteja de còpies offline del web de clients no toca la de Crown.
+
 El web de clients (`tools/client_app.py`) no es descarrega sencer: l'HTML només porta les dades (uns 2 MB, mig MB comprimit) i les fotos són fitxers a `imgs/` que es carreguen quan es veuen. No té còpia sense connexió; el seu `sw.js` només esborra la que desaven les versions anteriors.

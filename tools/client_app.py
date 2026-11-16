@@ -268,7 +268,7 @@ SW_CLEANUP = """/* Catàleg NEXE per a clients: web sempre en línia, sense còp
 self.addEventListener('install', function () { self.skipWaiting(); });
 self.addEventListener('activate', function (event) {
   event.waitUntil(
-    caches.keys().then(function (keys) { return Promise.all(keys.map(function (k) { return caches.delete(k); })); })
+    caches.keys().then(function (keys) { return Promise.all(keys.filter(function (k) { return k.indexOf('crown-') !== 0; }).map(function (k) { return caches.delete(k); })); })
       .then(function () { return self.registration.unregister(); })
       .then(function () { return self.clients.matchAll({ type: 'window' }); })
       .then(function (list) { list.forEach(function (c) { c.navigate(c.url); }); })
@@ -276,9 +276,9 @@ self.addEventListener('activate', function (event) {
 });
 """
 
-NO_SW = """<script>/* Web per a clients: sense service worker ni còpia offline */
-(function(){ try{ if('serviceWorker' in navigator){ navigator.serviceWorker.getRegistrations().then(function(rs){ rs.forEach(function(r){ r.unregister(); }); }); }
-  if(window.caches){ caches.keys().then(function(ks){ ks.forEach(function(k){ caches.delete(k); }); }); } }catch(e){} })();</script>"""
+NO_SW = r"""<script>/* Web per a clients: sense service worker ni còpia offline */
+(function(){ try{ if('serviceWorker' in navigator){ navigator.serviceWorker.getRegistrations().then(function(rs){ rs.forEach(function(r){ if(!/\/crown\/$/.test(r.scope)) r.unregister(); }); }); }
+  if(window.caches){ caches.keys().then(function(ks){ ks.forEach(function(k){ if(k.indexOf('crown-')!==0) caches.delete(k); }); }); } }catch(e){} })();</script>"""
 
 
 def externalize_images(html, dest):
