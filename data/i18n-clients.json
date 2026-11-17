@@ -1372,6 +1372,21 @@
    "es": "Granito, cuarzo y porcelánico · de Ø16 a Ø140 mm",
    "en": "Granite, quartz and porcelain · Ø16 to Ø140 mm",
    "uk": "Граніт, кварц і керамограніт · від Ø16 до Ø140 мм"
+  },
+  "Catàleg de màquines Crown": {
+   "es": "Catálogo de máquinas Crown",
+   "en": "Crown power tools catalogue",
+   "uk": "Каталог інструментів Crown"
+  },
+  "203 màquines amb preus · campanya tardor-hivern 2026": {
+   "es": "203 máquinas con precios · campaña otoño-invierno 2026",
+   "en": "203 tools with prices · autumn-winter 2026 campaign",
+   "uk": "203 інструменти з цінами · кампанія осінь-зима 2026"
+  },
+  "Obrir ↗": {
+   "es": "Abrir ↗",
+   "en": "Open ↗",
+   "uk": "Відкрити ↗"
   }
  },
  "patterns": [

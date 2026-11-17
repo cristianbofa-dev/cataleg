@@ -1123,7 +1123,7 @@ function renderHome(pages){
   }
   pages.home.appendChild(grid);
 
-  if(!_isPublicApp()) pages.home.appendChild(_crownLinkCard());
+  if(_showCrownLink()) pages.home.appendChild(_crownLinkCard());
 
   // Recomanats NEXE: sota les categories
   var recomanatsContainer = document.createElement('div');
@@ -1559,6 +1559,8 @@ function showHome(pages){
 
 // Enllaç al catàleg Crown (només al catàleg intern; les versions publicades no el porten)
 var CROWN_URL = 'https://www.nexeindustrial.es/crown/';
+// Al catàleg intern sempre; a les versions publicades, només si ho demanen (web de clients)
+function _showCrownLink(){ return !_isPublicApp() || (typeof SHOW_CROWN_LINK !== 'undefined' && SHOW_CROWN_LINK); }
 function _crownLinkCard(){
   var a = document.createElement('a');
   a.className = 'crown-link-card';
@@ -1661,7 +1663,7 @@ function showCategory(catId, subcatId, filter, pages){
   // Product grid
   _gridCtx = catId + '|' + (subcatId || '') + '|' + ((filter && filter.type) ? (filter.type + ':' + filter.value) : '');
   renderProductGrid(pages.categoryGrid, prods, pages);
-  if(catId === 'maquinaria' && !_isPublicApp() && pages.categoryGrid.parentNode){
+  if(catId === 'maquinaria' && _showCrownLink() && pages.categoryGrid.parentNode){
     var old = document.getElementById('crownLinkCat'); if(old) old.remove();
     var cl = _crownLinkCard(); cl.id = 'crownLinkCat';
     pages.categoryGrid.parentNode.insertBefore(cl, pages.categoryGrid);

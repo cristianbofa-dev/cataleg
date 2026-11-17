@@ -357,7 +357,7 @@ def build(dest):
     rep("function shareOrder(){",
         CLIENT_JS.replace('__WA__', WHATSAPP)
         + "\nfunction shareOrder(){ return _clientSendWhatsApp(); }\nfunction _internalShareOrder(){")
-    rep('<head>', '<head>\n' + STORAGE_SHIM + NO_SW + '<script>var NEXE_PUBLIC = true;</script>')
+    rep('<head>', '<head>\n' + STORAGE_SHIM + NO_SW + '<script>var NEXE_PUBLIC = true; var SHOW_CROWN_LINK = true;</script>')
     rep('var PORTS_LLINDAR = %d;' % nexe.PORTS_LLINDAR, 'var PORTS_LLINDAR = 0; // sense preus: sense línia de ports')
     rep("if ('serviceWorker' in navigator && location.protocol !== 'file:') {", "if (false) { // web per a clients: sense còpia offline")
     i18n = json.load(open(os.path.join(nexe.ROOT, 'data', 'i18n-clients.json'), encoding='utf-8'))
