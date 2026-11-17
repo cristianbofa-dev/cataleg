@@ -1123,6 +1123,8 @@ function renderHome(pages){
   }
   pages.home.appendChild(grid);
 
+  if(!_isPublicApp()) pages.home.appendChild(_crownLinkCard());
+
   // Recomanats NEXE: sota les categories
   var recomanatsContainer = document.createElement('div');
   recomanatsContainer.id = 'recomanatsSection';
@@ -1555,6 +1557,18 @@ function showHome(pages){
   pages.home.classList.add('active');
 }
 
+// Enllaç al catàleg Crown (només al catàleg intern; les versions publicades no el porten)
+var CROWN_URL = 'https://www.nexeindustrial.es/crown/';
+function _crownLinkCard(){
+  var a = document.createElement('a');
+  a.className = 'crown-link-card';
+  a.href = CROWN_URL; a.target = '_blank'; a.rel = 'noopener';
+  a.innerHTML = '<span class="crown-link-logo">CROWN</span>'
+    + '<span class="crown-link-txt"><b>Catàleg de màquines Crown</b><small>203 màquines amb preus · campanya tardor-hivern 2026</small></span>'
+    + '<span class="crown-link-go">Obrir ↗</span>';
+  return a;
+}
+
 function showCategory(catId, subcatId, filter, pages){
   pages.category.classList.add('active');
 
@@ -1647,6 +1661,11 @@ function showCategory(catId, subcatId, filter, pages){
   // Product grid
   _gridCtx = catId + '|' + (subcatId || '') + '|' + ((filter && filter.type) ? (filter.type + ':' + filter.value) : '');
   renderProductGrid(pages.categoryGrid, prods, pages);
+  if(catId === 'maquinaria' && !_isPublicApp() && pages.categoryGrid.parentNode){
+    var old = document.getElementById('crownLinkCat'); if(old) old.remove();
+    var cl = _crownLinkCard(); cl.id = 'crownLinkCat';
+    pages.categoryGrid.parentNode.insertBefore(cl, pages.categoryGrid);
+  } else { var o2 = document.getElementById('crownLinkCat'); if(o2) o2.remove(); }
 }
 
 function renderVezzaniSubmenu(catId, navCat, allProds, pages){
