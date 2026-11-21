@@ -1,6 +1,11 @@
 if ('serviceWorker' in navigator && location.protocol !== 'file:') {
   var _swRefreshing = false;
+  var _swFirstPublicInstall = typeof NEXE_PUBLIC !== 'undefined' && NEXE_PUBLIC && !navigator.serviceWorker.controller;
   navigator.serviceWorker.addEventListener('controllerchange', function(){
+    if(_swFirstPublicInstall){
+      _swFirstPublicInstall = false;
+      return;
+    }
     if(_swRefreshing) return;
     _swRefreshing = true;
     window.location.reload();

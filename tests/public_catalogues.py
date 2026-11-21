@@ -222,12 +222,12 @@ def check_crown(context, origin):
     page = context.new_page()
     url = origin + 'crown/'
     page.goto(url)
+    page.wait_for_function('navigator.serviceWorker.controller !== null')
     check_links(page, url)
     assert not page.locator('#mediaNotice').count()
     assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')
     assert not external
     check_request(page, context, crown=True)
-    page.wait_for_function('navigator.serviceWorker.controller !== null')
     # Visitar un avís en línia no ha de substituir la pàgina de la PWA a la cau.
     page.goto(url + 'avis-legal.html')
     expect(page.locator('h1')).to_have_text('Avís legal')
