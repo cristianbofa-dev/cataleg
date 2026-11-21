@@ -95,6 +95,7 @@ function _resolveImgPath(s){
 function _imgSrc(s){
   if(!s || typeof s !== 'string') return '';
   var r = _resolveImgPath(s);
+  if(_isPublicApp() && r.indexOf('http') === 0 && !window.nexeMediaAllowed(r, 'photos')) return '';
   if(r.indexOf('data:') === 0 || r.indexOf('http') === 0 || r.indexOf('blob:') === 0) return r;
   return location.protocol === 'file:' ? '' : r;
 }
@@ -429,6 +430,21 @@ if(document.readyState === 'complete' || document.readyState === 'interactive'){
 }
 
 // Versions publicades (Crown, web de clients): sense pestanya de clients ni mode edició
+function _photoSettings(p){
+  if(!_isPublicApp()) return '';
+  var pending = (p.imgs || []).some(function(src){
+    return src.indexOf('https://') === 0 && !window.nexeMediaAllowed(src, 'photos');
+  });
+  return pending ? '<button class="legal-media-link" type="button" data-media-settings>Configura les fotos externes</button>' : '';
+}
+
+function _productVideo(source){
+  if(_isPublicApp() && !window.nexeMediaAllowed(source, 'videos')){
+    return '<div class="gallery-slide legal-video"><button type="button" data-media-settings>Configura els vídeos de YouTube</button></div>';
+  }
+  return '<iframe src="'+escHtml(source)+'" title="Vídeo del producte" referrerpolicy="strict-origin-when-cross-origin" style="flex-shrink:0;width:100%;height:100%;border:none" allowfullscreen></iframe>';
+}
+
 function _isPublicApp(){ return typeof NEXE_PUBLIC !== 'undefined' && NEXE_PUBLIC; }
 function toggleEditMode(){
   if(_isPublicApp()){ _editMode = false; return; }
@@ -762,6 +778,7 @@ _loadEditOverrides();
 
 // Versió amb els canvis "enllaçats": els grups automàtics es renumeren, així que es neteja un cop el que hi havia guardat
 (function _bakeCleanup(){
+  if(_isPublicApp()) return;
   try{
     var BV = 'bake-2026-10-31';
     if(localStorage.getItem('nexe_bake_version') === BV) return;
@@ -2053,7 +2070,7 @@ var fit = 'contain';
       html += '</div>';
     }
     if(p.video){
-      html += '<iframe src="'+escHtml(p.video)+'" style="flex-shrink:0;width:100%;height:100%;border:none" allowfullscreen></iframe>';
+      html += _productVideo(p.video);
     }
     html += '</div>';
     if(_editMode){
@@ -2066,6 +2083,7 @@ var fit = 'contain';
     }
     html += '</div>';
 
+    html += _photoSettings(p);
     var _vgBrand = (_editOverrides[idx] && _editOverrides[idx].brand !== undefined) ? _editOverrides[idx].brand : def.brand;
     var _vgName = (_editOverrides[idx] && _editOverrides[idx].name !== undefined) ? _editOverrides[idx].name : def.name;
     var _vgRef = (_editOverrides[idx] && _editOverrides[idx].ref !== undefined) ? _editOverrides[idx].ref : p.r;
@@ -2630,7 +2648,7 @@ function showProduct(idx){
     html += '</div>';
   }
   if(p.video){
-    html += '<iframe src="'+escHtml(p.video)+'" style="flex-shrink:0;width:100%;height:100%;border:none" allowfullscreen></iframe>';
+    html += _productVideo(p.video);
   }
   html += '</div>';
   var totalSlides = imgs.length + (p.video ? 1 : 0);
@@ -2648,6 +2666,7 @@ function showProduct(idx){
     html += '<input type="file" id="galleryFileInput" accept="image/*" capture="environment" style="display:none" multiple>';
   }
   html += '</div>';
+  html += _photoSettings(p);
   var compatible = p.aplic && p.aplic.length ? p.aplic.join(', ') : 'Consultar compatibilitat';
   var detailPrice = (_editOverrides[idx] && _editOverrides[idx].price !== undefined) ? _editOverrides[idx].price : (parseFloat(p.p)||0);
 var _dName = (_editOverrides[idx] && _editOverrides[idx].name !== undefined) ? _editOverrides[idx].name : p.n;
@@ -3290,6 +3309,8 @@ function shareList(list){
 
   if(navigator.share){
     navigator.share({title:list.name, text:text}).catch(function(){});
+  } else if(_isPublicApp()){
+    window.nexeWhatsAppDraft(text, true);
   } else {
     var ta = document.createElement('textarea');
     ta.value = text;
@@ -3327,17 +3348,43 @@ var orderNotes = '';
 var orderClientId = null;
 var orderClientName = '';
 
+function publicCartItems(){
+  return orderItems.map(function(item){
+    return {idx:item.idx, qty:item.qty, price:item.price, variantLabel:item.variantLabel};
+  });
+}
+
+var publicOrderLoaded = false;
 function loadOrder(){
+  if(_isPublicApp() && publicOrderLoaded) return;
   try{ orderItems = JSON.parse(localStorage.getItem('nexe_order')) || []; }catch(e){ orderItems = []; }
+  if(_isPublicApp()){
+    publicOrderLoaded = true;
+    if(!Array.isArray(orderItems)) orderItems = [];
+    orderItems = orderItems.filter(function(item){ return item && typeof item === 'object'; });
+    try{
+      localStorage.removeItem('nexe_order_notes');
+      localStorage.removeItem('nexe_order_client');
+      if(orderItems.some(function(item){ return Object.prototype.hasOwnProperty.call(item, 'notes'); })){
+        orderItems = publicCartItems();
+        localStorage.setItem('nexe_order', JSON.stringify(orderItems));
+      }
+    }catch(e){}
+    return;
+  }
   try{ orderNotes = localStorage.getItem('nexe_order_notes') || ''; }catch(e){ orderNotes = ''; }
   try{ var c = JSON.parse(localStorage.getItem('nexe_order_client')); if(c){ orderClientId = c.id; orderClientName = c.nom || c.name; } }catch(e){}
 }
 
 function saveOrder(){
-  localStorage.setItem('nexe_order', JSON.stringify(orderItems));
-  localStorage.setItem('nexe_order_notes', orderNotes);
-  if(orderClientId) localStorage.setItem('nexe_order_client', JSON.stringify({id:orderClientId, name:orderClientName}));
-  else localStorage.removeItem('nexe_order_client');
+  if(_isPublicApp()){
+    try{ localStorage.setItem('nexe_order', JSON.stringify(publicCartItems())); }catch(e){}
+  }else{
+    localStorage.setItem('nexe_order', JSON.stringify(orderItems));
+    localStorage.setItem('nexe_order_notes', orderNotes);
+    if(orderClientId) localStorage.setItem('nexe_order_client', JSON.stringify({id:orderClientId, name:orderClientName}));
+    else localStorage.removeItem('nexe_order_client');
+  }
   updateOrderBadge();
   updateCartBar();
 }
@@ -3633,7 +3680,10 @@ function renderOrderPanel(){
     notesEl.value = orderNotes || '';
     var newNotes = notesEl.cloneNode(true);
     notesEl.parentNode.replaceChild(newNotes, notesEl);
-    newNotes.addEventListener('input', function(){ orderNotes = this.value; saveOrder(); });
+    newNotes.addEventListener('input', function(){
+      orderNotes = this.value;
+      if(!_isPublicApp()) saveOrder();
+    });
   }
 }
 
@@ -3660,7 +3710,7 @@ function clearOrder(){
 function shareOrder(){
   if(orderItems.length === 0) return;
   var lines = [];
-  lines.push('🧾 *PEDIDO NEXE*');
+  lines.push(_isPublicApp() ? '🧾 *SOL·LICITUD COMERCIAL — CROWN · NEXE*' : '🧾 *PEDIDO NEXE*');
   if(orderClientId && orderClientName){
     if(!_isPublicApp()) lines.push('👤 *Client:* '+orderClientName);
     var c = getClient(orderClientId);
@@ -3688,12 +3738,15 @@ function shareOrder(){
     if(getOrderBatteryDiscount() > 0) lines.push('🔋 Promoció bateries ('+getOrderBatteryCount()+' bateries): −'+formatPrice(getOrderBatteryDiscount()));
     if(_crownPorts() && getOrderHasCrown()) lines.push('🚚 '+(_onlyCrown()?'Ports':'Ports Crown')+': '+(getOrderPortsFree() ? 'gratuïts' : formatPrice(getOrderShipping())));
   }
-  lines.push('*TOTAL: '+formatPrice(getOrderTotal())+'*');
+  var totalLabel = _isPublicApp() ? 'TOTAL ORIENTATIU SENSE IVA' : 'TOTAL';
+  lines.push('*'+totalLabel+': '+formatPrice(getOrderTotal())+'*');
+  if(_isPublicApp()) lines.push('Sol·licitud pendent de confirmació.');
   if(orderNotes) lines.push('📌 '+orderNotes);
   lines.push('');
   lines.push('Generat amb Nexe Catàleg');
   var text = lines.join('\n');
 
+  if(_isPublicApp()) return window.nexeWhatsAppDraft(text);
   if(navigator.share){
     navigator.share({title:'Pedido Nexe',text:text}).catch(function(){});
   } else {
@@ -4174,6 +4227,7 @@ var _fbListsSyncing = false;
 var _fbListsLoaded = false;
 
 function initFirebaseSync(){
+  if(_isPublicApp()) return;
   if(location.protocol === 'file:'){
     console.log('[FB] file:// detected, skipping Firebase');
     return;
@@ -4535,7 +4589,7 @@ if(location.protocol === 'file:'){
   console.log('[Boot] file:// detected, skipping SQLite/SW');
 }
 loadOrder();
-loadClients();
+if(!_isPublicApp()) loadClients();
 init();
 if(document.readyState === 'complete' || document.readyState === 'interactive'){
   initOrderSystem();

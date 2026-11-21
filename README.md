@@ -354,3 +354,39 @@ El web de clients (`tools/client_app.py`) no es descarrega sencer: l'HTML només
 `python3 cataleg-crown/calcular_preus.py` llegeix els costos (`private/crown_netos_2026.xlsx`, no es publica) i escriu `cataleg-crown/preus_nexe.json` (només preus, sense costos), que fan servir el PDF i l'app Crown. Regles: preu del fullet, amb un mínim de cost / 0,7 (30 % de marge sobre venda), arrodonit amunt a ,90 o ,00; els carregadors i les màquines de més de 500 € al fullet es queden al preu del fullet. També deixa `dist/Crown_marges.csv` per revisar marges.
 
 Els ports no van dins del preu: a l'app Crown la comanda porta una línia de **10 € de ports** (`PORTS_COMANDA`), que passa a 0 a partir de **450 €** (`PORTS_LLINDAR`, a `tools/crown_app.py`). La promo de 2 bateries (−5 €) es manté. Al catàleg general passa el mateix amb els productes Crown: preu sense ports i línia "Ports Crown" de 10 € si la comanda en porta, gratuïta a partir de 450 € en Crown (constants `PORTS_LLINDAR` i `PORTS_COMANDA` a `tools/nexe.py`). El web de clients no mostra la línia de ports. Les versions publicades (Crown i web de clients) porten `NEXE_PUBLIC`: sense pestanya de clients, sense client a la comanda i sense mode edició.
+
+### Informació legal dels catàlegs públics
+
+Els generadors `tools/client_app.py` i `tools/crown_app.py` inclouen el peu
+i creen `avis-legal.html`, `privacitat.html`, `galetes.html` i `contacte.html`
+a cada sortida. Edita'n el contingut comú a `tools/public_legal.py`.
+Els controls públics són a `src/legal/`. La versió Crown d'un sol HTML
+enllaça a les pàgines legals de `https://www.nexeindustrial.es/crown/`.
+
+NEXE demana permís separadament per a fotos externes i vídeos de YouTube.
+Si afegeixes un proveïdor, revisa les categories, els orígens permesos i
+la política de galetes abans d'incorporar-lo. Crown predesa les seves
+pàgines legals a la memòria cau de la PWA.
+
+Per generar i provar els dos catàlegs en una carpeta temporal, amb Chromium:
+
+    python3 -m pip install Pillow reportlab playwright
+    python3 -m playwright install chromium
+    python3 tests/public_catalogues.py
+
+Si Chromium està disponible al sistema, la prova el fa servir. Les
+connexions externes es simulen, inclosa l'obertura de WhatsApp. Per
+comparar les dades amb una versió anterior, genera-la en una carpeta i
+passa la ruta amb `--baseline`.
+
+Per revisar els catàlegs localment sense publicar:
+
+    python3 tools/client_app.py --site /tmp/nexe-preview
+    python3 tools/crown_app.py --site /tmp/nexe-preview/crown
+    python3 -m http.server 8000 --bind 127.0.0.1 --directory /tmp/nexe-preview
+
+Obre `http://127.0.0.1:8000/` i `http://127.0.0.1:8000/crown/`. Quan
+hagis aprovat els canvis i fusionat la PR a `desarrollo-catalogo-nexe`,
+executa `bash tools/publish_clients.sh ../cataleg-clients` des del
+repositori original amb el clon de publicació actualitzat i net. L'script
+genera els dos catàlegs i fa push a `main` de `cataleg-clients`.

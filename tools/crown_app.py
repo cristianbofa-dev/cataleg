@@ -26,6 +26,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import nexe  # noqa: E402
+import public_legal  # noqa: E402
 
 from PIL import Image, ImageDraw, ImageFont  # noqa: E402
 
@@ -175,7 +176,7 @@ def nav_js(products, images):
     return '\n'.join(out)
 
 
-def build_html():
+def build_html(*, standalone=False):
     products, images = products_and_images()
     app = nexe.read_text(os.path.join(ROOT, 'src/js/app.js'))
     a = app.index('const NAV_CATEGORIES = [')
@@ -188,7 +189,6 @@ def build_html():
     app = app.replace("var quickTerms = ['Disc','Adhesiu','Ventosa','Compresor','Lija'];",
                       "var quickTerms = ['Amoladora','Taladro','Batería','Martillo','Sierra'];")
     app = app.replace("'Generat amb Nexe Catàleg'", "'Generat amb Catàleg Crown · NEXE'")
-    app = app.replace("lines.push('🧾 *PEDIDO NEXE*')", "lines.push('🧾 *PEDIDO NEXE · CROWN*')")
 
     template = nexe.read_text(nexe.TEMPLATE)
     template = template.replace('<head>', '<head>\n' + STORAGE_SHIM + PUBLIC_SHIM, 1)
@@ -212,7 +212,7 @@ def build_html():
         'images': nexe.IMAGES_PREFIX + nexe.compact(images) + ';',
     }
     html = re.sub(r'\{\{data:(\w+)\}\}', lambda m: data[m.group(1)], html)
-    return html, len(products)
+    return public_legal.integrate(html, crown=True, standalone=standalone), len(products)
 
 
 def icon(size, rx):
@@ -244,11 +244,15 @@ def write_public(dest, html):
     man.update({'name': 'Catàleg Crown', 'short_name': 'Crown',
                 'description': 'Màquines Crown amb preus NEXE', 'theme_color': '#d71920'})
     nexe.write_text(os.path.join(dest, 'manifest.json'), json.dumps(man, ensure_ascii=False, indent=2) + '\n')
-    version = hashlib.sha256(html.encode('utf-8')).hexdigest()[:12]
+    legal_pages = public_legal.pages(crown=True)
+    public_legal.write_pages(dest, crown=True)
+    version = hashlib.sha256((html + ''.join(legal_pages.values())).encode('utf-8')).hexdigest()[:12]
     sw = nexe.read_text(os.path.join(nexe.PUBLIC, 'sw.js'))
     sw = sw.replace('nexe-cataleg-', 'crown-cataleg-').replace('__BUILD_VERSION__', version)
     sw = sw.replace("'./fotos-extra.js', ", '').replace("var OTHER_APPS = ['crown/', 'clients/'];", "var OTHER_APPS = [];")
     sw = sw.replace("['./index.html', './fotos-extra.js']", "['./index.html', './index.html']")
+    sw = sw.replace('var LEGAL_PAGES = [];', 'var LEGAL_PAGES = ' + json.dumps(list(legal_pages)) + ';')
+    sw = sw.replace("'./clau.json',", '')
     nexe.write_text(os.path.join(dest, 'sw.js'), sw)
 
 
@@ -257,7 +261,7 @@ def main():
     ap.add_argument('--out', help='Només un fitxer HTML (p. ex. per a l\'app Documents)')
     ap.add_argument('--site', help='Carpeta on deixar l\'app completa (per defecte dist/crown)')
     a = ap.parse_args()
-    html, n = build_html()
+    html, n = build_html(standalone=bool(a.out))
     out = a.out or os.path.join(a.site or os.path.join(nexe.DIST, 'crown'), 'index.html')
     nexe.write_text(out, html)
     if not a.out:

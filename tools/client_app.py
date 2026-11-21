@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Catàleg per a clients: el catàleg general de NEXE SENSE PREUS, on el client
-omple les seves dades i envia la comanda per WhatsApp al comercial.
+omple les seves dades i prepara una sol·licitud per WhatsApp al comercial.
 
   python3 tools/client_app.py                  # -> dist/clients/ (app instal·lable)
   python3 tools/client_app.py --site carpeta   # en una altra carpeta
@@ -11,14 +11,13 @@ Què el diferencia del catàleg intern:
   manera que no es poden veure ni mirant el codi de la pàgina. També es
   treuen les frases de les descripcions i variants que porten preus (€).
 - Sense pestanya Clients, sense mode edició ni dades privades.
-- La comanda demana nom, empresa, telèfon i població i s'envia per WhatsApp
-  al número de WHATSAPP (sense preus ni totals).
+- La sol·licitud demana nom, empresa, telèfon i població opcional i es pot
+  copiar a un xat de WhatsApp (sense preus ni totals).
 - Memòria del navegador i service worker propis: no es barreja amb les
   apps NEXE i Crown si s'obren al mateix dispositiu.
 """
 import argparse
 import base64
-import hashlib
 import json
 import os
 import re
@@ -27,8 +26,8 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import nexe  # noqa: E402
+import public_legal  # noqa: E402
 
-WHATSAPP = '34610732047'          # número que rep les comandes (amb prefix 34)
 WHATSAPP_TXT = '610 73 20 47'
 
 PRICE_KEYS = {'p', 'price', 'cost', '_origPrice', 'pvp', 'preu', 'variantPrices'}
@@ -54,59 +53,58 @@ CLIENT_CSS = """
 .client-form input.err { border-color:#d70015; background:#fff2f2; }
 .client-form .full { grid-column:1 / -1; }
 .client-form-title { font-weight:700; font-size:15px; margin:2px 0 6px; }
-.client-form-note { font-size:12px; color:#6e6e73; margin:-2px 0 8px; }
 body.presentation .client-form input { background:#2c2c2e; color:#f5f5f7; border-color:rgba(255,255,255,.15); }
 #orderShare.wa { background:#25d366 !important; color:#fff !important; }
 """
 
 CLIENT_JS = r"""
 /* ── Catàleg per a clients: comanda per WhatsApp ── */
-var CLIENT_WA = '__WA__';
-function _clientData(){
-  try { return JSON.parse(localStorage.getItem('client_dades') || '{}'); } catch(e){ return {}; }
-}
-function _clientSaveData(){
-  var d = {};
+function _clientReadData(){
+  var data = {};
   ['nom','empresa','tel','poblacio'].forEach(function(k){
-    var el = document.getElementById('cf_'+k); if(el) d[k] = el.value.trim();
+    data[k] = document.getElementById('cf_'+k).value.trim();
   });
-  try { localStorage.setItem('client_dades', JSON.stringify(d)); } catch(e){}
-  return d;
+  return data;
 }
 function _clientInitForm(){
   var footer = document.getElementById('orderPanelFooter');
   if(!footer || document.getElementById('clientForm')) return;
-  var d = _clientData();
+  try { localStorage.removeItem('client_dades'); } catch(e){}
   var box = document.createElement('div');
   box.id = 'clientForm';
   box.innerHTML = '<div class="client-form-title">Les teves dades</div>'
-    + '<div class="client-form-note">Rebràs la confirmació i el preu de la comanda del teu comercial.</div>'
     + '<div class="client-form">'
-    + '<input id="cf_nom" placeholder="Nom i cognoms *" autocomplete="name">'
-    + '<input id="cf_empresa" placeholder="Empresa *" autocomplete="organization">'
-    + '<input id="cf_tel" placeholder="Telèfon *" type="tel" autocomplete="tel">'
-    + '<input id="cf_poblacio" placeholder="Població" autocomplete="address-level2">'
+    + '<input id="cf_nom" aria-label="Nom i cognoms" placeholder="Nom i cognoms *" autocomplete="off" required>'
+    + '<input id="cf_empresa" aria-label="Empresa" placeholder="Empresa *" autocomplete="off" required>'
+    + '<input id="cf_tel" aria-label="Telèfon" placeholder="Telèfon *" type="tel" autocomplete="off" required>'
+    + '<input id="cf_poblacio" aria-label="Població (opcional)" placeholder="Població" autocomplete="off">'
     + '</div>';
   footer.insertBefore(box, footer.firstChild);
   ['nom','empresa','tel','poblacio'].forEach(function(k){
     var el = document.getElementById('cf_'+k);
-    el.value = d[k] || '';
-    el.addEventListener('input', function(){ this.classList.remove('err'); _clientSaveData(); });
+    el.addEventListener('input', function(){
+      this.classList.remove('err'); this.removeAttribute('aria-invalid');
+    });
   });
   var share = document.getElementById('orderShare');
-  if(share){ share.textContent = 'Enviar per WhatsApp'; share.classList.add('wa'); }
+  if(share) share.classList.add('wa');
   var notes = document.getElementById('orderNotes');
-  if(notes) notes.placeholder = 'Observacions (lloc d\'entrega, urgència…)';
+  if(notes) notes.placeholder = 'Observacions sobre la sol·licitud';
 }
 function _clientSendWhatsApp(){
   if(!orderItems.length) return;
-  var d = _clientSaveData(), missing = [];
+  var d = _clientReadData(), missing = [];
   [['nom','cf_nom'],['empresa','cf_empresa'],['tel','cf_tel']].forEach(function(f){
-    if(!d[f[0]]){ missing.push(f[1]); document.getElementById(f[1]).classList.add('err'); }
+    if(!d[f[0]]){
+      var field = document.getElementById(f[1]);
+      missing.push(field);
+      field.classList.add('err');
+      field.setAttribute('aria-invalid', 'true');
+    }
   });
-  if(missing.length){ document.getElementById(missing[0]).focus(); return; }
+  if(missing.length){ missing[0].reportValidity(); missing[0].focus(); return; }
   var L = [];
-  L.push('🧾 *COMANDA — CATÀLEG NEXE*');
+  L.push('🧾 *SOL·LICITUD COMERCIAL — CATÀLEG NEXE*');
   L.push('👤 ' + d.nom);
   L.push('🏢 ' + d.empresa);
   L.push('📞 ' + d.tel);
@@ -124,18 +122,8 @@ function _clientSendWhatsApp(){
   if(orderNotes) L.push('📌 ' + orderNotes);
   var lg = window._clientLang ? window._clientLang() : 'ca';
   if(lg !== 'ca') L.push('🌐 Idioma del client: ' + {es:'castellà', en:'anglès', uk:'ucraïnès'}[lg]);
-  L.push('Enviat des del catàleg NEXE');
-  var url = 'https://wa.me/' + CLIENT_WA + '?text=' + encodeURIComponent(L.join('\n'));
-  var a = document.createElement('a');
-  a.href = url; a.target = '_blank'; a.rel = 'noopener';
-  document.body.appendChild(a); a.click(); a.remove();
-  _clientToast((window._clientT||String)('S\'obre WhatsApp amb la comanda: prem Enviar per fer-la arribar.'));
-}
-function _clientToast(t){
-  var el = document.createElement('div');
-  el.textContent = t;
-  el.style.cssText = 'position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom));transform:translateX(-50%);z-index:10000;background:#1d1d1f;color:#fff;padding:12px 20px;border-radius:14px;font:600 15px -apple-system,system-ui,sans-serif;box-shadow:0 6px 24px rgba(0,0,0,.25);max-width:90vw;text-align:center';
-  document.body.appendChild(el); setTimeout(function(){ el.remove(); }, 5000);
+  L.push('Sol·licitud pendent de confirmació.');
+  window.nexeWhatsAppDraft(L.join('\n'));
 }
 document.addEventListener('DOMContentLoaded', _clientInitForm);
 if(document.readyState !== 'loading') _clientInitForm();
@@ -211,12 +199,14 @@ function doEl(el){
   });
 }
 var SKIP = {SCRIPT:1, STYLE:1, NOSCRIPT:1};
+function legalText(el){ var langRoot = el && el.nodeType===1 && el.closest('[lang="ca"]'); return langRoot && langRoot !== document.documentElement; }
 function walk(root){
+  if(legalText(root.nodeType===3 ? root.parentElement : root)) return;
   if(root.nodeType===3){ if(root.parentNode && !SKIP[root.parentNode.nodeName] && root.parentNode.nodeName!=='TEXTAREA') doText(root); return; }
   if(root.nodeType!==1 || SKIP[root.nodeName] || root.id==='langPick') return;
   doEl(root);
   var w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT|NodeFilter.SHOW_ELEMENT, {acceptNode:function(n){
-    if(n.nodeType===1) return (SKIP[n.nodeName]||n.id==='langPick') ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT;
+    if(n.nodeType===1) return (SKIP[n.nodeName]||n.id==='langPick'||legalText(n)) ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT;
     return NodeFilter.FILTER_ACCEPT; }});
   var n; while((n=w.nextNode())){ if(n.nodeType===3){ if(n.parentNode.nodeName!=='TEXTAREA') doText(n); } else doEl(n); }
 }
@@ -249,6 +239,7 @@ function start(){
   OBS = new MutationObserver(function(ms){
     if(busy) return; busy=true;
     ms.forEach(function(m){
+      if(legalText(m.target.nodeType===3 ? m.target.parentElement : m.target)) return;
       if(m.type==='characterData'){ ORIG.set(m.target, m.target.nodeValue); doText(m.target); }
       else if(m.type==='attributes'){ var mm=AORIG.get(m.target); if(!mm){ doEl(m.target); } else { var v=m.target.getAttribute(m.attributeName);
           var cur = tr(mm[m.attributeName]||'')||mm[m.attributeName]; if(v!==cur){ mm[m.attributeName]=v; doEl(m.target);} } }
@@ -355,7 +346,7 @@ def build(dest):
     rep("function formatPrice(v){ return v.toFixed(2).replace('.',',')+' €'; }",
         "function formatPrice(v){ return ''; } // catàleg per a clients: sense preus")
     rep("function shareOrder(){",
-        CLIENT_JS.replace('__WA__', WHATSAPP)
+        CLIENT_JS
         + "\nfunction shareOrder(){ return _clientSendWhatsApp(); }\nfunction _internalShareOrder(){")
     rep('<head>', '<head>\n' + STORAGE_SHIM + NO_SW + '<script>var NEXE_PUBLIC = true; var SHOW_CROWN_LINK = true;</script>')
     rep('var PORTS_LLINDAR = %d;' % nexe.PORTS_LLINDAR, 'var PORTS_LLINDAR = 0; // sense preus: sense línia de ports')
@@ -385,10 +376,12 @@ def build(dest):
     for old in ('fotos-extra.js',):
         if os.path.exists(os.path.join(dest, old)):
             os.remove(os.path.join(dest, old))
+    html = public_legal.integrate(html)
     html = externalize_images(html, dest)
     nexe.write_text(out, html)
     nexe.write_extra_files(dest, sorted(set(extra)), max_size=900, quality=78)
     nexe.copy_public(dest, html)
+    public_legal.write_pages(dest)
     # Service worker que només esborra la còpia sense connexió de versions anteriors
     nexe.write_text(os.path.join(dest, 'sw.js'), SW_CLEANUP)
     # Si hi ha un domini propi configurat (fitxer CNAME), es conserva tal qual

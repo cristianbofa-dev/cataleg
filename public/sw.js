@@ -10,6 +10,7 @@ var VERSION = '__BUILD_VERSION__';
 var CACHE = 'nexe-cataleg-' + VERSION;
 var CORE = ['./', './index.html', './fotos-extra.js', './manifest.json', './clau.json',
             './icons/icon-192.png', './icons/icon-512.png', './icons/apple-touch-icon.png'];
+var LEGAL_PAGES = []; // S’emplena al build Crown.
 var OTHER_APPS = ['crown/', 'clients/']; // subcarpetes amb una app independent
 var NETWORK_TIMEOUT = 4000; // amb poca cobertura, no esperar més: obrir la còpia desada
 
@@ -17,7 +18,7 @@ self.addEventListener('install', function (event) {
   event.waitUntil(
     caches.open(CACHE).then(function (cache) {
       // Un a un: si un fitxer opcional no hi és, la resta es desa igualment
-      return Promise.all(CORE.map(function (url) {
+      return Promise.all(CORE.concat(LEGAL_PAGES.map(function (page) { return './' + page; })).map(function (url) {
         return cache.add(new Request(url, { cache: 'reload' })).catch(function () {});
       }));
     }).then(function () { return self.skipWaiting(); })
@@ -70,6 +71,13 @@ self.addEventListener('fetch', function (event) {
 
   // Pàgina: la xarxa si respon ràpid (per tenir la darrera versió); si no, la còpia.
   if (req.mode === 'navigate') {
+    if (LEGAL_PAGES.length && rel !== '' && rel !== 'index.html') {
+      if (LEGAL_PAGES.indexOf(rel) === -1) return;
+      event.respondWith(
+        fromNetwork(req, NETWORK_TIMEOUT).catch(function () { return caches.match('./' + rel); })
+      );
+      return;
+    }
     event.respondWith(
       fromNetwork(req, NETWORK_TIMEOUT).then(function (res) {
         if (res.ok) {
