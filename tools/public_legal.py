@@ -77,7 +77,8 @@ def integrate(html, *, crown=False, standalone=False):
         footer += ' <button type="button" data-media-settings>Preferències de galetes</button>'
     footer += '</footer>'
     terms = (
-        'Imports del catàleg i del resum sense IVA. El resum pot incloure ports i descomptes.'
+        'Venda exclusiva a professionals i empreses. Imports del catàleg i del resum sense IVA. '
+        'El resum pot incloure ports i descomptes.'
         if crown else 'El pressupost indicarà el preu segons la tarifa aplicable.'
     )
     privacy = f"""<div class="order-legal" id="orderLegal" lang="ca">
@@ -134,13 +135,15 @@ productes corresponen als seus titulars respectius.</p>
 tramita pagaments. Afegir productes a la cistella, preparar un missatge o enviar-lo
 per WhatsApp no formalitza una compra ni reserva existències.</p>
 <p>El catàleg general NEXE no publica preus. Demana un pressupost; el comercial
-t’indicarà la tarifa aplicable. El catàleg Crown mostra imports professionals sense IVA.
-El resum pot incloure els ports i descomptes que calcula el catàleg.</p>
+t’indicarà la tarifa aplicable. La venda del catàleg Crown s’adreça exclusivament
+a professionals i empreses. Els imports de Crown es mostren sense IVA. El resum
+pot incloure els ports i descomptes que calcula el catàleg.</p>
 <p>Abans de formalitzar una comanda, el comercial confirmarà les referències, la
 disponibilitat, els preus, els descomptes aplicables, els ports, els impostos i
-el total a pagar, així com les condicions aplicables. En una venda a un consumidor, abans d’acceptar l’oferta rebràs el preu total
-amb impostos i la informació sobre lliurament, garanties i, quan escaigui, desistiment. Es mantenen els drets
-que reconeix la normativa de consum.</p>""",
+el total a pagar, així com les condicions aplicables. Si el catàleg general NEXE
+dona lloc a una venda a un consumidor, abans d’acceptar l’oferta rebràs el preu
+total amb impostos i la informació sobre lliurament, garanties i, quan escaigui,
+desistiment. Es mantenen els drets que reconeix la normativa de consum.</p>""",
         'privacitat': f"""{IDENTITY}
 <h2>Quines dades utilitzem i per què</h2>
 <p>El catàleg NEXE et permet preparar un missatge amb nom, empresa, telèfon,
