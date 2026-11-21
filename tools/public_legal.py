@@ -77,7 +77,7 @@ def integrate(html, *, crown=False, standalone=False):
         footer += ' <button type="button" data-media-settings>Preferències de galetes</button>'
     footer += '</footer>'
     terms = (
-        'Imports del catàleg i del resum sense IVA. Els ports poden variar segons la comanda.'
+        'Imports del catàleg i del resum sense IVA. El resum pot incloure ports i descomptes.'
         if crown else 'El pressupost indicarà el preu segons la tarifa aplicable.'
     )
     privacy = f"""<div class="order-legal" id="orderLegal" lang="ca">

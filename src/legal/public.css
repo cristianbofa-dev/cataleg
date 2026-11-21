@@ -19,3 +19,4 @@
 .legal-actions a:not([hidden]){display:inline-flex;align-items:center;box-sizing:border-box}
 .legal-video{display:grid;place-content:center;text-align:center;flex:0 0 100%;min-height:100px}
 .legal-media-link{min-height:36px;padding:4px 12px;color:inherit;background:none;border:0;text-decoration:underline;font:inherit;cursor:pointer}
+body:has(#cartBar:not([hidden])) .legal-footer{padding-bottom:calc(88px + env(safe-area-inset-bottom))}

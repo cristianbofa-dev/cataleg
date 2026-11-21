@@ -778,6 +778,7 @@ _loadEditOverrides();
 
 // Versió amb els canvis "enllaçats": els grups automàtics es renumeren, així que es neteja un cop el que hi havia guardat
 (function _bakeCleanup(){
+  if(_isPublicApp()) return;
   try{
     var BV = 'bake-2026-10-31';
     if(localStorage.getItem('nexe_bake_version') === BV) return;
@@ -4588,7 +4589,7 @@ if(location.protocol === 'file:'){
   console.log('[Boot] file:// detected, skipping SQLite/SW');
 }
 loadOrder();
-loadClients();
+if(!_isPublicApp()) loadClients();
 init();
 if(document.readyState === 'complete' || document.readyState === 'interactive'){
   initOrderSystem();
