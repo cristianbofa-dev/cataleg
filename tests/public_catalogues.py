@@ -166,6 +166,7 @@ def check_nexe(context, origin):
     page.locator('#mediaNone').click()
     page.reload()
     expect(page.locator('#mediaNotice')).to_be_hidden()
+    check_mobile_navigation(page)
     assert not external
     check_request(page, context)
     assert len(popups) == 1
@@ -217,6 +218,22 @@ def check_nexe(context, origin):
     print('NEXE: formulari, WhatsApp, rebuig, categories separades, acceptació i retirada verificats.')
 
 
+def check_mobile_navigation(page):
+    assert page.evaluate("""() => [...document.styleSheets].some(sheet =>
+      [...sheet.cssRules].some(rule =>
+        rule.selectorText === '#app' && rule.style.height === '100dvh'))""")
+    original = page.viewport_size
+    for width, height in ((390, 620), (390, 780), (780, 390)):
+        page.set_viewport_size({'width': width, 'height': height})
+        assert page.locator('#nav').evaluate("""nav => {
+          const viewport = window.visualViewport;
+          const bounds = nav.getBoundingClientRect();
+          return bounds.height > 0 && bounds.top >= viewport.offsetTop &&
+            bounds.bottom <= viewport.offsetTop + viewport.height + 1;
+        }"""), (width, height)
+    page.set_viewport_size(original)
+
+
 def check_crown(context, origin):
     errors, external, _ = monitor(context, origin)
     page = context.new_page()
@@ -227,6 +244,7 @@ def check_crown(context, origin):
     assert not page.locator('#mediaNotice').count()
     assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')
     assert not external
+    check_mobile_navigation(page)
     check_request(page, context, crown=True)
     # Visitar un avís en línia no ha de substituir la pàgina de la PWA a la cau.
     page.goto(url + 'avis-legal.html')
